@@ -23,9 +23,10 @@ export class WorkspaceExecutionService {
     }
 
     const workspace = await this.workspaceManager.get(videoId);
-    const result = await execFileAsync(command, args, {
+    const executable = process.platform === "win32" ? `${command}.cmd` : command;
+    const result = await execFileAsync(executable, args, {
       cwd: workspace.path,
-      shell: false,
+      shell: process.platform === "win32",
       windowsHide: true,
     });
 
