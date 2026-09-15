@@ -1153,7 +1153,7 @@ Le système doit également conserver le workspace afin qu'une demande ultérieu
 
 La prochaine tâche officielle est :
 
-> **Démontrer la boucle erreur → correction → rerun via MCP.**
+> **Préparer l'intégration d'un client IA externe compatible MCP.**
 
 Le premier smoke test a validé le pipeline local de bout en bout : workspace, `composition/MainVideo.tsx`, bundling Remotion, sélection de composition et rendu MP4. Le fichier généré faisait 8 908 octets et les artefacts temporaires ont été supprimés après validation.
 
@@ -1173,6 +1173,13 @@ La boucle erreur → correction → rerun a ensuite été validée avec un clien
 * `get_render_result` a retrouvé ce rendu ;
 * `output/final.mp4` a été créé dans le workspace et faisait 2 983 octets ;
 * le workspace temporaire a été supprimé après le test.
+
+La surface `execute_code` a été durcie avant cette intégration :
+
+* seuls `pnpm --version`, `pnpm -v` et `pnpm exec` sont acceptés ;
+* `pnpm exec` est limité à `tsc`, `tsx` et `remotion` ;
+* les arguments vides, trop longs ou contenant des métacaractères shell sont refusés ;
+* un test MCP a confirmé l'exécution de `pnpm --version` et le rejet d'une tentative `pnpm exec node`.
 
 ---
 
@@ -1198,7 +1205,8 @@ PROJET
 ├── MCP Tools                      ✓ filesystem, exécution et rendu
 ├── DI / Container                 ✓ MCP et VideoEngine connectés
 ├── Server                         ✓ MCP démarré via Container
-└── Premier agent autonome         → objectif V1
+├── Sécurité ExecuteCode           ✓ liste blanche et validation d'arguments
+└── Client IA externe              → prochaine étape
 ```
 
 ---
@@ -1260,6 +1268,8 @@ Un lancement direct de `pnpm.cmd` avec `child_process.spawn` a produit `spawn EI
 `WorkspaceExecutionService` reçoit le nom logique `pnpm` depuis MCP et le convertit en `pnpm.cmd` sous Windows. L'exécution utilise le shell uniquement sur Windows, car Node ne lance pas directement les fichiers `.cmd` avec `execFile`.
 
 `RenderVideoTool` résout désormais tout `outputPath` relatif avec `WorkspaceManager.resolvePath`. Un rendu MCP ne peut donc pas écrire hors du workspace et son résultat pointe vers le fichier réellement produit.
+
+`ExecuteCodeTool` n'accepte plus des arguments arbitraires. Les seuls usages autorisés sont `pnpm --version`, `pnpm -v` et `pnpm exec` avec `tsc`, `tsx` ou `remotion`. Les arguments vides, trop longs et contenant des métacaractères shell sont refusés. Cette liste devra être réévaluée explicitement si le cycle vidéo nécessite une nouvelle commande.
 
 ## Conseils pour la suite
 

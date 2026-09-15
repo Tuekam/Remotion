@@ -4,6 +4,10 @@ import type { WorkspaceManager } from "../video-engine/contracts/WorkspaceManage
 
 const execFileAsync = promisify(execFile);
 const ALLOWED_COMMANDS = new Set(["pnpm"]);
+const ALLOWED_PNPM_ARGUMENTS = new Set(["--version", "-v"]);
+const ALLOWED_EXECUTABLES = new Set(["tsc", "tsx", "remotion"]);
+const MAX_ARGUMENT_LENGTH = 256;
+const UNSAFE_ARGUMENT_PATTERN = /[;&|<>`$(){}\r\n]/;
 
 export interface ExecutionResult {
   stdout: string;
@@ -22,6 +26,8 @@ export class WorkspaceExecutionService {
       throw new Error(`Command is not allowed: ${command}`);
     }
 
+    validateArguments(args);
+
     const workspace = await this.workspaceManager.get(videoId);
     const executable = process.platform === "win32" ? `${command}.cmd` : command;
     const result = await execFileAsync(executable, args, {
@@ -34,5 +40,39 @@ export class WorkspaceExecutionService {
       stdout: result.stdout,
       stderr: result.stderr,
     };
+  }
+}
+
+function validateArguments(args: string[]): void {
+  if (args.length === 0 || args.length > 20) {
+    throw new Error("Invalid command arguments");
+  }
+
+  for (const argument of args) {
+    if (
+      argument.length === 0 ||
+      argument.length > MAX_ARGUMENT_LENGTH ||
+      UNSAFE_ARGUMENT_PATTERN.test(argument)
+    ) {
+      throw new Error("Command argument is not allowed");
+    }
+  }
+
+  const firstArgument = args[0];
+  const executable = args[1];
+
+  if (firstArgument !== undefined && ALLOWED_PNPM_ARGUMENTS.has(firstArgument)) {
+    if (args.length !== 1) {
+      throw new Error("The pnpm version command does not accept extra arguments");
+    }
+    return;
+  }
+
+  if (firstArgument !== "exec" || executable === undefined) {
+    throw new Error("Only pnpm --version and pnpm exec are allowed");
+  }
+
+  if (!ALLOWED_EXECUTABLES.has(executable)) {
+    throw new Error(`Executable is not allowed: ${executable}`);
   }
 }

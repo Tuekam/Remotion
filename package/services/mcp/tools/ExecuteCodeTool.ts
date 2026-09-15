@@ -12,7 +12,7 @@ export class ExecuteCodeTool {
       "execute_code",
       {
         description:
-          "Execute an allowlisted workspace command. Only pnpm is permitted.",
+          "Execute a restricted pnpm command in a video workspace.",
         inputSchema: z.object({
           videoId: z.string().min(1),
           command: z.literal("pnpm"),
