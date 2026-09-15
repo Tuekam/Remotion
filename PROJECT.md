@@ -1153,9 +1153,16 @@ Le système doit également conserver le workspace afin qu'une demande ultérieu
 
 La prochaine tâche officielle est :
 
-> **Connecter une IA externe via MCP et valider la correction automatique d'une erreur.**
+> **Démontrer la boucle erreur → correction → rerun via MCP.**
 
 Le premier smoke test a validé le pipeline local de bout en bout : workspace, `composition/MainVideo.tsx`, bundling Remotion, sélection de composition et rendu MP4. Le fichier généré faisait 8 908 octets et les artefacts temporaires ont été supprimés après validation. Il reste à connecter une IA MCP externe et à démontrer une boucle d'erreur/correction.
+
+Le serveur MCP principal a également été validé avec un client stdio réel lancé depuis Node sous Windows :
+
+* handshake `initialize` réussi ;
+* `tools/list` réussi avec les 10 outils attendus ;
+* appel réel de `create_directory`, `write_file`, `read_file` et `inspect_directory` réussi ;
+* le workspace de smoke test a été supprimé après validation.
 
 ---
 
@@ -1236,6 +1243,10 @@ Ces éléments sont regroupés dans `package/services/video-engine/`, dans `mode
 
 Ne pas remettre les appels directs à `bundle`, `selectComposition` ou `renderMedia` dans `VideoEngineImpl` sans nécessité claire.
 
+### Validation stdio sous Windows
+
+Un lancement direct de `pnpm.cmd` avec `child_process.spawn` a produit `spawn EINVAL`. Pour les clients de validation Node sous Windows, utiliser `shell: true` (ou `cmd.exe /c`) et lancer `pnpm.cmd exec tsx Server.ts`. Le serveur MCP lui-même démarre correctement et respecte le protocole stdio.
+
 ## Conseils pour la suite
 
 1. Lire cette directive avant toute modification.
@@ -1247,6 +1258,7 @@ Ne pas remettre les appels directs à `bundle`, `selectComposition` ou `renderMe
 7. Le store des rendus est actuellement en mémoire (`RenderResultStore`) et sera perdu au redémarrage ; une persistance devra être conçue séparément si nécessaire.
 8. Après chaque étape majeure, mettre à jour cette section, l'état du projet et la prochaine tâche.
 9. Valider au minimum avec `pnpm.cmd typecheck` et vérifier la résolution Awilix du container.
+10. Pour valider MCP, tester au moins le handshake et un appel de Tool réel, pas seulement le démarrage du processus.
 
 ---
 
