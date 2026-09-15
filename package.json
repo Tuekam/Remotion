@@ -28,6 +28,7 @@
     "typescript": "^7.0.2"
   },
   "dependencies": {
+    "@modelcontextprotocol/client": "^2.0.0",
     "@modelcontextprotocol/server": "^2.0.0",
     "@remotion/renderer": "4.0.524",
     "awilix": "^13.0.5",

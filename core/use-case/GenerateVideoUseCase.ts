@@ -1,7 +1,9 @@
-import type { Render } from "../models/Render.ts";
+import type { Render } from "../models/Render.js";
 
 export interface GenerateVideoInput {
   videoId: string;
+  compositionId: string;
+  outputPath: string;
 }
 
 export interface GenerateVideoService {

@@ -1181,6 +1181,21 @@ La surface `execute_code` a été durcie avant cette intégration :
 * les arguments vides, trop longs ou contenant des métacaractères shell sont refusés ;
 * un test MCP a confirmé l'exécution de `pnpm --version` et le rejet d'une tentative `pnpm exec node`.
 
+Un client MCP générique stdio est maintenant disponible dans :
+
+```text
+package/services/mcp/client/McpStdioClient.ts
+```
+
+Il encapsule le SDK officiel `@modelcontextprotocol/client` et expose :
+
+* `connect()` ;
+* `listTools()` ;
+* `callTool({ name, arguments })` ;
+* `close()`.
+
+Il ne contient aucune logique liée à un fournisseur d'IA. Le processus MCP est fourni via `StdioServerParameters`, ce qui permet de connecter Claude, Gemini, Codex ou un autre agent en conservant le même backend. Un smoke test réel a découvert les 10 Tools puis a appelé `create_directory` et `execute_code` avec succès.
+
 ---
 
 # 41. État actuel
@@ -1206,7 +1221,9 @@ PROJET
 ├── DI / Container                 ✓ MCP et VideoEngine connectés
 ├── Server                         ✓ MCP démarré via Container
 ├── Sécurité ExecuteCode           ✓ liste blanche et validation d'arguments
-└── Client IA externe              → prochaine étape
+├── Client MCP générique stdio     ✓ connexion, découverte et appel de Tools
+├── GenerateVideoUseCase           ✓ aligné et connecté au VideoEngine
+└── Agent IA externe               → prochaine étape
 ```
 
 ---
@@ -1271,13 +1288,21 @@ Un lancement direct de `pnpm.cmd` avec `child_process.spawn` a produit `spawn EI
 
 `ExecuteCodeTool` n'accepte plus des arguments arbitraires. Les seuls usages autorisés sont `pnpm --version`, `pnpm -v` et `pnpm exec` avec `tsc`, `tsx` ou `remotion`. Les arguments vides, trop longs et contenant des métacaractères shell sont refusés. Cette liste devra être réévaluée explicitement si le cycle vidéo nécessite une nouvelle commande.
 
+### Client MCP générique
+
+Le client externe de référence est [McpStdioClient.ts](C:/Users/PROMOPlus/Documents/video-saas/package/services/mcp/client/McpStdioClient.ts). Il doit rester indépendant du fournisseur d'IA et ne doit pas embarquer de logique créative ou métier. Son rôle est limité au cycle de transport MCP : connexion, découverte des capacités, appel des Tools et fermeture.
+
+Sous Windows, fournir `pnpm.cmd` comme commande du transport stdio lorsque le serveur est lancé avec `pnpm exec tsx Server.ts`.
+
+Le contrat `GenerateVideoUseCase` est maintenant aligné avec le cycle réel du VideoEngine. Son entrée contient `videoId`, `compositionId` et `outputPath`. L'adaptateur [GenerateVideoServiceImpl.ts](C:/Users/PROMOPlus/Documents/video-saas/package/services/video-engine/GenerateVideoServiceImpl.ts) délègue le rendu au `VideoEngine`, tandis que [GenerateVideoUseCaseImpl.ts](C:/Users/PROMOPlus/Documents/video-saas/package/domain/GenerateVideoUseCaseImpl.ts) reste un use case métier focalisé. Les deux sont enregistrés dans [Container.ts](C:/Users/PROMOPlus/Documents/video-saas/Container.ts) et un smoke test réel a produit un rendu `completed`.
+
 ## Conseils pour la suite
 
 1. Lire cette directive avant toute modification.
 2. Vérifier le placement d'un nouveau modèle ou contrat avant de le créer.
 3. Préférer une dépendance injectée à un `new` dans les services, Tools ou serveurs.
 4. Garder les MCP Tools focalisés sur une seule capacité ; la logique métier reste dans les services ou use cases.
-5. Ne pas enregistrer `GenerateVideoUseCase` dans le container avant d'avoir aligné son contrat avec le cycle réel du VideoEngine.
+5. `GenerateVideoUseCase` reçoit les trois informations nécessaires au rendu (`videoId`, `compositionId`, `outputPath`) ; son adaptateur VideoEngine est enregistré dans le container.
 6. `ExecuteCodeTool` est sensible : toute extension de la liste blanche de commandes doit être explicitement justifiée et testée.
 7. Le store des rendus est actuellement en mémoire (`RenderResultStore`) et sera perdu au redémarrage ; une persistance devra être conçue séparément si nécessaire.
 8. Après chaque étape majeure, mettre à jour cette section, l'état du projet et la prochaine tâche.

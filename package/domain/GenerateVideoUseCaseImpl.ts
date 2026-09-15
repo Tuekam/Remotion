@@ -1,9 +1,9 @@
-import type { Render } from "../../core/models/Render.ts";
+import type { Render } from "../../core/models/Render.js";
 import type {
   GenerateVideoInput,
   GenerateVideoService,
   GenerateVideoUseCase,
-} from "../../core/use-case/GenerateVideoUseCase.ts";
+} from "../../core/use-case/GenerateVideoUseCase.js";
 
 export class GenerateVideoUseCaseImpl implements GenerateVideoUseCase {
   public constructor(

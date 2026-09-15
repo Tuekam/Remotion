@@ -13,6 +13,7 @@ import { CreateVideoUseCaseImpl } from "./package/domain/CreateVideoUseCaseImpl.
 import { DeleteVideoUseCaseImpl } from "./package/domain/DeleteVideoUseCaseImpl.js";
 import { GetVideoUseCaseImpl } from "./package/domain/GetVideoUseCaseImpl.js";
 import { UpdateVideoUseCaseImpl } from "./package/domain/UpdateVideoUseCaseImpl.js";
+import { GenerateVideoUseCaseImpl } from "./package/domain/GenerateVideoUseCaseImpl.js";
 import { LocalVideoStore } from "./package/data/database/LocalVideoStore.js";
 import { CreateVideoRepositoryImpl } from "./package/data/repositories/CreateVideoRepositoryImpl.js";
 import { DeleteVideoRepositoryImpl } from "./package/data/repositories/DeleteVideoRepositoryImpl.js";
@@ -33,6 +34,7 @@ import { RenderVideoTool } from "./package/services/mcp/tools/RenderVideoTool.js
 import { RenderResultStore } from "./package/services/mcp/RenderResultStore.js";
 import { WorkspaceExecutionService } from "./package/services/mcp/WorkspaceExecutionService.js";
 import { VideoEngineImpl } from "./package/services/video-engine/VideoEngineImpl.js";
+import { GenerateVideoServiceImpl } from "./package/services/video-engine/GenerateVideoServiceImpl.js";
 import { RemotionBundlerImpl } from "./package/services/video-engine/runtime/RemotionBundlerImpl.js";
 import { RemotionRendererImpl } from "./package/services/video-engine/runtime/RemotionRendererImpl.js";
 import { WorkspaceManagerImpl } from "./package/services/video-engine/workspace/WorkspaceManagerImpl.js";
@@ -68,6 +70,8 @@ export const container = createContainer({
   videoBundler: asClass(RemotionBundlerImpl).singleton(),
   videoRenderer: asClass(RemotionRendererImpl).singleton(),
   videoEngine: asClass(VideoEngineImpl).singleton(),
+  generateVideoService: asClass(GenerateVideoServiceImpl).singleton(),
+  generateVideoUseCase: asClass(GenerateVideoUseCaseImpl).singleton(),
   mcpServer: asFunction(
     () => new McpServer({ name: "video-saas", version: "1.0.0" }),
   ).singleton(),
