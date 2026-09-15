@@ -48,12 +48,16 @@ const workspaceRoot = join(
   "workspace",
 );
 const videoStorePath = join(projectRoot, "data", "videos.json");
+const renderStorePath = join(projectRoot, "data", "renders.json");
+const outputRoot = join(projectRoot, "output");
 
 export const container = createContainer({
   injectionMode: InjectionMode.CLASSIC,
 }).register({
   workspaceRoot: asValue(workspaceRoot),
   videoStorePath: asValue(videoStorePath),
+  renderStorePath: asValue(renderStorePath),
+  outputRoot: asValue(outputRoot),
   localVideoStore: asClass(LocalVideoStore).singleton(),
   createVideoRepository: asClass(CreateVideoRepositoryImpl).singleton(),
   getVideoRepository: asClass(GetVideoRepositoryImpl).singleton(),

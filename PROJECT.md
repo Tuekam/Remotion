@@ -1153,7 +1153,7 @@ Le système doit également conserver le workspace afin qu'une demande ultérieu
 
 La prochaine tâche officielle est :
 
-> **Valider l'utilisation du serveur MCP depuis Codex CLI.**
+> **Valider l'utilisation de Claude Desktop avec le serveur MCP.**
 
 Le premier smoke test a validé le pipeline local de bout en bout : workspace, `composition/MainVideo.tsx`, bundling Remotion, sélection de composition et rendu MP4. Le fichier généré faisait 8 908 octets et les artefacts temporaires ont été supprimés après validation.
 
@@ -1224,6 +1224,17 @@ Le scénario Codex validé avec approbation compatible est :
 * `delete_file` réussi ;
 * aucun workspace temporaire conservé après le test.
 
+Le scénario vidéo complet a ensuite été validé depuis Codex :
+
+* une composition sans `registerRoot` a produit un rendu `failed` avec l'erreur Remotion attendue ;
+* Codex a corrigé `composition/MainVideo.tsx` avec `update_file` ;
+* la composition corrigée utilisait 30 frames, 30 fps et une résolution 320x180 ;
+* le rendu final a produit un résultat `completed` avec l'identifiant `90264a5a-14c8-44d4-87ae-c09698a1c805` ;
+* `get_render_result` a confirmé le statut `completed` ;
+* Codex a supprimé les répertoires `composition` et `output` du workspace temporaire.
+
+Les résultats de rendu sont maintenant persistés dans `data/renders.json`. `RenderResultStore` conserve les statuts, chemins, erreurs et dates, et `get_render_result` peut relire un rendu après recréation du store ou redémarrage du serveur. Un smoke test a validé cette lecture entre deux instances du store.
+
 ---
 
 # 41. État actuel
@@ -1252,7 +1263,10 @@ PROJET
 ├── Client MCP générique stdio     ✓ connexion, découverte et appel de Tools
 ├── GenerateVideoUseCase           ✓ aligné et connecté au VideoEngine
 ├── Codex CLI                      ✓ serveur video-saas enregistré
-└── Validation Codex interactive   ✓ découverte et appels MCP réussis
+├── Validation Codex interactive   ✓ découverte, filesystem et rendu vidéo réussis
+├── Persistance des rendus         ✓ data/renders.json
+├── Claude Desktop                 ✓ configuration MCP ajoutée
+└── Reprise des workspaces         → prochaine étape
 ```
 
 ---
@@ -1313,7 +1327,7 @@ Un lancement direct de `pnpm.cmd` avec `child_process.spawn` a produit `spawn EI
 
 `WorkspaceExecutionService` reçoit le nom logique `pnpm` depuis MCP et le convertit en `pnpm.cmd` sous Windows. L'exécution utilise le shell uniquement sur Windows, car Node ne lance pas directement les fichiers `.cmd` avec `execFile`.
 
-`RenderVideoTool` résout désormais tout `outputPath` relatif avec `WorkspaceManager.resolvePath`. Un rendu MCP ne peut donc pas écrire hors du workspace et son résultat pointe vers le fichier réellement produit.
+`RenderVideoTool` accepte uniquement un `outputPath` commençant par `output/`. Le fichier final est écrit dans le dossier `output/` à la racine du repository, tandis que les sources restent isolées dans `workspace/<videoId>/composition/`. Les chemins qui tentent de sortir de ce dossier sont refusés.
 
 `ExecuteCodeTool` n'accepte plus des arguments arbitraires. Les seuls usages autorisés sont `pnpm --version`, `pnpm -v` et `pnpm exec` avec `tsc`, `tsx` ou `remotion`. Les arguments vides, trop longs et contenant des métacaractères shell sont refusés. Cette liste devra être réévaluée explicitement si le cycle vidéo nécessite une nouvelle commande.
 
@@ -1329,6 +1343,35 @@ Pour Codex CLI sous Windows, utiliser `codex.cmd` dans PowerShell lorsque `codex
 
 La commande de validation recommandée est `codex --approve-for-me exec --skip-git-repo-check --ephemeral --json -C C:\Users\PROMOPlus\Documents\video-saas ...`. `--approve-for-me` ne doit pas être combiné avec `--sandbox` dans cette version de Codex. La découverte et les Tools en écriture ont été validés avec cette configuration. Si une limite de quota réapparaît avant l'appel MCP, réessayer avec un compte disposant de quota et ne pas modifier le serveur pour contourner cette limitation.
 
+### Claude Desktop
+
+Claude Desktop est configuré dans :
+
+```text
+C:\Users\PROMOPlus\AppData\Local\Packages\Claude_pzs8sxrjxfjjc\LocalCache\Roaming\Claude\claude_desktop_config.json
+```
+
+Le serveur `video-saas` utilise `pnpm.cmd --dir C:\Users\PROMOPlus\Documents\video-saas exec tsx C:\Users\PROMOPlus\Documents\video-saas\Server.ts`. Le JSON a été validé et le serveur passe le typecheck. Redémarrer complètement Claude Desktop pour qu'il recharge `mcpServers`; ne pas modifier la configuration existante hors de cette entrée.
+
+### Consignes AGENTS.md pour l'agent vidéo
+
+[AGENTS.md](C:/Users/PROMOPlus/Documents/video-saas/AGENTS.md) est la seule consigne opérationnelle destinée à l'agent qui produit une vidéo. Il doit l'utiliser sans lire `PROJECT.md`, `README.md` ou l'architecture complète du repository.
+
+Conventions obligatoires :
+
+* demander ou utiliser un `videoId` unique ;
+* créer uniquement `workspace/<videoId>/composition/MainVideo.tsx` ;
+* ce fichier doit appeler `registerRoot` et déclarer la composition `MainVideo` ;
+* le VideoEngine attend toujours `composition/MainVideo.tsx`, pas `src/Root.tsx`, `src/index.ts` ou un autre point d'entrée ;
+* utiliser `durationInFrames = durée en secondes * fps` ; par exemple 15 secondes à 30 fps = 450 frames ;
+* appeler `render_video` une seule fois avec `outputPath` sous `output/`, par exemple `output/video01.mp4` ;
+* ne pas créer le dossier `output/` avec les Tools : le serveur le crée à la racine si nécessaire ;
+* ne pas lancer de commandes shell, de typecheck, de preview, de `ffprobe` ou de rendu alternatif ;
+* en cas d'erreur, corriger uniquement `MainVideo.tsx` et effectuer au maximum une nouvelle tentative ;
+* s'arrêter immédiatement après le résultat final.
+
+Ces règles évitent les erreurs observées avec Codex : inspection excessive du projet, mauvais point d'entrée, absence de `registerRoot`, imports locaux inutiles, rendus répétés et fichiers produits au mauvais emplacement.
+
 Le contrat `GenerateVideoUseCase` est maintenant aligné avec le cycle réel du VideoEngine. Son entrée contient `videoId`, `compositionId` et `outputPath`. L'adaptateur [GenerateVideoServiceImpl.ts](C:/Users/PROMOPlus/Documents/video-saas/package/services/video-engine/GenerateVideoServiceImpl.ts) délègue le rendu au `VideoEngine`, tandis que [GenerateVideoUseCaseImpl.ts](C:/Users/PROMOPlus/Documents/video-saas/package/domain/GenerateVideoUseCaseImpl.ts) reste un use case métier focalisé. Les deux sont enregistrés dans [Container.ts](C:/Users/PROMOPlus/Documents/video-saas/Container.ts) et un smoke test réel a produit un rendu `completed`.
 
 ## Conseils pour la suite
@@ -1339,7 +1382,7 @@ Le contrat `GenerateVideoUseCase` est maintenant aligné avec le cycle réel du 
 4. Garder les MCP Tools focalisés sur une seule capacité ; la logique métier reste dans les services ou use cases.
 5. `GenerateVideoUseCase` reçoit les trois informations nécessaires au rendu (`videoId`, `compositionId`, `outputPath`) ; son adaptateur VideoEngine est enregistré dans le container.
 6. `ExecuteCodeTool` est sensible : toute extension de la liste blanche de commandes doit être explicitement justifiée et testée.
-7. Le store des rendus est actuellement en mémoire (`RenderResultStore`) et sera perdu au redémarrage ; une persistance devra être conçue séparément si nécessaire.
+7. `RenderResultStore` persiste les résultats dans `data/renders.json`. Toute évolution vers une base de données devra conserver le contrat et les dates sérialisées.
 8. Après chaque étape majeure, mettre à jour cette section, l'état du projet et la prochaine tâche.
 9. Valider au minimum avec `pnpm.cmd typecheck` et vérifier la résolution Awilix du container.
 10. Pour valider MCP, tester au moins le handshake et un appel de Tool réel, pas seulement le démarrage du processus.

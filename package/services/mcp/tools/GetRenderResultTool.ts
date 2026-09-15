@@ -17,7 +17,7 @@ export class GetRenderResultTool {
         }),
       },
       async ({ renderId }) => {
-        const render = this.renderResultStore.get(renderId);
+        const render = await this.renderResultStore.get(renderId);
         if (!render) {
           throw new Error(`Render not found: ${renderId}`);
         }
