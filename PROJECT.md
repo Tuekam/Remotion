@@ -232,7 +232,20 @@ video-saas/
 │   │
 │   └── services/
 │       ├── video-engine/
+│       │   ├── VideoEngineImpl.ts
+│       │   ├── contracts/
+│       │   │   ├── VideoBundler.ts
+│       │   │   ├── VideoEngine.ts
+│       │   │   ├── VideoRenderer.ts
+│       │   │   └── WorkspaceManager.ts
+│       │   ├── models/
+│       │   │   ├── RenderVideoInput.ts
+│       │   │   └── VideoWorkspace.ts
+│       │   ├── workspace/
+│       │   │   └── WorkspaceManagerImpl.ts
 │       │   ├── runtime/
+│       │   │   ├── RemotionBundlerImpl.ts
+│       │   │   ├── RemotionRendererImpl.ts
 │       │   │   ├── remotion.config.ts
 │       │   │   └── ...
 │       │   │
@@ -280,7 +293,7 @@ Cette architecture est validée et ne doit pas être transformée en Feature-Fir
 
 # 9. Responsabilité de Core
 
-`core/` contient les contrats et modèles indépendants des technologies concrètes.
+`core/` contient uniquement les contrats et modèles partagés entre plusieurs couches indépendantes.
 
 Il ne doit pas dépendre directement :
 
@@ -767,10 +780,9 @@ Le serveur MCP graphique Inspector avait rencontré un problème de configuratio
 # 25. EN COURS
 
 ```text
-[ ] Finaliser les modèles `Video` et `Render`.
-[ ] Définir les contrats des repositories.
-[ ] Définir les contrats des use cases.
-[ ] Définir les contrats des use cases.
+[x] Finaliser les modèles `Video` et `Render`.
+[x] Définir les contrats des repositories.
+[x] Définir les contrats des use cases.
 ```
 
 ---
@@ -780,33 +792,33 @@ Le serveur MCP graphique Inspector avait rencontré un problème de configuratio
 ## Phase 3 — Architecture applicative
 
 ```text
-[ ] Créer package/domain
-[ ] Créer package/data
-[ ] Créer package/services
+[x] Créer package/domain
+[x] Créer package/data
+[x] Créer package/services
 ```
 
 ## Phase 4 — VideoEngine
 
 ```text
-[ ] Créer runtime
-[ ] Créer workspace manager
-[ ] Définir le contrat VideoEngine
-[ ] Intégrer Remotion
-[ ] Intégrer Renderer
-[ ] Gestion des erreurs
+[x] Créer runtime
+[x] Créer workspace manager
+[x] Définir le contrat VideoEngine
+[x] Intégrer Remotion
+[x] Intégrer Renderer
+[x] Gestion des erreurs
 ```
 
 ## Phase 5 — MCP
 
 ```text
-[ ] Créer MCP Server officiel
-[ ] Créer InspectDirectoryTool
-[ ] Créer CreateDirectoryTool
-[ ] Créer ReadFileTool
-[ ] Créer WriteFileTool
-[ ] Créer UpdateFileTool
-[ ] Créer DeleteFileTool
-[ ] Créer InspectAssetTool
+[x] Créer MCP Server officiel
+[x] Créer InspectDirectoryTool
+[x] Créer CreateDirectoryTool
+[x] Créer ReadFileTool
+[x] Créer WriteFileTool
+[x] Créer UpdateFileTool
+[x] Créer DeleteFileTool
+[x] Créer InspectAssetTool
 [ ] Créer ExecuteCodeTool
 [ ] Créer RenderVideoTool
 [ ] Créer GetRenderResultTool
@@ -815,12 +827,12 @@ Le serveur MCP graphique Inspector avait rencontré un problème de configuratio
 ## Phase 6 — Dependency Injection
 
 ```text
-[ ] Créer Container.ts
-[ ] Configurer Awilix
+[x] Créer Container.ts
+[x] Configurer Awilix
 [ ] Connecter Core aux implémentations
 [ ] Connecter Domain aux repositories
 [ ] Connecter VideoEngine
-[ ] Connecter MCP
+[x] Connecter MCP
 ```
 
 ## Phase 7 — Backend
@@ -903,6 +915,9 @@ Tout agent intervenant sur le projet doit :
 18. Utiliser l'injection de dépendances.
 19. Garder `Server.ts` léger.
 20. Mettre à jour `PROJECT.md` après une décision importante ou une étape majeure.
+21. Préférer des contrats atomiques et des implémentations focalisées.
+22. Maintenir `VideoEngineImpl` comme façade d'orchestration.
+23. Isoler les dépendances Remotion dans les implémentations de services dédiées.
 
 ---
 
@@ -1138,9 +1153,9 @@ Le système doit également conserver le workspace afin qu'une demande ultérieu
 
 La prochaine tâche officielle est :
 
-> **Nettoyer les tests temporaires et finaliser le socle du projet, puis définir et créer le système de Skills.**
+> **Créer les MCP Tools d'exécution et de rendu, puis le Container DI.**
 
-Ne pas commencer l'implémentation complète de `core/`, `domain/`, `data/`, `VideoEngine` ou des MCP Tools avant d'avoir terminé cette étape.
+`core/` contient uniquement les éléments partagés entre plusieurs couches. Les types et contrats spécifiques au VideoEngine restent dans `package/services/video-engine/`. Les MCP Tools filesystem sont focalisés sur une capacité et utilisent un service partagé pour la résolution sécurisée des workspaces. `Container.ts` est le composition root Awilix : il construit et injecte le serveur MCP, le transport, le service workspace et les Tools. `McpVideoServer` ne construit aucune dépendance. Les dépendances sont injectées afin de respecter la séparation des responsabilités et de faciliter les tests. Un échec de rendu produit un `Render` en état `failed`. Les implémentations se trouvent dans `package/domain/`, `package/data/` et `package/services/`, avec la nomenclature `*Impl.ts`. Le stockage utilise un fichier JSON local injecté par le constructeur ; Firebase reste inactif.
 
 ---
 
@@ -1157,13 +1172,13 @@ PROJET
 ├── Renderer                      ✓
 ├── MCP                           ✓
 │
-├── Nettoyage                      → prochaine étape
-├── Skills                         → ensuite
-├── Core                           → ensuite
-├── Domain                         → ensuite
-├── Data                           → ensuite
-├── VideoEngine                    → ensuite
-├── MCP Tools                      → ensuite
+├── Nettoyage                      ✓
+├── Skills                         ✓
+├── Core                           ✓ contrats définis
+├── Domain                         ✓ implémentations créées
+├── Data                           ✓ filesystem local V1
+├── VideoEngine                    ✓ runtime Remotion et rendu local au service
+├── MCP Tools                      ✓ filesystem workspace
 ├── DI / Container                 → ensuite
 ├── Server                         → ensuite
 └── Premier agent autonome         → objectif V1
