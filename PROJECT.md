@@ -853,7 +853,7 @@ Le serveur MCP graphique Inspector avait rencontré un problème de configuratio
 [x] Créer un workspace vidéo
 [x] Générer MainVideo.tsx
 [x] Exécuter le code
-[ ] Corriger automatiquement une erreur
+[x] Corriger automatiquement une erreur
 [x] Rendre la vidéo
 [x] Vérifier le rendu
 [x] Sauvegarder output/[video-id].mp4
@@ -1153,7 +1153,7 @@ Le système doit également conserver le workspace afin qu'une demande ultérieu
 
 La prochaine tâche officielle est :
 
-> **Préparer l'intégration d'un client IA externe compatible MCP.**
+> **Valider l'utilisation du serveur MCP depuis Codex CLI.**
 
 Le premier smoke test a validé le pipeline local de bout en bout : workspace, `composition/MainVideo.tsx`, bundling Remotion, sélection de composition et rendu MP4. Le fichier généré faisait 8 908 octets et les artefacts temporaires ont été supprimés après validation.
 
@@ -1208,6 +1208,22 @@ Le workflow complet a également été exécuté directement avec `McpStdioClien
 * MP4 final généré dans le workspace, avec une taille de 2 983 octets ;
 * workspace temporaire supprimé après validation.
 
+Codex CLI `0.154.0` est maintenant installé et le serveur `video-saas` a été enregistré dans sa configuration MCP globale :
+
+```text
+codex mcp add video-saas -- pnpm.cmd --dir C:\Users\PROMOPlus\Documents\video-saas exec tsx C:\Users\PROMOPlus\Documents\video-saas\Server.ts
+```
+
+La configuration est visible avec `codex mcp get video-saas` et `codex mcp list`. Après rétablissement du quota, `codex exec` a découvert les 10 Tools MCP avec succès. Une première tentative d'appel de Tools d'écriture a été bloquée par la politique Codex `approval policy is never`, avant exécution côté serveur. Avec `codex --approve-for-me exec ...`, les opérations d'écriture ont ensuite réussi.
+
+Le scénario Codex validé avec approbation compatible est :
+
+* `create_directory` réussi ;
+* `write_file` réussi ;
+* `read_file` réussi avec le contenu attendu `Codex MCP smoke test` ;
+* `delete_file` réussi ;
+* aucun workspace temporaire conservé après le test.
+
 ---
 
 # 41. État actuel
@@ -1235,7 +1251,8 @@ PROJET
 ├── Sécurité ExecuteCode           ✓ liste blanche et validation d'arguments
 ├── Client MCP générique stdio     ✓ connexion, découverte et appel de Tools
 ├── GenerateVideoUseCase           ✓ aligné et connecté au VideoEngine
-└── Agent IA externe               → prochaine étape
+├── Codex CLI                      ✓ serveur video-saas enregistré
+└── Validation Codex interactive   ✓ découverte et appels MCP réussis
 ```
 
 ---
@@ -1307,6 +1324,10 @@ Le client externe de référence est [McpStdioClient.ts](C:/Users/PROMOPlus/Docu
 Sous Windows, fournir `pnpm.cmd` comme commande du transport stdio lorsque le serveur est lancé avec `pnpm exec tsx Server.ts`.
 
 Le client est un transport et un adaptateur de protocole, pas un agent autonome. La décision créative, l'analyse des erreurs et l'ordre des Tools doivent rester dans l'IA externe. Le scénario de smoke test ci-dessus sert uniquement de référence d'intégration et ne doit pas être déplacé dans le backend métier.
+
+Pour Codex CLI sous Windows, utiliser `codex.cmd` dans PowerShell lorsque `codex.ps1` est bloqué par la politique d'exécution. L'enregistrement MCP est global à Codex ; il ne doit contenir aucun secret et doit pointer vers le serveur stdio local avec `pnpm.cmd`.
+
+La commande de validation recommandée est `codex --approve-for-me exec --skip-git-repo-check --ephemeral --json -C C:\Users\PROMOPlus\Documents\video-saas ...`. `--approve-for-me` ne doit pas être combiné avec `--sandbox` dans cette version de Codex. La découverte et les Tools en écriture ont été validés avec cette configuration. Si une limite de quota réapparaît avant l'appel MCP, réessayer avec un compte disposant de quota et ne pas modifier le serveur pour contourner cette limitation.
 
 Le contrat `GenerateVideoUseCase` est maintenant aligné avec le cycle réel du VideoEngine. Son entrée contient `videoId`, `compositionId` et `outputPath`. L'adaptateur [GenerateVideoServiceImpl.ts](C:/Users/PROMOPlus/Documents/video-saas/package/services/video-engine/GenerateVideoServiceImpl.ts) délègue le rendu au `VideoEngine`, tandis que [GenerateVideoUseCaseImpl.ts](C:/Users/PROMOPlus/Documents/video-saas/package/domain/GenerateVideoUseCaseImpl.ts) reste un use case métier focalisé. Les deux sont enregistrés dans [Container.ts](C:/Users/PROMOPlus/Documents/video-saas/Container.ts) et un smoke test réel a produit un rendu `completed`.
 
