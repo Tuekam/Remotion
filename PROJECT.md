@@ -1196,6 +1196,18 @@ Il encapsule le SDK officiel `@modelcontextprotocol/client` et expose :
 
 Il ne contient aucune logique liée à un fournisseur d'IA. Le processus MCP est fourni via `StdioServerParameters`, ce qui permet de connecter Claude, Gemini, Codex ou un autre agent en conservant le même backend. Un smoke test réel a découvert les 10 Tools puis a appelé `create_directory` et `execute_code` avec succès.
 
+Le workflow complet a également été exécuté directement avec `McpStdioClient` :
+
+* 10 Tools découverts ;
+* workspace et fichiers créés ;
+* premier rendu en échec ;
+* correction via `update_file` ;
+* exécution via `execute_code` ;
+* rendu final `completed` ;
+* résultat récupéré via `get_render_result` ;
+* MP4 final généré dans le workspace, avec une taille de 2 983 octets ;
+* workspace temporaire supprimé après validation.
+
 ---
 
 # 41. État actuel
@@ -1293,6 +1305,8 @@ Un lancement direct de `pnpm.cmd` avec `child_process.spawn` a produit `spawn EI
 Le client externe de référence est [McpStdioClient.ts](C:/Users/PROMOPlus/Documents/video-saas/package/services/mcp/client/McpStdioClient.ts). Il doit rester indépendant du fournisseur d'IA et ne doit pas embarquer de logique créative ou métier. Son rôle est limité au cycle de transport MCP : connexion, découverte des capacités, appel des Tools et fermeture.
 
 Sous Windows, fournir `pnpm.cmd` comme commande du transport stdio lorsque le serveur est lancé avec `pnpm exec tsx Server.ts`.
+
+Le client est un transport et un adaptateur de protocole, pas un agent autonome. La décision créative, l'analyse des erreurs et l'ordre des Tools doivent rester dans l'IA externe. Le scénario de smoke test ci-dessus sert uniquement de référence d'intégration et ne doit pas être déplacé dans le backend métier.
 
 Le contrat `GenerateVideoUseCase` est maintenant aligné avec le cycle réel du VideoEngine. Son entrée contient `videoId`, `compositionId` et `outputPath`. L'adaptateur [GenerateVideoServiceImpl.ts](C:/Users/PROMOPlus/Documents/video-saas/package/services/video-engine/GenerateVideoServiceImpl.ts) délègue le rendu au `VideoEngine`, tandis que [GenerateVideoUseCaseImpl.ts](C:/Users/PROMOPlus/Documents/video-saas/package/domain/GenerateVideoUseCaseImpl.ts) reste un use case métier focalisé. Les deux sont enregistrés dans [Container.ts](C:/Users/PROMOPlus/Documents/video-saas/Container.ts) et un smoke test réel a produit un rendu `completed`.
 
