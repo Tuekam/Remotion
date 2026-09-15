@@ -7,6 +7,9 @@ import { InspectDirectoryTool } from "./tools/InspectDirectoryTool.js";
 import { ReadFileTool } from "./tools/ReadFileTool.js";
 import { UpdateFileTool } from "./tools/UpdateFileTool.js";
 import { WriteFileTool } from "./tools/WriteFileTool.js";
+import { ExecuteCodeTool } from "./tools/ExecuteCodeTool.js";
+import { GetRenderResultTool } from "./tools/GetRenderResultTool.js";
+import { RenderVideoTool } from "./tools/RenderVideoTool.js";
 
 interface McpTool {
   register(server: McpServer): void;
@@ -23,6 +26,9 @@ export class McpVideoServer {
     private readonly updateFileTool: UpdateFileTool,
     private readonly deleteFileTool: DeleteFileTool,
     private readonly inspectAssetTool: InspectAssetTool,
+    private readonly executeCodeTool: ExecuteCodeTool,
+    private readonly renderVideoTool: RenderVideoTool,
+    private readonly getRenderResultTool: GetRenderResultTool,
   ) {
     this.registerTools([
       inspectDirectoryTool,
@@ -32,6 +38,9 @@ export class McpVideoServer {
       updateFileTool,
       deleteFileTool,
       inspectAssetTool,
+      executeCodeTool,
+      renderVideoTool,
+      getRenderResultTool,
     ]);
   }
 

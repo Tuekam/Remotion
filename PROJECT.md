@@ -819,9 +819,9 @@ Le serveur MCP graphique Inspector avait rencontré un problème de configuratio
 [x] Créer UpdateFileTool
 [x] Créer DeleteFileTool
 [x] Créer InspectAssetTool
-[ ] Créer ExecuteCodeTool
-[ ] Créer RenderVideoTool
-[ ] Créer GetRenderResultTool
+[x] Créer ExecuteCodeTool
+[x] Créer RenderVideoTool
+[x] Créer GetRenderResultTool
 ```
 
 ## Phase 6 — Dependency Injection
@@ -829,34 +829,34 @@ Le serveur MCP graphique Inspector avait rencontré un problème de configuratio
 ```text
 [x] Créer Container.ts
 [x] Configurer Awilix
-[ ] Connecter Core aux implémentations
-[ ] Connecter Domain aux repositories
-[ ] Connecter VideoEngine
+[x] Connecter Core aux implémentations
+[x] Connecter Domain aux repositories CRUD
+[x] Connecter VideoEngine
 [x] Connecter MCP
 ```
 
 ## Phase 7 — Backend
 
 ```text
-[ ] Créer Server.ts
-[ ] Initialiser le container
-[ ] Initialiser MCP
-[ ] Vérifier les dépendances
+[x] Créer Server.ts
+[x] Initialiser le container
+[x] Initialiser MCP
+[x] Vérifier les dépendances
 ```
 
 ## Phase 8 — Premier scénario réel
 
 ```text
 [ ] Connecter une IA externe
-[ ] Lire les Skills
-[ ] Inspecter le workspace
-[ ] Créer un workspace vidéo
-[ ] Générer MainVideo.tsx
-[ ] Exécuter le code
+[x] Lire les Skills
+[x] Inspecter le workspace
+[x] Créer un workspace vidéo
+[x] Générer MainVideo.tsx
+[x] Exécuter le code
 [ ] Corriger automatiquement une erreur
-[ ] Rendre la vidéo
-[ ] Vérifier le rendu
-[ ] Sauvegarder output/[video-id].mp4
+[x] Rendre la vidéo
+[x] Vérifier le rendu
+[x] Sauvegarder output/[video-id].mp4
 ```
 
 ---
@@ -1153,9 +1153,9 @@ Le système doit également conserver le workspace afin qu'une demande ultérieu
 
 La prochaine tâche officielle est :
 
-> **Créer les MCP Tools d'exécution et de rendu, puis le Container DI.**
+> **Connecter une IA externe via MCP et valider la correction automatique d'une erreur.**
 
-`core/` contient uniquement les éléments partagés entre plusieurs couches. Les types et contrats spécifiques au VideoEngine restent dans `package/services/video-engine/`. Les MCP Tools filesystem sont focalisés sur une capacité et utilisent un service partagé pour la résolution sécurisée des workspaces. `Container.ts` est le composition root Awilix : il construit et injecte le serveur MCP, le transport, le service workspace et les Tools. `McpVideoServer` ne construit aucune dépendance. Les dépendances sont injectées afin de respecter la séparation des responsabilités et de faciliter les tests. Un échec de rendu produit un `Render` en état `failed`. Les implémentations se trouvent dans `package/domain/`, `package/data/` et `package/services/`, avec la nomenclature `*Impl.ts`. Le stockage utilise un fichier JSON local injecté par le constructeur ; Firebase reste inactif.
+Le premier smoke test a validé le pipeline local de bout en bout : workspace, `composition/MainVideo.tsx`, bundling Remotion, sélection de composition et rendu MP4. Le fichier généré faisait 8 908 octets et les artefacts temporaires ont été supprimés après validation. Il reste à connecter une IA MCP externe et à démontrer une boucle d'erreur/correction.
 
 ---
 
@@ -1178,15 +1178,79 @@ PROJET
 ├── Domain                         ✓ implémentations créées
 ├── Data                           ✓ filesystem local V1
 ├── VideoEngine                    ✓ runtime Remotion et rendu local au service
-├── MCP Tools                      ✓ filesystem workspace
-├── DI / Container                 → ensuite
-├── Server                         → ensuite
+├── MCP Tools                      ✓ filesystem, exécution et rendu
+├── DI / Container                 ✓ MCP et VideoEngine connectés
+├── Server                         ✓ MCP démarré via Container
 └── Premier agent autonome         → objectif V1
 ```
 
 ---
 
-# 42. Règle finale
+# 42. Transmission au prochain développeur ou agent
+
+Cette section résume les difficultés rencontrées pendant la construction du socle et les décisions à préserver.
+
+## Problèmes rencontrés et résolutions
+
+### Extensions des imports TypeScript
+
+Le projet utilise `module` et `moduleResolution` en mode `NodeNext`. Les imports relatifs doivent donc utiliser `.js` dans les fichiers TypeScript destinés à être compilés. Les imports `.ts` provoquent une erreur `TS5097`.
+
+Résolution :
+
+* utiliser `.js` dans les nouveaux imports relatifs des fichiers compilés ;
+* conserver les imports existants cohérents avec leur couche tant qu'ils compilent ;
+* valider avec `pnpm.cmd typecheck` sous Windows lorsque `pnpm` est bloqué par la politique PowerShell.
+
+### Injection Awilix
+
+Awilix est configuré en `InjectionMode.CLASSIC`. Les noms des paramètres des constructeurs doivent donc correspondre exactement aux noms des registrations du container.
+
+Exemples importants :
+
+* `WorkspaceManagerImpl(workspaceRoot)` utilise la registration `workspaceRoot` ;
+* `LocalVideoStore(videoStorePath)` utilise la registration `videoStorePath` ;
+* `McpVideoServer(mcpServer, transport, ...)` utilise `mcpServer`, et non `server`.
+
+Le composition root est [Container.ts](C:/Users/PROMOPlus/Documents/video-saas/Container.ts). Aucun serveur ou Tool ne doit construire ses dépendances lui-même.
+
+### Placement des contrats
+
+`core/` est réservé aux modèles et contrats réellement partagés entre plusieurs couches indépendantes. Les éléments spécifiques au VideoEngine ne doivent pas y être ajoutés :
+
+* `VideoWorkspace` ;
+* `RenderVideoInput` ;
+* `VideoEngine` ;
+* `WorkspaceManager` ;
+* `VideoBundler` ;
+* `VideoRenderer`.
+
+Ces éléments sont regroupés dans `package/services/video-engine/`, dans `models/` et `contracts/`. Les implémentations concrètes utilisent la nomenclature `*Impl.ts`.
+
+### Taille et responsabilité de VideoEngineImpl
+
+`VideoEngineImpl` doit rester une façade d'orchestration. Le bundling et le rendu Remotion sont isolés dans :
+
+* `runtime/RemotionBundlerImpl.ts` ;
+* `runtime/RemotionRendererImpl.ts`.
+
+Ne pas remettre les appels directs à `bundle`, `selectComposition` ou `renderMedia` dans `VideoEngineImpl` sans nécessité claire.
+
+## Conseils pour la suite
+
+1. Lire cette directive avant toute modification.
+2. Vérifier le placement d'un nouveau modèle ou contrat avant de le créer.
+3. Préférer une dépendance injectée à un `new` dans les services, Tools ou serveurs.
+4. Garder les MCP Tools focalisés sur une seule capacité ; la logique métier reste dans les services ou use cases.
+5. Ne pas enregistrer `GenerateVideoUseCase` dans le container avant d'avoir aligné son contrat avec le cycle réel du VideoEngine.
+6. `ExecuteCodeTool` est sensible : toute extension de la liste blanche de commandes doit être explicitement justifiée et testée.
+7. Le store des rendus est actuellement en mémoire (`RenderResultStore`) et sera perdu au redémarrage ; une persistance devra être conçue séparément si nécessaire.
+8. Après chaque étape majeure, mettre à jour cette section, l'état du projet et la prochaine tâche.
+9. Valider au minimum avec `pnpm.cmd typecheck` et vérifier la résolution Awilix du container.
+
+---
+
+# 43. Règle finale
 
 Le projet doit rester :
 

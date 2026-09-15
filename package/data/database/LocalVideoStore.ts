@@ -12,7 +12,7 @@ type StoredVideo = Omit<Video, "createdAt" | "updatedAt"> & {
 };
 
 export class LocalVideoStore {
-  public constructor(private readonly filePath: string) {}
+  public constructor(private readonly videoStorePath: string) {}
 
   public async create(input: CreateVideoInput): Promise<Video> {
     const videos = await this.readAll();
@@ -82,7 +82,7 @@ export class LocalVideoStore {
 
   private async readAll(): Promise<Video[]> {
     try {
-      const content = await readFile(this.filePath, "utf8");
+      const content = await readFile(this.videoStorePath, "utf8");
       const storedVideos: StoredVideo[] = JSON.parse(content) as StoredVideo[];
       return storedVideos.map((video) => ({
         ...video,
@@ -98,9 +98,9 @@ export class LocalVideoStore {
   }
 
   private async writeAll(videos: Video[]): Promise<void> {
-    await mkdir(dirname(this.filePath), { recursive: true });
+    await mkdir(dirname(this.videoStorePath), { recursive: true });
     await writeFile(
-      this.filePath,
+      this.videoStorePath,
       JSON.stringify(videos, null, 2),
       "utf8",
     );
