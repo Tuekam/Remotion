@@ -1,0 +1,1 @@
+{"version":3,"file":"VideoTypeCatalog.d.ts","sourceRoot":"","sources":["VideoTypeCatalog.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAGV,mBAAmB,EACnB,WAAW,EACZ,MAAM,mCAAmC,CAAC;AAa3C,qBAAa,gBAAgB;IAC3B,OAAO,CAAC,QAAQ,CAAC,WAAW,CAyL1B;IAEK,IAAI,IAAI,SAAS,mBAAmB,EAAE,CAE5C;IAEM,GAAG,CAAC,EAAE,EAAE,WAAW,GAAG,mBAAmB,CAM/C;CACF"}

@@ -19,7 +19,52 @@ codex.cmd --approve-for-me -C "C:\Users\PROMOPlus\Documents\video-saas"
 - Use an output path such as `output/video01.mp4`; never write a final video inside the workspace `output/` directory.
 - This file is the only project instruction file to read for video-generation requests.
 - Do not read `PROJECT.md`, `README.md`, source files outside the requested workspace, git history, or any other project documentation.
-- Do not inspect the repository architecture; the MCP Tool descriptions are sufficient for the requested video task.
+- Do not inspect the repository architecture; the MCP Tool descriptions and this file are sufficient for the requested video task.
+
+## V2 pre-production rules
+
+The V2 layer qualifies the request before production. Do not start by writing
+Remotion code or by calling `render_video`.
+
+The assistant must:
+
+1. Understand the user's request in natural language.
+2. Identify the most appropriate video type, objective, platform, format and duration.
+3. Ask only for missing information that is required for the selected video type.
+4. Ask the user to confirm a proposed video type when it was inferred rather than explicitly provided.
+5. Create a project with `create_video_project`.
+6. Store the collected information with `update_video_brief`.
+7. Register user-provided local assets with `register_asset`.
+8. Validate the project with `validate_video_project`.
+9. If required information is missing, explain what is missing and wait; do not generate.
+10. Present the video plan in natural language with `create_video_plan` and
+    `get_video_plan`.
+11. Ask the user to approve the plan when approval is needed.
+12. Confirm the project with `confirm_video_project`.
+13. Only after confirmation, call `generate_video_project`.
+
+Use these discovery tools when the request does not provide enough context:
+
+- `list_video_types`
+- `get_video_requirements`
+
+The eight initial video types are:
+
+- `product-presentation`
+- `product-promotion`
+- `product-demonstration`
+- `service-presentation`
+- `problem-solution`
+- `company-presentation`
+- `testimonial`
+- `event-promotion`
+
+Required assets must block validation and generation. Recommended assets are
+optional and must never block generation. Keep every asset associated with its
+`videoId`; do not use assets from another project.
+
+The plan is a human-readable production description, not source code. Do not
+present `MainVideo.tsx` or implementation details as the plan.
 
 ## Forbidden actions
 
@@ -33,20 +78,31 @@ codex.cmd --approve-for-me -C "C:\Users\PROMOPlus\Documents\video-saas"
 
 ## Video workflow
 
-1. Use the requested `videoId` as the only workspace scope.
-2. Inspect only that workspace.
-3. Create the directory `composition` in that workspace.
-4. Create exactly `composition/MainVideo.tsx`.
-5. Put the complete Remotion entry point in `composition/MainVideo.tsx`.
-6. Render once with `compositionId: "MainVideo"` and an output path under root `output/`.
-7. Report the result and stop.
+1. Complete the V2 pre-production workflow above.
+2. Use the confirmed `videoId` as the only workspace scope.
+3. Call `generate_video_project` to delegate to the V1 production engine.
+4. If the engine requests source creation, inspect only that workspace.
+5. Create the directory `composition` in that workspace.
+6. Create exactly `composition/MainVideo.tsx`.
+7. Put the complete Remotion entry point in `composition/MainVideo.tsx`.
+8. Render once with `compositionId: "MainVideo"` and an output path under root
+   `output/`.
+9. Verify the returned render result and report the final output path.
+10. Stop after the requested video has been produced.
 
 If the request is ambiguous, ask one concise clarification instead of exploring the project.
 
 ## MCP tool policy
 
 - Call only the MCP Tools required by the user's request.
-- For a normal video request, prefer this sequence: `create_directory`, `write_file` or `update_file`, `render_video`, then `get_render_result`.
+- For a new V2 video request, prefer this sequence:
+  `list_video_types`/`get_video_requirements` (if needed),
+  `create_video_project`, `update_video_brief`, `register_asset` (if needed),
+  `validate_video_project`, `create_video_plan`, `get_video_plan`,
+  `confirm_video_project`, `generate_video_project`.
+- Use `create_directory`, `write_file` or `update_file`, `render_video`, and
+  `get_render_result` only when the production engine requires them or when
+  the user explicitly requests the lower-level V1 workflow.
 - Use `read_file` or `inspect_directory` only when needed to continue the requested task.
 - If rendering fails, inspect the returned error, correct only the relevant workspace file with `update_file`, and retry the render once.
 - Never create a preview, alternate resolution, duplicate output, or second render unless the user explicitly asks.

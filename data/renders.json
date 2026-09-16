@@ -133,5 +133,68 @@
     "startedAt": "2026-09-16T10:56:01.446Z",
     "completedAt": "2026-09-16T10:56:01.505Z",
     "error": "ENOENT: no such file or directory, open 'C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\video-engine\\workspace\\olosto-video\\composition\\MainVideo.tsx'"
+  },
+  {
+    "id": "89bc9f93-04ea-43ce-82d3-f3baf53bf2ed",
+    "videoId": "olosto-service-presentation",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-16T12:22:59.302Z",
+    "completedAt": "2026-09-16T12:22:59.353Z",
+    "error": "ENOENT: no such file or directory, open 'C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\video-engine\\workspace\\olosto-service-presentation\\composition\\MainVideo.tsx'"
+  },
+  {
+    "id": "5c825d81-571f-4041-8fb0-7f6461e96380",
+    "videoId": "olosto-service-presentation",
+    "status": "completed",
+    "outputPath": "C:\\Users\\PROMOPlus\\Documents\\video-saas\\output\\olosto-service-presentation.mp4",
+    "startedAt": "2026-09-16T12:54:34.032Z",
+    "completedAt": "2026-09-16T12:56:26.557Z",
+    "error": null
+  },
+  {
+    "id": "6998d2c4-4443-40fa-bccb-328183358d7a",
+    "videoId": "olosto",
+    "status": "completed",
+    "outputPath": "C:\\Users\\PROMOPlus\\Documents\\video-saas\\output\\video01.mp4",
+    "startedAt": "2026-09-16T13:41:22.792Z",
+    "completedAt": "2026-09-16T13:44:56.507Z",
+    "error": null
+  },
+  {
+    "id": "040073d5-a5be-4d0b-a453-527c2b46fa83",
+    "videoId": "olosto-v2",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-16T14:28:24.689Z",
+    "completedAt": "2026-09-16T14:29:52.002Z",
+    "error": "Error: Error loading image with src: http://localhost:3000/public/assets/logo"
+  },
+  {
+    "id": "50aa8fd0-3988-4090-8a03-7ed94e9231f8",
+    "videoId": "olosto-v2",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-16T14:30:44.958Z",
+    "completedAt": "2026-09-16T14:31:20.818Z",
+    "error": "Error: Error loading image with src: http://localhost:3000/public/assets/logo.jpeg"
+  },
+  {
+    "id": "2e5bbc3e-88b2-404c-8ce4-874df1a00a19",
+    "videoId": "olosto-v2",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-16T14:32:22.032Z",
+    "completedAt": "2026-09-16T14:33:20.375Z",
+    "error": "A delayRender() \"Loading <Img> with src=/public/assets/logo.jpeg\" was called but not cleared after 28000ms. See https://remotion.dev/docs/timeout for help. "
+  },
+  {
+    "id": "05a9a6dd-5d09-4632-b8de-d8dd89f821a0",
+    "videoId": "olosto-v2",
+    "status": "completed",
+    "outputPath": "C:\\Users\\PROMOPlus\\Documents\\video-saas\\output\\video01.mp4",
+    "startedAt": "2026-09-16T14:33:49.514Z",
+    "completedAt": "2026-09-16T14:37:06.773Z",
+    "error": null
   }
 ]

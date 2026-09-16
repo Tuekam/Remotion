@@ -1,31 +1,30 @@
 import { z } from "zod";
 import type { McpServer } from "@modelcontextprotocol/server";
-import type { RenderVideoInput } from "../../video-engine/models/RenderVideoInput.js";
-import type { VideoEngine } from "../../video-engine/contracts/VideoEngine.js";
+import type { GenerateVideoProjectUseCase } from "../../../../core/use-case/GenerateVideoProjectUseCase.js";
 import { RenderResultStore } from "../RenderResultStore.js";
 import { RenderOutputPathResolver } from "../RenderOutputPathResolver.js";
 
-export class RenderVideoTool {
+export class GenerateVideoProjectTool {
   public constructor(
-    private readonly videoEngine: VideoEngine,
+    private readonly generateVideoProjectUseCase: GenerateVideoProjectUseCase,
     private readonly renderResultStore: RenderResultStore,
     private readonly renderOutputPathResolver: RenderOutputPathResolver,
   ) {}
 
   public register(server: McpServer): void {
     server.registerTool(
-      "render_video",
+      "generate_video_project",
       {
-        description: "Render a Remotion composition from a video workspace.",
+        description: "Render a confirmed V2 video project.",
         inputSchema: z.object({
           videoId: z.string().min(1),
           compositionId: z.string().min(1),
           outputPath: z.string().min(1),
         }),
       },
-      async (input: RenderVideoInput) => {
+      async (input) => {
         await this.renderOutputPathResolver.ensureDirectory();
-        const render = await this.videoEngine.render({
+        const render = await this.generateVideoProjectUseCase.execute({
           ...input,
           outputPath: this.renderOutputPathResolver.resolve(input.outputPath),
         });

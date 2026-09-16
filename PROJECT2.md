@@ -1275,7 +1275,73 @@ Pour une version de production, une isolation/sandbox devra être prévue.
 
 ------------------------------------------------------------------------
 
-# 27. Ce qui est déjà terminé en V1
+# 27. Decisions V2 validees
+
+Les decisions suivantes sont validees avant l'implementation :
+
+1. Les assets `RECOMMENDED` restent facultatifs. L'utilisateur decide s'il
+   souhaite les fournir ; leur absence ne bloque pas la generation.
+2. En phase locale de test, les fichiers importes par l'utilisateur doivent
+   etre places dans le dossier `assets/` du workspace du projet courant.
+3. Aucun asset ne doit etre partage automatiquement entre deux `videoId`.
+4. Le plan video doit etre presente a l'utilisateur en langage naturel.
+   Le code source Remotion ne doit pas etre utilise comme presentation du
+   plan.
+5. La production Remotion ne commence qu'apres validation des informations
+   obligatoires et confirmation du projet.
+6. `AGENTS.md` reste exclusivement reserve a l'agent de generation video.
+   Les agents developpeurs doivent utiliser `PROJECT.md` pour la V1 et
+   `PROJECT2.md` pour la V2.
+7. La V2 est une couche de pre-production au-dessus du moteur V1. Le moteur
+   V1 et son workflow de rendu doivent rester fonctionnels.
+
+## 27.1 Ordre d'implementation valide
+
+``` text
+1. Modeles et contrats Core
+2. Catalogue des types video
+3. Structure du workspace V2
+4. Import et manifeste des assets
+5. Services V2
+6. Use Cases V2
+7. Tools MCP de pre-production
+8. Workflow conversationnel
+9. Connexion au moteur de production V1
+10. Tests et validation
+```
+
+Chaque phase doit etre analysee et validee avant de passer a la suivante.
+
+## 27.2 Principe de separation des assets
+
+Les fichiers utilisateur appartiennent aux donnees du projet :
+
+``` text
+workspace/<videoId>/assets/
+```
+
+Les services peuvent contenir la logique de gestion des assets, mais jamais
+les fichiers eux-memes. Le dossier `assets/` est cree pour le projet courant
+et son manifeste reste lie au meme `videoId`.
+
+## 27.3 Conception Core a preparer
+
+La premiere phase doit definir, sans dependance a MCP, Remotion ou Firebase :
+
+- les identifiants des types video ;
+- les niveaux `REQUIRED`, `RECOMMENDED` et `OPTIONAL` ;
+- le `VideoBrief` et ses etats ;
+- le modele `Asset` et son manifeste ;
+- le `ValidationReport` ;
+- le `VideoPlan` ;
+- les etats du projet de production.
+
+Les implementations TypeScript ne doivent commencer qu'apres validation de
+ces contrats.
+
+------------------------------------------------------------------------
+
+# 28. Ce qui est déjà terminé en V1
 
 La V1 a été validée sur les points suivants :
 
@@ -1294,7 +1360,7 @@ La V2 doit donc **réutiliser cette base** et non la reconstruire.
 
 ------------------------------------------------------------------------
 
-# 28. Ordre de développement V2
+# 29. Ordre de développement V2
 
 Ne pas commencer directement par les outils MCP.
 
@@ -1334,7 +1400,7 @@ Ordre recommandé :
 
 ------------------------------------------------------------------------
 
-# 29. Première tâche V2
+# 30. Première tâche V2
 
 La première tâche de développement n'est PAS encore de créer tous les
 modèles.
@@ -1369,7 +1435,7 @@ l'ajout futur de nouveaux types.
 
 ------------------------------------------------------------------------
 
-# 30. Règles de travail pour les futurs agents
+# 31. Règles de travail pour les futurs agents
 
 Tout agent qui reprend ce projet doit respecter les règles suivantes :
 
@@ -1395,7 +1461,7 @@ V1 = production autonome
 
 ------------------------------------------------------------------------
 
-# 31. État actuel de V2
+# 32. État actuel de V2
 
 ``` text
 [✓] Vision V2 définie
@@ -1411,42 +1477,54 @@ V1 = production autonome
 [✓] ValidationReport identifié
 [✓] VideoPlan identifié
 [✓] Architecture générale V2 esquissée
-[ ] Définir précisément VideoTypeDefinition
-[ ] Définir la matrice complète des exigences
-[ ] Définir précisément VideoBrief
-[ ] Définir précisément Asset
-[ ] Définir AssetManifest
-[ ] Définir ValidationReport
-[ ] Définir les use cases
-[ ] Implémenter les services
+[✓] Définir le contrat Core VideoTypeDefinition
+[✓] Définir les niveaux et clés d'exigence
+[✓] Implémenter le catalogue initial et la matrice des exigences
+[✓] Définir précisément VideoBrief
+[✓] Définir précisément Asset
+[✓] Définir AssetManifest
+[✓] Définir ValidationReport
+[✓] Définir VideoPlan
+[✓] Définir les use cases V2
+[✓] Définir les repositories de persistance V2
+[✓] Implémenter le catalogue des types
+[✓] Implémenter les repositories locaux V2
+[✓] Implémenter les Use Cases V2 de catalogue et de brief
+[✓] Implémenter les services V2 d'assets, validation et planning
+[✓] Implémenter les Use Cases V2 d'assets, validation et planning
+[✓] Enregistrer les dépendances V2 dans le composition root
+[✓] Exposer les Tools MCP de pré-production V2
+[✓] Corriger le cycle validation → confirmation
+[✓] Ajouter la récupération du plan vidéo
+[✓] Connecter la production V2 au moteur V1 avec confirmation
+[✓] Mutualiser la validation des chemins de sortie
+[ ] Implémenter les autres services
 [ ] Implémenter les outils MCP V2
-[ ] Connecter V2 au moteur V1
-[ ] Tester le parcours complet
+[✓] Connecter V2 au moteur V1
+[✓] Tester le parcours de pré-production V2 en mémoire
 ```
 
 ------------------------------------------------------------------------
 
-# 32. Prochaine étape
+# 33. Prochaine étape
 
-**Ne pas coder immédiatement.**
-
-La prochaine discussion doit porter sur :
+La prochaine étape doit porter sur :
 
 ``` text
-VideoTypeDefinition
+Import réel des assets via le client IA
         +
-AssetRequirement
+Test MCP de bout en bout
         +
-InformationRequirement
+Validation d'une production Remotion V2
 ```
 
-Puis valider la matrice complète des 8 types.
-
-Après cette validation seulement, commencer l'implémentation TypeScript.
+Le parcours métier de pré-production est déjà implémenté et validé en
+mémoire. Il reste à le tester via le protocole MCP avec un workspace réel,
+puis à valider le rendu Remotion d'un projet confirmé.
 
 ------------------------------------------------------------------------
 
-# 33. Principe directeur du projet
+# 34. Principe directeur du projet
 
 Le système final doit se comporter comme un véritable
 développeur/creative agent :

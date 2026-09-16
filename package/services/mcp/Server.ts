@@ -10,6 +10,16 @@ import { WriteFileTool } from "./tools/WriteFileTool.js";
 import { ExecuteCodeTool } from "./tools/ExecuteCodeTool.js";
 import { GetRenderResultTool } from "./tools/GetRenderResultTool.js";
 import { RenderVideoTool } from "./tools/RenderVideoTool.js";
+import { ListVideoTypesTool } from "./tools/ListVideoTypesTool.js";
+import { GetVideoRequirementsTool } from "./tools/GetVideoRequirementsTool.js";
+import { CreateVideoProjectTool } from "./tools/CreateVideoProjectTool.js";
+import { RegisterAssetTool } from "./tools/RegisterAssetTool.js";
+import { UpdateVideoBriefTool } from "./tools/UpdateVideoBriefTool.js";
+import { ValidateVideoProjectTool } from "./tools/ValidateVideoProjectTool.js";
+import { CreateVideoPlanTool } from "./tools/CreateVideoPlanTool.js";
+import { ConfirmVideoProjectTool } from "./tools/ConfirmVideoProjectTool.js";
+import { GetVideoPlanTool } from "./tools/GetVideoPlanTool.js";
+import { GenerateVideoProjectTool } from "./tools/GenerateVideoProjectTool.js";
 
 interface McpTool {
   register(server: McpServer): void;
@@ -29,6 +39,16 @@ export class McpVideoServer {
     private readonly executeCodeTool: ExecuteCodeTool,
     private readonly renderVideoTool: RenderVideoTool,
     private readonly getRenderResultTool: GetRenderResultTool,
+    private readonly listVideoTypesTool: ListVideoTypesTool,
+    private readonly getVideoRequirementsTool: GetVideoRequirementsTool,
+    private readonly createVideoProjectTool: CreateVideoProjectTool,
+    private readonly registerAssetTool: RegisterAssetTool,
+    private readonly updateVideoBriefTool: UpdateVideoBriefTool,
+    private readonly validateVideoProjectTool: ValidateVideoProjectTool,
+    private readonly createVideoPlanTool: CreateVideoPlanTool,
+    private readonly confirmVideoProjectTool: ConfirmVideoProjectTool,
+    private readonly getVideoPlanTool: GetVideoPlanTool,
+    private readonly generateVideoProjectTool: GenerateVideoProjectTool,
   ) {
     this.registerTools([
       inspectDirectoryTool,
@@ -41,6 +61,16 @@ export class McpVideoServer {
       executeCodeTool,
       renderVideoTool,
       getRenderResultTool,
+      listVideoTypesTool,
+      getVideoRequirementsTool,
+      createVideoProjectTool,
+      registerAssetTool,
+      updateVideoBriefTool,
+      validateVideoProjectTool,
+      createVideoPlanTool,
+      confirmVideoProjectTool,
+      getVideoPlanTool,
+      generateVideoProjectTool,
     ]);
   }
 

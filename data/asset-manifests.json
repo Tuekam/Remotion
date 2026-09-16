@@ -1,0 +1,130 @@
+[
+  {
+    "videoId": "olosto-service-presentation",
+    "assets": [
+      {
+        "id": "6185b8f1-d3fd-40ff-b3eb-543f7ab5c443",
+        "videoId": "olosto-service-presentation",
+        "name": "olosto-logo",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/olosto-logo",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-16T12:22:51.952Z",
+        "updatedAt": "2026-09-16T12:22:51.952Z"
+      },
+      {
+        "id": "99215024-e157-40c1-ac8d-58f1876b91ab",
+        "videoId": "olosto-service-presentation",
+        "name": "olosto-logo.jpeg",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/olosto-logo.jpeg",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-16T12:23:39.694Z",
+        "updatedAt": "2026-09-16T12:23:39.694Z"
+      }
+    ],
+    "updatedAt": "2026-09-16T12:23:39.694Z"
+  },
+  {
+    "videoId": "olosto-premium-ad",
+    "assets": [
+      {
+        "id": "b6841d78-197f-4ff7-8d14-22949b0577c8",
+        "videoId": "olosto-premium-ad",
+        "name": "logo-olosto",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/logo-olosto",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-16T13:19:33.322Z",
+        "updatedAt": "2026-09-16T13:19:33.322Z"
+      },
+      {
+        "id": "ee5c3aeb-902e-4999-8b0f-5745d24975f8",
+        "videoId": "olosto-premium-ad",
+        "name": "logo-olosto.jpeg",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/logo-olosto.jpeg",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-16T13:22:22.512Z",
+        "updatedAt": "2026-09-16T13:22:22.512Z"
+      }
+    ],
+    "updatedAt": "2026-09-16T13:22:22.512Z"
+  },
+  {
+    "videoId": "olosto-motion-ad",
+    "assets": [
+      {
+        "id": "d73dbf9a-a561-4d92-9697-38342faf6735",
+        "videoId": "olosto-motion-ad",
+        "name": "Logo officiel OLOSTO",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/Logo officiel OLOSTO",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-16T13:32:06.704Z",
+        "updatedAt": "2026-09-16T13:32:06.704Z"
+      }
+    ],
+    "updatedAt": "2026-09-16T13:32:06.704Z"
+  },
+  {
+    "videoId": "olosto",
+    "assets": [
+      {
+        "id": "0f86edfc-bdf8-4988-bc79-b0b7212bfc95",
+        "videoId": "olosto",
+        "name": "logo.jpeg",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/logo.jpeg",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-16T13:34:54.465Z",
+        "updatedAt": "2026-09-16T13:34:54.465Z"
+      }
+    ],
+    "updatedAt": "2026-09-16T13:34:54.465Z"
+  },
+  {
+    "videoId": "olosto-v2",
+    "assets": [
+      {
+        "id": "bb2b6f30-4228-4bbb-a8e7-b577d528830b",
+        "videoId": "olosto-v2",
+        "name": "logo",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/logo",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-16T14:26:27.140Z",
+        "updatedAt": "2026-09-16T14:26:27.140Z"
+      }
+    ],
+    "updatedAt": "2026-09-16T14:26:27.140Z"
+  }
+]

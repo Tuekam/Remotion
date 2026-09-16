@@ -1,0 +1,38 @@
+[
+  {
+    "id": "olosto-service-presentation-plan",
+    "videoId": "olosto-service-presentation",
+    "videoType": "service-presentation",
+    "summary": "Service Presentation: Faire comprendre la valeur du service.",
+    "narrative": "Identifier le besoin du public. Présenter le service et sa valeur. Terminer par un appel à l'action.",
+    "callToAction": "Confiez vos achats européens à Olosto",
+    "visualDirection": "Créer une direction visuelle cohérente à partir du brief.",
+    "scenes": [],
+    "createdAt": "2026-09-16T12:20:39.494Z",
+    "updatedAt": "2026-09-16T12:20:39.494Z"
+  },
+  {
+    "id": "olosto-premium-ad-plan",
+    "videoId": "olosto-premium-ad",
+    "videoType": "problem-solution",
+    "summary": "Problem Solution: Montrer comment une solution répond à un problème.",
+    "narrative": "Présenter le problème. Montrer la frustration ou la conséquence. Présenter la solution et ses bénéfices. Terminer par un appel à l'action.",
+    "callToAction": "Confiez vos achats à OLOSTO.",
+    "visualDirection": "Utiliser les assets fournis dans le workspace du projet.",
+    "scenes": [],
+    "createdAt": "2026-09-16T13:19:49.373Z",
+    "updatedAt": "2026-09-16T13:19:49.373Z"
+  },
+  {
+    "id": "olosto-motion-ad-plan",
+    "videoId": "olosto-motion-ad",
+    "videoType": "service-presentation",
+    "summary": "Service Presentation: Faire comprendre la valeur du service.",
+    "narrative": "Identifier le besoin du public. Présenter le service et sa valeur. Terminer par un appel à l'action.",
+    "callToAction": "Confiez vos achats à OLOSTO.",
+    "visualDirection": "Utiliser les assets fournis dans le workspace du projet.",
+    "scenes": [],
+    "createdAt": "2026-09-16T13:32:20.515Z",
+    "updatedAt": "2026-09-16T13:32:20.515Z"
+  }
+]
