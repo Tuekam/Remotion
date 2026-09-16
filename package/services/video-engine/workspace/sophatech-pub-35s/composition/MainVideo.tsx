@@ -209,13 +209,14 @@ const IconAudit: React.FC = () => (
 	</svg>
 );
 
-const ICONS: Record<string, React.FC> = {
+const ICONS = {
 	code: IconCode,
 	maintenance: IconMaintenance,
 	formation: IconFormation,
 	automation: IconAutomation,
 	audit: IconAudit,
-};
+} as const;
+type IconKey = keyof typeof ICONS;
 
 // ---------------------------------------------------------------------------
 // Logo
@@ -282,7 +283,7 @@ const IntroScene: React.FC = () => {
 };
 
 const ServiceScene: React.FC<{
-	iconKey: string;
+	iconKey: IconKey;
 	title: string;
 	subtitle: string;
 	index: number;
@@ -383,7 +384,7 @@ const ServiceScene: React.FC<{
 
 const OutroScene: React.FC = () => {
 	const exitOpacity = useExitOpacity(OUTRO_DURATION, 16);
-	const services: {key: string; label: string}[] = [
+	const services: {key: IconKey; label: string}[] = [
 		{key: 'code', label: 'Programmation'},
 		{key: 'maintenance', label: 'Maintenance'},
 		{key: 'formation', label: 'Formation'},

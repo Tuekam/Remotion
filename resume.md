@@ -390,6 +390,8 @@ Il expose :
 - `callTool({ name, arguments })` ;
 - `close()`.
 
+`McpStdioClient` ne construit pas lui-même le SDK, le transport ou une autre dépendance. Il reçoit `Client` et `Transport` par injection. La composition du client MCP doit être faite par le composition root de l'application qui l'utilise. Aucun factory concret contenant des `new` ne doit être ajouté dans ce dossier.
+
 Il sert surtout :
 
 - aux smoke tests ;
@@ -565,4 +567,3 @@ Il ne faut pas :
 - permettre une commande shell arbitraire ;
 - contourner les restrictions de chemins ;
 - modifier la configuration globale pour résoudre une erreur locale de composition.
-

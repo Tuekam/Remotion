@@ -1,8 +1,4 @@
-import { Client } from "@modelcontextprotocol/client";
-import {
-  StdioClientTransport,
-  type StdioServerParameters,
-} from "@modelcontextprotocol/client/stdio";
+import type { Client, Transport } from "@modelcontextprotocol/client";
 import type {
   CallToolResult,
   ListToolsResult,
@@ -13,18 +9,23 @@ export interface McpToolCall {
   arguments?: Record<string, unknown>;
 }
 
+export interface McpStdioClientDependencies {
+  client: Client;
+  transport: Transport;
+}
+
 export class McpStdioClient {
-  private readonly client: Client;
-  private readonly transport: StdioClientTransport;
   private connected = false;
 
   public constructor(
-    server: StdioServerParameters,
-    clientInfo = { name: "video-saas-client", version: "1.0.0" },
+    dependencies: McpStdioClientDependencies,
   ) {
-    this.client = new Client(clientInfo);
-    this.transport = new StdioClientTransport(server);
+    this.client = dependencies.client;
+    this.transport = dependencies.transport;
   }
+
+  private readonly client: Client;
+  private readonly transport: Transport;
 
   public async connect(): Promise<void> {
     if (this.connected) {

@@ -88,5 +88,14 @@
     "startedAt": "2026-09-15T14:19:25.751Z",
     "completedAt": "2026-09-15T14:21:27.465Z",
     "error": null
+  },
+  {
+    "id": "0d2e1f91-0521-4ccf-b87f-8f26ff3cc2e1",
+    "videoId": "skym-shoe-promo",
+    "status": "completed",
+    "outputPath": "C:\\Users\\PROMOPlus\\Documents\\video-saas\\output\\skym.mp4",
+    "startedAt": "2026-09-16T08:13:59.363Z",
+    "completedAt": "2026-09-16T08:16:42.870Z",
+    "error": null
   }
 ]
