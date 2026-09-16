@@ -97,5 +97,41 @@
     "startedAt": "2026-09-16T08:13:59.363Z",
     "completedAt": "2026-09-16T08:16:42.870Z",
     "error": null
+  },
+  {
+    "id": "33325c12-0683-44ef-a4e0-db45a56f244b",
+    "videoId": "olosto-premium-ad",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-16T10:32:45.278Z",
+    "completedAt": "2026-09-16T10:32:45.283Z",
+    "error": "ENOENT: no such file or directory, open 'C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\video-engine\\workspace\\olosto-premium-ad\\composition\\MainVideo.tsx'"
+  },
+  {
+    "id": "27914da2-e404-4f09-9529-724b95bea617",
+    "videoId": "olosto-premium-ad",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-16T10:33:07.226Z",
+    "completedAt": "2026-09-16T10:33:07.257Z",
+    "error": "You passed C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\video-engine\\workspace\\olosto-premium-ad\\composition\\MainVideo.tsx as your entry point, but this file does not contain \"registerRoot\". You should use the file that calls registerRoot() as the entry point. To ignore this error, pass \"ignoreRegisterRootWarning\" to bundle(). This error cannot be ignored on the CLI."
+  },
+  {
+    "id": "0a70f1c1-c56b-4370-846a-5922e1bc5e5e",
+    "videoId": "olosto-premium-ad",
+    "status": "completed",
+    "outputPath": "C:\\Users\\PROMOPlus\\Documents\\video-saas\\output\\video.mp4",
+    "startedAt": "2026-09-16T10:33:20.282Z",
+    "completedAt": "2026-09-16T10:34:33.145Z",
+    "error": null
+  },
+  {
+    "id": "1067eabe-617a-4fa2-9175-d9611198d168",
+    "videoId": "olosto-video",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-16T10:56:01.446Z",
+    "completedAt": "2026-09-16T10:56:01.505Z",
+    "error": "ENOENT: no such file or directory, open 'C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\video-engine\\workspace\\olosto-video\\composition\\MainVideo.tsx'"
   }
 ]
