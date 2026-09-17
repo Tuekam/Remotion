@@ -196,5 +196,257 @@
     "startedAt": "2026-09-16T14:33:49.514Z",
     "completedAt": "2026-09-16T14:37:06.773Z",
     "error": null
+  },
+  {
+    "id": "90c2f7b7-b67d-4ca6-9a06-9a5ed41f7e5f",
+    "videoId": "julessopha-nouvelle-collection",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-16T18:57:52.791Z",
+    "completedAt": "2026-09-16T18:57:52.825Z",
+    "error": "ENOENT: no such file or directory, open 'C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\video-engine\\workspace\\julessopha-nouvelle-collection\\composition\\MainVideo.tsx'"
+  },
+  {
+    "id": "459f970a-7ef7-40d5-a00a-ec6c28d8a8dd",
+    "videoId": "julessopha-nouvelle-collection",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-16T18:58:41.420Z",
+    "completedAt": "2026-09-16T19:00:28.903Z",
+    "error": "Error while downloading http://localhost:3000/public/audio/voice-over.mp3: Error: Received a status code of 404 while downloading file http://localhost:3000/public/audio/voice-over.mp3.\nThe response body was:\n---\n{\"statusCode\":404,\"message\":\"The requested path (C:\\\\Users\\\\PROMOP~1\\\\AppData\\\\Local\\\\Temp\\\\remotion-webpack-bundle-LqsbQQ\\\\public\\\\audio\\\\voice-over.mp3) could not be found\"}\n---\n    at readFile (file:///C:/Users/PROMOPlus/Documents/video-saas/node_modules/.pnpm/@remotion+renderer@4.0.524__6453c4b44650086c8d6f554ba13fb2f4/node_modules/@remotion/renderer/dist/esm/index.mjs:1156:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)"
+  },
+  {
+    "id": "c188b9e6-d1fe-4e6d-bd3b-760b93c233ca",
+    "videoId": "julessopha-nouvelle-collection",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-16T19:01:18.388Z",
+    "completedAt": "2026-09-16T19:01:36.523Z",
+    "error": "Error while downloading http://localhost:3000/public/assets/background.m4a: Error: Received a status code of 404 while downloading file http://localhost:3000/public/assets/background.m4a.\nThe response body was:\n---\n{\"statusCode\":404,\"message\":\"The requested path (C:\\\\Users\\\\PROMOP~1\\\\AppData\\\\Local\\\\Temp\\\\remotion-webpack-bundle-dPeYyj\\\\public\\\\assets\\\\background.m4a) could not be found\"}\n---\n    at readFile (file:///C:/Users/PROMOPlus/Documents/video-saas/node_modules/.pnpm/@remotion+renderer@4.0.524__6453c4b44650086c8d6f554ba13fb2f4/node_modules/@remotion/renderer/dist/esm/index.mjs:1156:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)"
+  },
+  {
+    "id": "1a86c2b3-bba1-4356-a4a3-88aacb6403d9",
+    "videoId": "julessopha-nouvelle-collection",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-16T19:02:08.504Z",
+    "completedAt": "2026-09-16T19:02:23.592Z",
+    "error": "Error while downloading http://localhost:3000/public/assets/background.m4a: Error: Received a status code of 404 while downloading file http://localhost:3000/public/assets/background.m4a.\nThe response body was:\n---\n{\"statusCode\":404,\"message\":\"The requested path (C:\\\\Users\\\\PROMOP~1\\\\AppData\\\\Local\\\\Temp\\\\remotion-webpack-bundle-Z51CO9\\\\public\\\\assets\\\\background.m4a) could not be found\"}\n---\n    at readFile (file:///C:/Users/PROMOPlus/Documents/video-saas/node_modules/.pnpm/@remotion+renderer@4.0.524__6453c4b44650086c8d6f554ba13fb2f4/node_modules/@remotion/renderer/dist/esm/index.mjs:1156:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)"
+  },
+  {
+    "id": "ab484e8f-cd92-4d4f-9bbe-25a46dd85455",
+    "videoId": "julessopha-nouvelle-collection",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-16T19:02:59.202Z",
+    "completedAt": "2026-09-16T19:03:21.772Z",
+    "error": "Error while downloading http://localhost:3000/public/assets/voice-over.mp3: Error: Received a status code of 404 while downloading file http://localhost:3000/public/assets/voice-over.mp3.\nThe response body was:\n---\n{\"statusCode\":404,\"message\":\"The requested path (C:\\\\Users\\\\PROMOP~1\\\\AppData\\\\Local\\\\Temp\\\\remotion-webpack-bundle-7nA8s0\\\\public\\\\assets\\\\voice-over.mp3) could not be found\"}\n---\n    at readFile (file:///C:/Users/PROMOPlus/Documents/video-saas/node_modules/.pnpm/@remotion+renderer@4.0.524__6453c4b44650086c8d6f554ba13fb2f4/node_modules/@remotion/renderer/dist/esm/index.mjs:1156:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)"
+  },
+  {
+    "id": "99509a17-bd43-49be-a75d-38ac3fce9fe2",
+    "videoId": "julessopha-nouvelle-collection",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-16T19:09:03.895Z",
+    "completedAt": "2026-09-16T19:09:20.554Z",
+    "error": "Error while downloading http://localhost:3000/public/assets/background.mp3: Error: Received a status code of 404 while downloading file http://localhost:3000/public/assets/background.mp3.\nThe response body was:\n---\n{\"statusCode\":404,\"message\":\"The requested path (C:\\\\Users\\\\PROMOP~1\\\\AppData\\\\Local\\\\Temp\\\\remotion-webpack-bundle-3yS9vM\\\\public\\\\assets\\\\background.mp3) could not be found\"}\n---\n    at readFile (file:///C:/Users/PROMOPlus/Documents/video-saas/node_modules/.pnpm/@remotion+renderer@4.0.524__6453c4b44650086c8d6f554ba13fb2f4/node_modules/@remotion/renderer/dist/esm/index.mjs:1156:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)"
+  },
+  {
+    "id": "64aae91b-deed-4133-9c63-e5cfdac4ee49",
+    "videoId": "julessopha-nouvelle-collection",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-16T19:14:03.049Z",
+    "completedAt": "2026-09-16T19:14:09.435Z",
+    "error": "Error while downloading http://localhost:3000/public/assets/background.mp3: Error: Received a status code of 404 while downloading file http://localhost:3000/public/assets/background.mp3.\nThe response body was:\n---\n{\"statusCode\":404,\"message\":\"The requested path (C:\\\\Users\\\\PROMOP~1\\\\AppData\\\\Local\\\\Temp\\\\remotion-webpack-bundle-v3UZe0\\\\public\\\\assets\\\\background.mp3) could not be found\"}\n---\n    at readFile (file:///C:/Users/PROMOPlus/Documents/video-saas/node_modules/.pnpm/@remotion+renderer@4.0.524__6453c4b44650086c8d6f554ba13fb2f4/node_modules/@remotion/renderer/dist/esm/index.mjs:1156:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)"
+  },
+  {
+    "id": "8e42e416-0ca3-40ab-af0c-81ea87e69c34",
+    "videoId": "julessopha-nouvelle-collection",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-16T19:14:56.912Z",
+    "completedAt": "2026-09-16T19:15:03.314Z",
+    "error": "Error while downloading http://localhost:3000/public/assets/voice-over.mp3: Error: Received a status code of 404 while downloading file http://localhost:3000/public/assets/voice-over.mp3.\nThe response body was:\n---\n{\"statusCode\":404,\"message\":\"The requested path (C:\\\\Users\\\\PROMOP~1\\\\AppData\\\\Local\\\\Temp\\\\remotion-webpack-bundle-u9bCy0\\\\public\\\\assets\\\\voice-over.mp3) could not be found\"}\n---\n    at readFile (file:///C:/Users/PROMOPlus/Documents/video-saas/node_modules/.pnpm/@remotion+renderer@4.0.524__6453c4b44650086c8d6f554ba13fb2f4/node_modules/@remotion/renderer/dist/esm/index.mjs:1156:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)"
+  },
+  {
+    "id": "18e3b743-e267-46ce-bc30-8536bb8cebd6",
+    "videoId": "julessopha-nouvelle-collection-v2",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-16T19:17:11.787Z",
+    "completedAt": "2026-09-16T19:18:02.191Z",
+    "error": "Error while downloading http://localhost:3000/public/assets/voice-over.mp3: Error: Received a status code of 404 while downloading file http://localhost:3000/public/assets/voice-over.mp3.\nThe response body was:\n---\n{\"statusCode\":404,\"message\":\"The requested path (C:\\\\Users\\\\PROMOP~1\\\\AppData\\\\Local\\\\Temp\\\\remotion-webpack-bundle-MEZ9vC\\\\public\\\\assets\\\\voice-over.mp3) could not be found\"}\n---\n    at readFile (file:///C:/Users/PROMOPlus/Documents/video-saas/node_modules/.pnpm/@remotion+renderer@4.0.524__6453c4b44650086c8d6f554ba13fb2f4/node_modules/@remotion/renderer/dist/esm/index.mjs:1156:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)"
+  },
+  {
+    "id": "3b503b1c-37a8-4b5c-bb9b-26b3d7fec5e7",
+    "videoId": "julessopha-nouvelle-collection-v2",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-16T19:22:10.200Z",
+    "completedAt": "2026-09-16T19:22:16.768Z",
+    "error": "Error while downloading http://localhost:3000/public/assets/voice-over.mp3: Error: Received a status code of 404 while downloading file http://localhost:3000/public/assets/voice-over.mp3.\nThe response body was:\n---\n{\"statusCode\":404,\"message\":\"The requested path (C:\\\\Users\\\\PROMOP~1\\\\AppData\\\\Local\\\\Temp\\\\remotion-webpack-bundle-Y0KxHA\\\\public\\\\assets\\\\voice-over.mp3) could not be found\"}\n---\n    at readFile (file:///C:/Users/PROMOPlus/Documents/video-saas/node_modules/.pnpm/@remotion+renderer@4.0.524__6453c4b44650086c8d6f554ba13fb2f4/node_modules/@remotion/renderer/dist/esm/index.mjs:1156:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)"
+  },
+  {
+    "id": "95c2cea5-9eaf-49ed-b971-7e5708f242e6",
+    "videoId": "olosto-ads-01",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-16T19:45:38.989Z",
+    "completedAt": "2026-09-16T19:45:39.068Z",
+    "error": "ENOENT: no such file or directory, open 'C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\video-engine\\workspace\\olosto-ads-01\\composition\\MainVideo.tsx'"
+  },
+  {
+    "id": "62056d1e-c6a3-4138-8b5a-a97bd5f6c0d0",
+    "videoId": "olosto-ads-01",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-16T19:52:10.499Z",
+    "completedAt": "2026-09-16T19:52:48.830Z",
+    "error": "Module not found: Error: Can't resolve '@remotion/google-fonts/Poppins' in 'C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\video-engine\\workspace\\olosto-ads-01\\composition'\nresolve '@remotion/google-fonts/Poppins' in 'C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\video-engine\\workspace\\olosto-ads-01\\composition'\n  Parsed request is a module\n  using description file: C:\\Users\\PROMOPlus\\Documents\\video-saas\\package.json (relative path: ./package/services/video-engine/workspace/olosto-ads-01/composition)\n    Field 'browser' doesn't contain a valid alias configuration\n    resolve as module\n      C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\video-engine\\workspace\\olosto-ads-01\\composition\\node_modules doesn't exist or is not a directory\n      C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\video-engine\\workspace\\olosto-ads-01\\node_modules doesn't exist or is not a directory\n      C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\video-engine\\workspace\\node_modules doesn't exist or is not a directory\n      C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\video-engine\\node_modules doesn't exist or is not a directory\n      C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\node_modules doesn't exist or is not a directory\n      C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\node_modules doesn't exist or is not a directory\n      looking for modules in C:\\Users\\PROMOPlus\\Documents\\video-saas\\node_modules\n        C:\\Users\\PROMOPlus\\Documents\\video-saas\\node_modules\\@remotion\\google-fonts doesn't exist\n      C:\\Users\\PROMOPlus\\Documents\\node_modules doesn't exist or is not a directory\n      C:\\Users\\PROMOPlus\\node_modules doesn't exist or is not a directory\n      C:\\Users\\node_modules doesn't exist or is not a directory\n      C:\\node_modules doesn't exist or is not a directory"
+  },
+  {
+    "id": "db61384a-f372-420c-b123-51bd529a26d9",
+    "videoId": "olosto-ads-01",
+    "status": "completed",
+    "outputPath": "C:\\Users\\PROMOPlus\\Documents\\video-saas\\output\\video01.mp4",
+    "startedAt": "2026-09-16T19:54:36.020Z",
+    "completedAt": "2026-09-16T19:56:47.611Z",
+    "error": null
+  },
+  {
+    "id": "7e54f4d7-967b-4adb-9978-bcfeee7c7c5f",
+    "videoId": "olosto-ads-01",
+    "status": "completed",
+    "outputPath": "C:\\Users\\PROMOPlus\\Documents\\video-saas\\output\\video01.mp4",
+    "startedAt": "2026-09-17T07:10:37.300Z",
+    "completedAt": "2026-09-17T07:13:24.980Z",
+    "error": null
+  },
+  {
+    "id": "d1ac9b93-309c-46da-952f-fcc2852e82a0",
+    "videoId": "olosto-ads-01",
+    "status": "completed",
+    "outputPath": "C:\\Users\\PROMOPlus\\Documents\\video-saas\\output\\olosto-ads-01.mp4",
+    "startedAt": "2026-09-17T07:32:26.877Z",
+    "completedAt": "2026-09-17T07:34:57.470Z",
+    "error": null
+  },
+  {
+    "id": "866dc6d1-b26b-4c77-9992-6a79bc71b95d",
+    "videoId": "olosto-ads-02",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-17T08:28:37.319Z",
+    "completedAt": "2026-09-17T08:28:37.378Z",
+    "error": "ENOENT: no such file or directory, open 'C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\video-engine\\workspace\\olosto-ads-02\\composition\\MainVideo.tsx'"
+  },
+  {
+    "id": "4b7203ef-e7d0-4c03-af84-95360f7ec9bb",
+    "videoId": "olosto-ads-02",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-17T08:34:25.505Z",
+    "completedAt": "2026-09-17T08:34:25.552Z",
+    "error": "ENOENT: no such file or directory, open 'C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\video-engine\\workspace\\olosto-ads-02\\composition\\MainVideo.tsx'"
+  },
+  {
+    "id": "8103fcfe-68dc-419f-a852-354ff662f959",
+    "videoId": "olosto-ad",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-17T08:44:09.866Z",
+    "completedAt": "2026-09-17T08:44:09.898Z",
+    "error": "ENOENT: no such file or directory, open 'C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\video-engine\\workspace\\olosto-ad\\composition\\MainVideo.tsx'"
+  },
+  {
+    "id": "08068ad8-b356-41ca-ad4f-ba588113e365",
+    "videoId": "olosto-ad",
+    "status": "completed",
+    "outputPath": "C:\\Users\\PROMOPlus\\Documents\\video-saas\\output\\video01.mp4",
+    "startedAt": "2026-09-17T08:48:47.426Z",
+    "completedAt": "2026-09-17T08:53:43.586Z",
+    "error": null
+  },
+  {
+    "id": "26841587-fc66-4035-a9e0-0285cfe9f778",
+    "videoId": "olosto-pub-motion",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-17T09:08:43.725Z",
+    "completedAt": "2026-09-17T09:08:43.766Z",
+    "error": "ENOENT: no such file or directory, open 'C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\video-engine\\workspace\\olosto-pub-motion\\composition\\MainVideo.tsx'"
+  },
+  {
+    "id": "23139900-6d06-470f-b708-947694cf6d38",
+    "videoId": "olosto-pub-motion",
+    "status": "completed",
+    "outputPath": "C:\\Users\\PROMOPlus\\Documents\\video-saas\\output\\olosto-pub-motion.mp4",
+    "startedAt": "2026-09-17T09:13:27.834Z",
+    "completedAt": "2026-09-17T09:16:42.187Z",
+    "error": null
+  },
+  {
+    "id": "92bd4c6d-1cef-4194-b2fb-2fc6797d3892",
+    "videoId": "olosto-gemini",
+    "status": "completed",
+    "outputPath": "C:\\Users\\PROMOPlus\\Documents\\video-saas\\output\\video01.mp4",
+    "startedAt": "2026-09-17T09:42:07.594Z",
+    "completedAt": "2026-09-17T09:45:13.928Z",
+    "error": null
+  },
+  {
+    "id": "5387b03d-81f9-45ca-accb-d3aaec32cde1",
+    "videoId": "olosto-premium-motion-20260917",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-17T12:41:50.592Z",
+    "completedAt": "2026-09-17T12:41:50.656Z",
+    "error": "ENOENT: no such file or directory, open 'C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\video-engine\\workspace\\olosto-premium-motion-20260917\\composition\\MainVideo.tsx'"
+  },
+  {
+    "id": "6a3134c8-d5d2-4e43-aa03-643f683aaf0c",
+    "videoId": "olosto-premium-motion-20260917",
+    "status": "completed",
+    "outputPath": "C:\\Users\\PROMOPlus\\Documents\\video-saas\\output\\olosto-premium-motion.mp4",
+    "startedAt": "2026-09-17T12:43:22.645Z",
+    "completedAt": "2026-09-17T12:46:46.017Z",
+    "error": null
+  },
+  {
+    "id": "4deb1a5c-f0aa-47a3-ac5e-9c3fd7ed6663",
+    "videoId": "olosto-premium-motion-20260917",
+    "status": "completed",
+    "outputPath": "C:\\Users\\PROMOPlus\\Documents\\video-saas\\output\\olosto-premium-motion-synchronisee.mp4",
+    "startedAt": "2026-09-17T14:06:17.809Z",
+    "completedAt": "2026-09-17T14:10:52.115Z",
+    "error": null
+  },
+  {
+    "id": "6918134d-526b-46da-90cc-434fb1650d94",
+    "videoId": "olosto-premium-vertical-01",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-17T14:30:24.673Z",
+    "completedAt": "2026-09-17T14:30:26.344Z",
+    "error": "ENOENT: no such file or directory, open 'C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\video-engine\\workspace\\olosto-premium-vertical-01\\composition\\MainVideo.tsx'"
+  },
+  {
+    "id": "8702cda3-d1ea-47e8-b3a2-5350acc40212",
+    "videoId": "olosto-premium-vertical-01",
+    "status": "completed",
+    "outputPath": "C:\\Users\\PROMOPlus\\Documents\\video-saas\\output\\video01.mp4",
+    "startedAt": "2026-09-17T14:32:05.137Z",
+    "completedAt": "2026-09-17T14:35:26.706Z",
+    "error": null
+  },
+  {
+    "id": "8ffb2a1a-5bca-4821-bd4c-89ace01d59fd",
+    "videoId": "olosto-premium-vertical-01",
+    "status": "completed",
+    "outputPath": "C:\\Users\\PROMOPlus\\Documents\\video-saas\\output\\video01.mp4",
+    "startedAt": "2026-09-17T14:37:57.881Z",
+    "completedAt": "2026-09-17T14:41:03.942Z",
+    "error": null
   }
 ]

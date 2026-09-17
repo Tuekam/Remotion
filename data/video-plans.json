@@ -34,5 +34,89 @@
     "scenes": [],
     "createdAt": "2026-09-16T13:32:20.515Z",
     "updatedAt": "2026-09-16T13:32:20.515Z"
+  },
+  {
+    "id": "julessopha-nouvelle-collection-plan",
+    "videoId": "julessopha-nouvelle-collection",
+    "videoType": "product-promotion",
+    "summary": "Product Promotion: Inciter le public à acheter le produit.",
+    "narrative": "Accrocher rapidement l'attention. Présenter le produit et l'offre. Terminer par un appel à l'action clair.",
+    "callToAction": "Commandez en ligne dès maintenant",
+    "visualDirection": "Utiliser les assets fournis dans le workspace du projet.",
+    "scenes": [],
+    "createdAt": "2026-09-16T18:56:26.935Z",
+    "updatedAt": "2026-09-16T18:56:26.935Z"
+  },
+  {
+    "id": "olosto-ads-01-plan",
+    "videoId": "olosto-ads-01",
+    "videoType": "problem-solution",
+    "summary": "Problem Solution: Montrer comment une solution répond à un problème.",
+    "narrative": "Présenter le problème. Montrer la frustration ou la conséquence. Présenter la solution et ses bénéfices. Terminer par un appel à l'action.",
+    "callToAction": "Confiez vos achats à OLOSTO.",
+    "visualDirection": "Utiliser les assets fournis dans le workspace du projet.",
+    "scenes": [],
+    "createdAt": "2026-09-16T19:44:27.110Z",
+    "updatedAt": "2026-09-16T19:44:27.110Z"
+  },
+  {
+    "id": "olosto-ads-02-plan",
+    "videoId": "olosto-ads-02",
+    "videoType": "problem-solution",
+    "summary": "Problem Solution: Montrer comment une solution répond à un problème.",
+    "narrative": "Présenter le problème. Montrer la frustration ou la conséquence. Présenter la solution et ses bénéfices. Terminer par un appel à l'action.",
+    "callToAction": "Confiez vos achats à OLOSTO.",
+    "visualDirection": "Utiliser les assets fournis dans le workspace du projet.",
+    "scenes": [],
+    "createdAt": "2026-09-17T07:53:30.330Z",
+    "updatedAt": "2026-09-17T07:53:30.330Z"
+  },
+  {
+    "id": "olosto-ad-plan",
+    "videoId": "olosto-ad",
+    "videoType": "service-presentation",
+    "summary": "Service Presentation: Faire comprendre la valeur du service.",
+    "narrative": "Identifier le besoin du public. Présenter le service et sa valeur. Terminer par un appel à l'action.",
+    "callToAction": "Confiez vos achats à OLOSTO.",
+    "visualDirection": "Utiliser les assets fournis dans le workspace du projet.",
+    "scenes": [],
+    "createdAt": "2026-09-17T08:42:41.837Z",
+    "updatedAt": "2026-09-17T08:42:41.837Z"
+  },
+  {
+    "id": "olosto-pub-motion-plan",
+    "videoId": "olosto-pub-motion",
+    "videoType": "problem-solution",
+    "summary": "Problem Solution: Montrer comment une solution répond à un problème.",
+    "narrative": "Présenter le problème. Montrer la frustration ou la conséquence. Présenter la solution et ses bénéfices. Terminer par un appel à l'action.",
+    "callToAction": "Confiez vos achats à OLOSTO",
+    "visualDirection": "Utiliser les assets fournis dans le workspace du projet.",
+    "scenes": [],
+    "createdAt": "2026-09-17T09:08:26.828Z",
+    "updatedAt": "2026-09-17T09:08:26.828Z"
+  },
+  {
+    "id": "olosto-premium-motion-20260917-plan",
+    "videoId": "olosto-premium-motion-20260917",
+    "videoType": "company-presentation",
+    "summary": "Company Presentation: Faire connaître l'entreprise et sa proposition de valeur.",
+    "narrative": "Présenter l'identité de l'entreprise. Expliquer son activité. Mettre en avant sa proposition de valeur.",
+    "callToAction": "Confiez vos achats à OLOSTO.",
+    "visualDirection": "Utiliser les assets fournis dans le workspace du projet.",
+    "scenes": [],
+    "createdAt": "2026-09-17T12:15:14.914Z",
+    "updatedAt": "2026-09-17T12:15:14.914Z"
+  },
+  {
+    "id": "olosto-premium-vertical-01-plan",
+    "videoId": "olosto-premium-vertical-01",
+    "videoType": "company-presentation",
+    "summary": "Company Presentation: Faire connaître l'entreprise et sa proposition de valeur.",
+    "narrative": "Présenter l'identité de l'entreprise. Expliquer son activité. Mettre en avant sa proposition de valeur.",
+    "callToAction": "Confiez vos achats à OLOSTO.",
+    "visualDirection": "Utiliser les assets fournis dans le workspace du projet.",
+    "scenes": [],
+    "createdAt": "2026-09-17T14:27:42.211Z",
+    "updatedAt": "2026-09-17T14:27:42.211Z"
   }
 ]

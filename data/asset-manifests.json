@@ -126,5 +126,439 @@
       }
     ],
     "updatedAt": "2026-09-16T14:26:27.140Z"
+  },
+  {
+    "videoId": "julessopha-nouvelle-collection",
+    "assets": [
+      {
+        "id": "322fb688-52ae-4b51-8b69-8922fbccb553",
+        "videoId": "julessopha-nouvelle-collection",
+        "name": "background.m4a",
+        "key": null,
+        "type": "audio",
+        "relativePath": "assets/background.m4a",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 521397,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-16T18:55:16.532Z",
+        "updatedAt": "2026-09-16T18:55:16.532Z"
+      },
+      {
+        "id": "d5a00a8a-835e-411e-bcdb-b66fd9ca425b",
+        "videoId": "julessopha-nouvelle-collection",
+        "name": "voice-over.mp3",
+        "key": null,
+        "type": "audio",
+        "relativePath": "assets/voice-over.mp3",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 329395,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-16T19:00:51.363Z",
+        "updatedAt": "2026-09-16T19:00:51.363Z"
+      }
+    ],
+    "updatedAt": "2026-09-16T19:00:51.363Z"
+  },
+  {
+    "videoId": "julessopha-nouvelle-collection-v2",
+    "assets": [
+      {
+        "id": "6271ca10-a974-4761-bcef-6b81366cf6e7",
+        "videoId": "julessopha-nouvelle-collection-v2",
+        "name": "background.mp3",
+        "key": null,
+        "type": "audio",
+        "relativePath": "assets/background.mp3",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 2039221,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-16T19:16:20.700Z",
+        "updatedAt": "2026-09-16T19:16:20.700Z"
+      },
+      {
+        "id": "a282c3ef-3b0c-4a46-8595-4c5623f46646",
+        "videoId": "julessopha-nouvelle-collection-v2",
+        "name": "voice-over.mp3",
+        "key": null,
+        "type": "audio",
+        "relativePath": "assets/voice-over.mp3",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 338591,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-16T19:16:41.370Z",
+        "updatedAt": "2026-09-16T19:16:41.370Z"
+      }
+    ],
+    "updatedAt": "2026-09-16T19:16:41.370Z"
+  },
+  {
+    "videoId": "olosto-ads-01",
+    "assets": [
+      {
+        "id": "24fe9baa-f606-43f2-a996-d2bf455ee93b",
+        "videoId": "olosto-ads-01",
+        "name": "logo-olosto",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/logo-olosto",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-16T19:41:36.097Z",
+        "updatedAt": "2026-09-16T19:41:36.097Z"
+      },
+      {
+        "id": "634ca190-5caf-4960-bf33-aedecad90923",
+        "videoId": "olosto-ads-01",
+        "name": "background-music",
+        "key": null,
+        "type": "audio",
+        "relativePath": "assets/background-music",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 2039221,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-16T19:43:46.329Z",
+        "updatedAt": "2026-09-16T19:43:46.329Z"
+      }
+    ],
+    "updatedAt": "2026-09-16T19:43:46.329Z"
+  },
+  {
+    "videoId": "olosto-ads-02",
+    "assets": [
+      {
+        "id": "1040a694-2656-4600-9a80-4a3ed9c4bb15",
+        "videoId": "olosto-ads-02",
+        "name": "logo-olosto",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/logo-olosto",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-17T07:53:05.650Z",
+        "updatedAt": "2026-09-17T07:53:05.650Z"
+      },
+      {
+        "id": "b6f2b5b1-8d3e-4a54-b6f3-5f83a33b6143",
+        "videoId": "olosto-ads-02",
+        "name": "background-music",
+        "key": null,
+        "type": "audio",
+        "relativePath": "assets/background-music",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 2039221,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-17T07:53:07.615Z",
+        "updatedAt": "2026-09-17T07:53:07.615Z"
+      }
+    ],
+    "updatedAt": "2026-09-17T07:53:07.615Z"
+  },
+  {
+    "videoId": "olosto-ad",
+    "assets": [
+      {
+        "id": "7b8371a3-4586-47dc-80a7-eeb180191e56",
+        "videoId": "olosto-ad",
+        "name": "olosto-logo",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/olosto-logo",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-17T08:41:55.780Z",
+        "updatedAt": "2026-09-17T08:41:55.780Z"
+      },
+      {
+        "id": "d05aae12-6e73-4f5f-a045-14d23899c9bf",
+        "videoId": "olosto-ad",
+        "name": "olosto-background-music",
+        "key": null,
+        "type": "audio",
+        "relativePath": "assets/olosto-background-music",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 2039221,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-17T08:42:00.445Z",
+        "updatedAt": "2026-09-17T08:42:00.445Z"
+      },
+      {
+        "id": "f83df8b2-495e-482f-8dbb-91828e9f0911",
+        "videoId": "olosto-ad",
+        "name": "olosto-logo.jpeg",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/olosto-logo.jpeg",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-17T08:51:33.485Z",
+        "updatedAt": "2026-09-17T08:51:33.485Z"
+      },
+      {
+        "id": "3777b94e-f43e-43a9-8e88-f721dbbb32d9",
+        "videoId": "olosto-ad",
+        "name": "olosto-background-music.mp3",
+        "key": null,
+        "type": "audio",
+        "relativePath": "assets/olosto-background-music.mp3",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 2039221,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-17T08:51:37.761Z",
+        "updatedAt": "2026-09-17T08:51:37.761Z"
+      }
+    ],
+    "updatedAt": "2026-09-17T08:51:37.761Z"
+  },
+  {
+    "videoId": "olosto-pub-motion",
+    "assets": [
+      {
+        "id": "6ebcee04-b4ce-4fdf-80a1-b1aa940e89ae",
+        "videoId": "olosto-pub-motion",
+        "name": "olosto-logo",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/olosto-logo",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-17T09:04:26.738Z",
+        "updatedAt": "2026-09-17T09:04:26.738Z"
+      },
+      {
+        "id": "3bc0ae5b-5ec2-4e90-b1f5-3c3cdb768f23",
+        "videoId": "olosto-pub-motion",
+        "name": "olosto-logo.jpeg",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/olosto-logo.jpeg",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-17T09:05:19.278Z",
+        "updatedAt": "2026-09-17T09:05:19.278Z"
+      },
+      {
+        "id": "b42ecf96-bc5e-40d5-99e7-7ea08d52390f",
+        "videoId": "olosto-pub-motion",
+        "name": "olosto-background.mp3",
+        "key": null,
+        "type": "audio",
+        "relativePath": "assets/olosto-background.mp3",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 2039221,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-17T09:05:21.986Z",
+        "updatedAt": "2026-09-17T09:05:21.986Z"
+      }
+    ],
+    "updatedAt": "2026-09-17T09:05:21.986Z"
+  },
+  {
+    "videoId": "olosto-gemini",
+    "assets": [
+      {
+        "id": "2b67746f-31ba-4296-98a9-e24c1fd1e8c1",
+        "videoId": "olosto-gemini",
+        "name": "logo",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/logo",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-17T09:31:59.030Z",
+        "updatedAt": "2026-09-17T09:31:59.030Z"
+      },
+      {
+        "id": "a436964d-c4c3-48e2-a8e0-68695a84ef23",
+        "videoId": "olosto-gemini",
+        "name": "background_music",
+        "key": "promotionalVisual",
+        "type": "audio",
+        "relativePath": "assets/background_music",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 2039221,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-17T09:31:59.246Z",
+        "updatedAt": "2026-09-17T09:31:59.246Z"
+      },
+      {
+        "id": "e6f3e7f9-92af-4a88-b064-f7854b003133",
+        "videoId": "olosto-gemini",
+        "name": "logo.jpeg",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/logo.jpeg",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-17T09:41:35.211Z",
+        "updatedAt": "2026-09-17T09:41:35.211Z"
+      }
+    ],
+    "updatedAt": "2026-09-17T09:41:35.211Z"
+  },
+  {
+    "videoId": "olosto-final",
+    "assets": [
+      {
+        "id": "b8579679-90fc-4c27-841e-a46c75091636",
+        "videoId": "olosto-final",
+        "name": "logo",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/logo",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-17T09:40:14.231Z",
+        "updatedAt": "2026-09-17T09:40:14.231Z"
+      },
+      {
+        "id": "2c2de22c-95db-4ec2-befe-3fb5e0c71afb",
+        "videoId": "olosto-final",
+        "name": "background_music",
+        "key": "promotionalVisual",
+        "type": "audio",
+        "relativePath": "assets/background_music",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 2039221,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-17T09:40:14.425Z",
+        "updatedAt": "2026-09-17T09:40:14.425Z"
+      }
+    ],
+    "updatedAt": "2026-09-17T09:40:14.425Z"
+  },
+  {
+    "videoId": "json-repair-validation-20260917-2",
+    "assets": [],
+    "updatedAt": "2026-09-17T12:07:25.171Z"
+  },
+  {
+    "videoId": "elevenlabs-api-test-20260917-v3",
+    "assets": [],
+    "updatedAt": "2026-09-17T12:07:54.199Z"
+  },
+  {
+    "videoId": "olosto-premium-motion-20260917",
+    "assets": [
+      {
+        "id": "76e345b3-808f-4e65-8625-2ed70a5b2ab6",
+        "videoId": "olosto-premium-motion-20260917",
+        "name": "Logo officiel OLOSTO",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/Logo officiel OLOSTO",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-17T12:14:27.244Z",
+        "updatedAt": "2026-09-17T12:14:27.244Z"
+      },
+      {
+        "id": "90497b23-58d9-4de0-90d2-591aeb61d472",
+        "videoId": "olosto-premium-motion-20260917",
+        "name": "Musique de fond OLOSTO",
+        "key": null,
+        "type": "audio",
+        "relativePath": "assets/Musique de fond OLOSTO",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 2039221,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-17T12:14:27.856Z",
+        "updatedAt": "2026-09-17T12:14:27.856Z"
+      },
+      {
+        "id": "23120488-0481-4bd7-b615-44dc0112c56e",
+        "videoId": "olosto-premium-motion-20260917",
+        "name": "logo.jpeg",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/logo.jpeg",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-17T12:42:02.815Z",
+        "updatedAt": "2026-09-17T12:42:02.815Z"
+      },
+      {
+        "id": "f79e595b-af3a-47a1-a61f-42328bb4f373",
+        "videoId": "olosto-premium-motion-20260917",
+        "name": "background.mp3",
+        "key": null,
+        "type": "audio",
+        "relativePath": "assets/background.mp3",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 2039221,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-17T12:42:02.916Z",
+        "updatedAt": "2026-09-17T12:42:02.916Z"
+      }
+    ],
+    "updatedAt": "2026-09-17T12:42:02.916Z"
+  },
+  {
+    "videoId": "olosto-premium-vertical-01",
+    "assets": [
+      {
+        "id": "9038aa19-f57d-47c2-9ba1-83df778f4d0e",
+        "videoId": "olosto-premium-vertical-01",
+        "name": "logo.jpeg",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/logo.jpeg",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-17T14:26:47.865Z",
+        "updatedAt": "2026-09-17T14:26:47.865Z"
+      },
+      {
+        "id": "2b0c1d6f-3045-46f9-a95a-4d9088046a0c",
+        "videoId": "olosto-premium-vertical-01",
+        "name": "background.mp3",
+        "key": null,
+        "type": "audio",
+        "relativePath": "assets/background.mp3",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 2039221,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-17T14:26:48.045Z",
+        "updatedAt": "2026-09-17T14:26:48.045Z"
+      }
+    ],
+    "updatedAt": "2026-09-17T14:26:48.045Z"
   }
 ]

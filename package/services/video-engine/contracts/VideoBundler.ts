@@ -1,5 +1,6 @@
 export interface VideoBundleInput {
   entryPoint: string;
+  publicDir: string;
 }
 
 export interface VideoBundle {

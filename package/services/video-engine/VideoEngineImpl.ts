@@ -1,4 +1,5 @@
 import { randomUUID } from "node:crypto";
+import { access, cp, mkdir, rm } from "node:fs/promises";
 import { join } from "node:path";
 import type { Render } from "../../../core/models/Render.js";
 import type { RenderVideoInput } from "./models/RenderVideoInput.js";
@@ -20,7 +21,12 @@ export class VideoEngineImpl implements VideoEngine {
   }
 
   public async execute(videoId: string): Promise<void> {
-    await this.bundleWorkspace(videoId);
+    const bundle = await this.bundleWorkspace(videoId);
+    try {
+      return;
+    } finally {
+      await bundle.cleanup();
+    }
   }
 
   public async render(input: RenderVideoInput): Promise<Render> {
@@ -28,8 +34,12 @@ export class VideoEngineImpl implements VideoEngine {
     const startedAt = new Date();
 
     try {
-      const { serveUrl } = await this.bundleWorkspace(input.videoId);
-      await this.videoRenderer.render(input, { serveUrl });
+      const bundle = await this.bundleWorkspace(input.videoId);
+      try {
+        await this.videoRenderer.render(input, { serveUrl: bundle.serveUrl });
+      } finally {
+        await bundle.cleanup();
+      }
 
       return {
         id: renderId,
@@ -55,13 +65,66 @@ export class VideoEngineImpl implements VideoEngine {
 
   private async bundleWorkspace(
     videoId: string,
-  ): Promise<{ serveUrl: string }> {
+  ): Promise<{ serveUrl: string; cleanup: () => Promise<void> }> {
     const workspace = await this.workspaceManager.get(videoId);
-    const entryPoint = join(workspace.path, "composition", "MainVideo.tsx");
-    return this.videoBundler.bundle({ entryPoint });
+    const publicDir = join(
+      workspace.path,
+      ".render-public",
+      randomUUID(),
+    );
+    await this.preparePublicDirectory(workspace.path, publicDir);
+    try {
+      const entryPoint = join(workspace.path, "composition", "MainVideo.tsx");
+      const bundle = await this.videoBundler.bundle({ entryPoint, publicDir });
+      return {
+        ...bundle,
+        cleanup: () => rm(publicDir, { recursive: true, force: true }),
+      };
+    } catch (error) {
+      await rm(publicDir, { recursive: true, force: true });
+      throw error;
+    }
+  }
+
+  private async preparePublicDirectory(
+    workspacePath: string,
+    publicDir: string,
+  ): Promise<void> {
+    await mkdir(publicDir, { recursive: true });
+    await copyDirectoryIfPresent(
+      join(workspacePath, "assets"),
+      join(publicDir, "assets"),
+    );
+    await copyDirectoryIfPresent(
+      join(workspacePath, "audio"),
+      join(publicDir, "audio"),
+    );
   }
 }
 
 function toErrorMessage(error: unknown): string {
   return error instanceof Error ? error.message : String(error);
+}
+
+async function copyDirectoryIfPresent(
+  sourcePath: string,
+  targetPath: string,
+): Promise<void> {
+  try {
+    await access(sourcePath);
+  } catch (error) {
+    if (isFileNotFoundError(error)) {
+      return;
+    }
+    throw error;
+  }
+  await cp(sourcePath, targetPath, { recursive: true, force: true });
+}
+
+function isFileNotFoundError(error: unknown): error is NodeJS.ErrnoException {
+  return (
+    error instanceof Error &&
+    "code" in error &&
+    (error as NodeJS.ErrnoException).code === "ENOENT"
+  );
 }

@@ -20,6 +20,9 @@ import { CreateVideoPlanTool } from "./tools/CreateVideoPlanTool.js";
 import { ConfirmVideoProjectTool } from "./tools/ConfirmVideoProjectTool.js";
 import { GetVideoPlanTool } from "./tools/GetVideoPlanTool.js";
 import { GenerateVideoProjectTool } from "./tools/GenerateVideoProjectTool.js";
+import { GenerateVoiceOverTool } from "./tools/GenerateVoiceOverTool.js";
+import { GetVoiceOverTool } from "./tools/GetVoiceOverTool.js";
+import { CreateProductionPlanTool } from "./tools/CreateProductionPlanTool.js";
 
 interface McpTool {
   register(server: McpServer): void;
@@ -49,6 +52,9 @@ export class McpVideoServer {
     private readonly confirmVideoProjectTool: ConfirmVideoProjectTool,
     private readonly getVideoPlanTool: GetVideoPlanTool,
     private readonly generateVideoProjectTool: GenerateVideoProjectTool,
+    private readonly generateVoiceOverTool: GenerateVoiceOverTool,
+    private readonly getVoiceOverTool: GetVoiceOverTool,
+    private readonly createProductionPlanTool: CreateProductionPlanTool,
   ) {
     this.registerTools([
       inspectDirectoryTool,
@@ -71,6 +77,9 @@ export class McpVideoServer {
       confirmVideoProjectTool,
       getVideoPlanTool,
       generateVideoProjectTool,
+      generateVoiceOverTool,
+      getVoiceOverTool,
+      createProductionPlanTool,
     ]);
   }
 

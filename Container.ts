@@ -33,6 +33,9 @@ import { UpdateVideoRepositoryImpl } from "./package/data/repositories/UpdateVid
 import { AssetManifestRepositoryImpl } from "./package/data/repositories/AssetManifestRepositoryImpl.js";
 import { VideoBriefRepositoryImpl } from "./package/data/repositories/VideoBriefRepositoryImpl.js";
 import { VideoPlanRepositoryImpl } from "./package/data/repositories/VideoPlanRepositoryImpl.js";
+import { VoiceOverRepositoryImpl } from "./package/data/repositories/VoiceOverRepositoryImpl.js";
+import { AudioTimelineRepositoryImpl } from "./package/data/repositories/AudioTimelineRepositoryImpl.js";
+import { ProductionPlanRepositoryImpl } from "./package/data/repositories/ProductionPlanRepositoryImpl.js";
 import { McpVideoServer } from "./package/services/mcp/Server.js";
 import { WorkspaceFileService } from "./package/services/mcp/WorkspaceFileService.js";
 import { CreateDirectoryTool } from "./package/services/mcp/tools/CreateDirectoryTool.js";
@@ -55,6 +58,12 @@ import { CreateVideoPlanTool } from "./package/services/mcp/tools/CreateVideoPla
 import { ConfirmVideoProjectTool } from "./package/services/mcp/tools/ConfirmVideoProjectTool.js";
 import { GetVideoPlanTool } from "./package/services/mcp/tools/GetVideoPlanTool.js";
 import { GenerateVideoProjectTool } from "./package/services/mcp/tools/GenerateVideoProjectTool.js";
+import { GenerateVoiceOverUseCaseImpl } from "./package/domain/GenerateVoiceOverUseCaseImpl.js";
+import { GetVoiceOverUseCaseImpl } from "./package/domain/GetVoiceOverUseCaseImpl.js";
+import { CreateProductionPlanUseCaseImpl } from "./package/domain/CreateProductionPlanUseCaseImpl.js";
+import { GenerateVoiceOverTool } from "./package/services/mcp/tools/GenerateVoiceOverTool.js";
+import { GetVoiceOverTool } from "./package/services/mcp/tools/GetVoiceOverTool.js";
+import { CreateProductionPlanTool } from "./package/services/mcp/tools/CreateProductionPlanTool.js";
 import { RenderResultStore } from "./package/services/mcp/RenderResultStore.js";
 import { RenderOutputPathResolver } from "./package/services/mcp/RenderOutputPathResolver.js";
 import { WorkspaceExecutionService } from "./package/services/mcp/WorkspaceExecutionService.js";
@@ -67,6 +76,11 @@ import { AssetService } from "./package/services/asset/AssetService.js";
 import { VideoPlanningService } from "./package/services/video-planning/VideoPlanningService.js";
 import { VideoTypeCatalog } from "./package/services/video-type/VideoTypeCatalog.js";
 import { VideoValidationService } from "./package/services/validation/VideoValidationService.js";
+import { ElevenLabsClientImpl } from "./package/services/audio/voice/ElevenLabsClientImpl.js";
+import { VoiceServiceImpl } from "./package/services/audio/voice/VoiceServiceImpl.js";
+import { MusicServiceImpl } from "./package/services/audio/music/MusicServiceImpl.js";
+import { AudioTimelineServiceImpl } from "./package/services/audio/timeline/AudioTimelineServiceImpl.js";
+import { ProductionPlanServiceImpl } from "./package/services/audio/production/ProductionPlanServiceImpl.js";
 
 const projectRoot = fileURLToPath(new URL(".", import.meta.url));
 const workspaceRoot = join(
@@ -81,6 +95,9 @@ const renderStorePath = join(projectRoot, "data", "renders.json");
 const briefStorePath = join(projectRoot, "data", "video-briefs.json");
 const manifestStorePath = join(projectRoot, "data", "asset-manifests.json");
 const planStorePath = join(projectRoot, "data", "video-plans.json");
+const voiceOverStorePath = join(projectRoot, "data", "voice-overs.json");
+const audioTimelineStorePath = join(projectRoot, "data", "audio-timelines.json");
+const productionPlanStorePath = join(projectRoot, "data", "production-plans.json");
 const outputRoot = join(projectRoot, "output");
 
 export const container = createContainer({
@@ -92,6 +109,15 @@ export const container = createContainer({
   briefStorePath: asValue(briefStorePath),
   manifestStorePath: asValue(manifestStorePath),
   planStorePath: asValue(planStorePath),
+  voiceOverStorePath: asValue(voiceOverStorePath),
+  audioTimelineStorePath: asValue(audioTimelineStorePath),
+  productionPlanStorePath: asValue(productionPlanStorePath),
+  elevenLabsApiKey: asValue(process.env.ELEVENLABS_API_KEY),
+  elevenLabsClient: asClass(ElevenLabsClientImpl).singleton(),
+  voiceService: asClass(VoiceServiceImpl).singleton(),
+  musicService: asClass(MusicServiceImpl).singleton(),
+  audioTimelineService: asClass(AudioTimelineServiceImpl).singleton(),
+  productionPlanService: asClass(ProductionPlanServiceImpl).singleton(),
   outputRoot: asValue(outputRoot),
   localVideoStore: asClass(LocalVideoStore).singleton(),
   localVideoProjectStore: asClass(LocalVideoProjectStore).singleton(),
@@ -116,6 +142,9 @@ export const container = createContainer({
   videoBriefRepository: asClass(VideoBriefRepositoryImpl).singleton(),
   assetManifestRepository: asClass(AssetManifestRepositoryImpl).singleton(),
   videoPlanRepository: asClass(VideoPlanRepositoryImpl).singleton(),
+  voiceOverRepository: asClass(VoiceOverRepositoryImpl).singleton(),
+  audioTimelineRepository: asClass(AudioTimelineRepositoryImpl).singleton(),
+  productionPlanRepository: asClass(ProductionPlanRepositoryImpl).singleton(),
   videoTypeCatalog: asClass(VideoTypeCatalog).singleton(),
   assetService: asClass(AssetService).singleton(),
   videoValidationService: asClass(VideoValidationService).singleton(),
@@ -130,6 +159,9 @@ export const container = createContainer({
   confirmVideoProjectUseCase: asClass(ConfirmVideoProjectUseCaseImpl).singleton(),
   getVideoPlanUseCase: asClass(GetVideoPlanUseCaseImpl).singleton(),
   generateVideoProjectUseCase: asClass(GenerateVideoProjectUseCaseImpl).singleton(),
+  generateVoiceOverUseCase: asClass(GenerateVoiceOverUseCaseImpl).singleton(),
+  getVoiceOverUseCase: asClass(GetVoiceOverUseCaseImpl).singleton(),
+  createProductionPlanUseCase: asClass(CreateProductionPlanUseCaseImpl).singleton(),
   mcpServer: asFunction(
     () => new McpServer({ name: "video-saas", version: "1.0.0" }),
   ).singleton(),
@@ -154,5 +186,8 @@ export const container = createContainer({
   confirmVideoProjectTool: asClass(ConfirmVideoProjectTool).singleton(),
   getVideoPlanTool: asClass(GetVideoPlanTool).singleton(),
   generateVideoProjectTool: asClass(GenerateVideoProjectTool).singleton(),
+  generateVoiceOverTool: asClass(GenerateVoiceOverTool).singleton(),
+  getVoiceOverTool: asClass(GetVoiceOverTool).singleton(),
+  createProductionPlanTool: asClass(CreateProductionPlanTool).singleton(),
   mcpVideoServer: asClass(McpVideoServer).singleton(),
 });

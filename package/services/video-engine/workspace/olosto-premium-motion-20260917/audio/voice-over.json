@@ -1,0 +1,666 @@
+{
+  "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4",
+  "videoId": "olosto-premium-motion-20260917",
+  "provider": "elevenlabs",
+  "model": "eleven_multilingual_v2",
+  "voiceId": "pNInz6obpgDQGcFmaJgB",
+  "language": "fr",
+  "script": "Vous avez repéré le produit qu’il vous faut en Europe. Mais comment le faire parvenir jusqu’au Cameroun ? Avec OLOSTO, tout devient plus simple. Vous choisissez, vous commandez, puis OLOSTO prend le relais. Nous facilitons vos achats sur les sites e-commerce européens et suivons votre colis, étape après étape. De l’Europe au Cameroun, votre commande avance en toute simplicité. Vous achetez. OLOSTO facilite le reste. Acheter en Europe depuis le Cameroun, c’est plus simple avec OLOSTO. Confiez vos achats à OLOSTO.",
+  "audioPath": "audio/voice-over.mp3",
+  "durationMs": 41221,
+  "alignment": null,
+  "segments": [
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-1",
+      "text": "Vous",
+      "startMs": 100,
+      "endMs": 220,
+      "durationMs": 120,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-2",
+      "text": "avez",
+      "startMs": 280,
+      "endMs": 420,
+      "durationMs": 140,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-3",
+      "text": "repéré",
+      "startMs": 460,
+      "endMs": 920,
+      "durationMs": 460,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-4",
+      "text": "le",
+      "startMs": 960,
+      "endMs": 1060,
+      "durationMs": 100,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-5",
+      "text": "produit",
+      "startMs": 1100,
+      "endMs": 1520,
+      "durationMs": 420,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-6",
+      "text": "qu'il",
+      "startMs": 1560,
+      "endMs": 1740,
+      "durationMs": 180,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-7",
+      "text": "vous",
+      "startMs": 1780,
+      "endMs": 1940,
+      "durationMs": 160,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-8",
+      "text": "faut",
+      "startMs": 2040,
+      "endMs": 2360,
+      "durationMs": 320,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-9",
+      "text": "en",
+      "startMs": 2440,
+      "endMs": 2560,
+      "durationMs": 120,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-10",
+      "text": "Europe.",
+      "startMs": 2640,
+      "endMs": 3100,
+      "durationMs": 460,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-11",
+      "text": "Mais",
+      "startMs": 3600,
+      "endMs": 3720,
+      "durationMs": 120,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-12",
+      "text": "comment",
+      "startMs": 3760,
+      "endMs": 4040,
+      "durationMs": 280,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-13",
+      "text": "le",
+      "startMs": 4100,
+      "endMs": 4200,
+      "durationMs": 100,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-14",
+      "text": "faire",
+      "startMs": 4260,
+      "endMs": 4460,
+      "durationMs": 200,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-15",
+      "text": "parvenir",
+      "startMs": 4520,
+      "endMs": 5300,
+      "durationMs": 780,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-16",
+      "text": "jusqu'au",
+      "startMs": 5640,
+      "endMs": 6040,
+      "durationMs": 400,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-17",
+      "text": "Cameroun",
+      "startMs": 6160,
+      "endMs": 6780,
+      "durationMs": 620,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-18",
+      "text": "?",
+      "startMs": 7360,
+      "endMs": 7360,
+      "durationMs": 0,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-19",
+      "text": "Avec",
+      "startMs": 7480,
+      "endMs": 7740,
+      "durationMs": 260,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-20",
+      "text": "Holosto,",
+      "startMs": 7780,
+      "endMs": 8480,
+      "durationMs": 700,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-21",
+      "text": "tout",
+      "startMs": 8700,
+      "endMs": 8800,
+      "durationMs": 100,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-22",
+      "text": "devient",
+      "startMs": 8860,
+      "endMs": 9200,
+      "durationMs": 340,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-23",
+      "text": "plus",
+      "startMs": 9240,
+      "endMs": 9440,
+      "durationMs": 200,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-24",
+      "text": "simple.",
+      "startMs": 9520,
+      "endMs": 10080,
+      "durationMs": 560,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-25",
+      "text": "Vous",
+      "startMs": 10420,
+      "endMs": 10540,
+      "durationMs": 120,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-26",
+      "text": "choisissez,",
+      "startMs": 10580,
+      "endMs": 11240,
+      "durationMs": 660,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-27",
+      "text": "vous",
+      "startMs": 11360,
+      "endMs": 11480,
+      "durationMs": 120,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-28",
+      "text": "commandez,",
+      "startMs": 11540,
+      "endMs": 12160,
+      "durationMs": 620,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-29",
+      "text": "puis",
+      "startMs": 12580,
+      "endMs": 12960,
+      "durationMs": 380,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-30",
+      "text": "Holosto",
+      "startMs": 13000,
+      "endMs": 13640,
+      "durationMs": 640,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-31",
+      "text": "prend",
+      "startMs": 13700,
+      "endMs": 13920,
+      "durationMs": 220,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-32",
+      "text": "le",
+      "startMs": 13980,
+      "endMs": 14080,
+      "durationMs": 100,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-33",
+      "text": "relais.",
+      "startMs": 14140,
+      "endMs": 14600,
+      "durationMs": 460,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-34",
+      "text": "Nous",
+      "startMs": 15200,
+      "endMs": 15300,
+      "durationMs": 100,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-35",
+      "text": "facilitons",
+      "startMs": 15360,
+      "endMs": 15960,
+      "durationMs": 600,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-36",
+      "text": "vos",
+      "startMs": 16000,
+      "endMs": 16180,
+      "durationMs": 180,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-37",
+      "text": "achats",
+      "startMs": 16280,
+      "endMs": 16840,
+      "durationMs": 560,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-38",
+      "text": "sur",
+      "startMs": 16940,
+      "endMs": 17100,
+      "durationMs": 160,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-39",
+      "text": "les",
+      "startMs": 17140,
+      "endMs": 17280,
+      "durationMs": 140,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-40",
+      "text": "sites",
+      "startMs": 17360,
+      "endMs": 17640,
+      "durationMs": 280,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-41",
+      "text": "e-commerce",
+      "startMs": 17700,
+      "endMs": 18280,
+      "durationMs": 580,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-42",
+      "text": "européens",
+      "startMs": 18340,
+      "endMs": 19360,
+      "durationMs": 1020,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-43",
+      "text": "et",
+      "startMs": 19440,
+      "endMs": 19560,
+      "durationMs": 120,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-44",
+      "text": "suivons",
+      "startMs": 19620,
+      "endMs": 20040,
+      "durationMs": 420,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-45",
+      "text": "votre",
+      "startMs": 20100,
+      "endMs": 20360,
+      "durationMs": 260,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-46",
+      "text": "colis",
+      "startMs": 20420,
+      "endMs": 21040,
+      "durationMs": 620,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-47",
+      "text": "étape",
+      "startMs": 21160,
+      "endMs": 21660,
+      "durationMs": 500,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-48",
+      "text": "après",
+      "startMs": 21780,
+      "endMs": 22180,
+      "durationMs": 400,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-49",
+      "text": "étape.",
+      "startMs": 22260,
+      "endMs": 22820,
+      "durationMs": 560,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-50",
+      "text": "De",
+      "startMs": 23640,
+      "endMs": 23720,
+      "durationMs": 80,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-51",
+      "text": "l'Europe",
+      "startMs": 23760,
+      "endMs": 24140,
+      "durationMs": 380,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-52",
+      "text": "au",
+      "startMs": 24180,
+      "endMs": 24260,
+      "durationMs": 80,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-53",
+      "text": "Cameroun,",
+      "startMs": 24320,
+      "endMs": 24900,
+      "durationMs": 580,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-54",
+      "text": "votre",
+      "startMs": 25480,
+      "endMs": 25740,
+      "durationMs": 260,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-55",
+      "text": "commande",
+      "startMs": 25780,
+      "endMs": 26060,
+      "durationMs": 280,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-56",
+      "text": "avance",
+      "startMs": 26160,
+      "endMs": 26640,
+      "durationMs": 480,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-57",
+      "text": "en",
+      "startMs": 26740,
+      "endMs": 26820,
+      "durationMs": 80,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-58",
+      "text": "toute",
+      "startMs": 26980,
+      "endMs": 27160,
+      "durationMs": 180,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-59",
+      "text": "simplicité.",
+      "startMs": 27220,
+      "endMs": 27980,
+      "durationMs": 760,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-60",
+      "text": "Vous",
+      "startMs": 28740,
+      "endMs": 28900,
+      "durationMs": 160,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-61",
+      "text": "achetez.",
+      "startMs": 28960,
+      "endMs": 29320,
+      "durationMs": 360,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-62",
+      "text": "Holosto",
+      "startMs": 30160,
+      "endMs": 30720,
+      "durationMs": 560,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-63",
+      "text": "facilite",
+      "startMs": 30800,
+      "endMs": 31280,
+      "durationMs": 480,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-64",
+      "text": "le",
+      "startMs": 31340,
+      "endMs": 31420,
+      "durationMs": 80,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-65",
+      "text": "reste.",
+      "startMs": 31480,
+      "endMs": 31940,
+      "durationMs": 460,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-66",
+      "text": "Acheter",
+      "startMs": 32720,
+      "endMs": 33040,
+      "durationMs": 320,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-67",
+      "text": "en",
+      "startMs": 33100,
+      "endMs": 33220,
+      "durationMs": 120,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-68",
+      "text": "Europe",
+      "startMs": 33300,
+      "endMs": 33880,
+      "durationMs": 580,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-69",
+      "text": "depuis",
+      "startMs": 33960,
+      "endMs": 34220,
+      "durationMs": 260,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-70",
+      "text": "le",
+      "startMs": 34280,
+      "endMs": 34360,
+      "durationMs": 80,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-71",
+      "text": "Cameroun,",
+      "startMs": 34400,
+      "endMs": 35000,
+      "durationMs": 600,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-72",
+      "text": "c'est",
+      "startMs": 35780,
+      "endMs": 35920,
+      "durationMs": 140,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-73",
+      "text": "plus",
+      "startMs": 35960,
+      "endMs": 36140,
+      "durationMs": 180,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-74",
+      "text": "simple",
+      "startMs": 36240,
+      "endMs": 36680,
+      "durationMs": 440,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-75",
+      "text": "avec",
+      "startMs": 36780,
+      "endMs": 37040,
+      "durationMs": 260,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-76",
+      "text": "Holosto.",
+      "startMs": 37060,
+      "endMs": 37780,
+      "durationMs": 720,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-77",
+      "text": "Confiez",
+      "startMs": 38620,
+      "endMs": 39080,
+      "durationMs": 460,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-78",
+      "text": "vos",
+      "startMs": 39120,
+      "endMs": 39280,
+      "durationMs": 160,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-79",
+      "text": "achats",
+      "startMs": 39360,
+      "endMs": 39780,
+      "durationMs": 420,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-80",
+      "text": "à",
+      "startMs": 39900,
+      "endMs": 40060,
+      "durationMs": 160,
+      "sceneId": null
+    },
+    {
+      "id": "45d28bc1-c299-4106-b28e-bbe6c7a47ab4-word-81",
+      "text": "Holosto.",
+      "startMs": 40100,
+      "endMs": 40860,
+      "durationMs": 760,
+      "sceneId": null
+    }
+  ],
+  "generationFingerprint": "5c0bac46505b7226389e28b990653a6a4ba9fb06dce8ff402b99bc8ddd4e9dc9",
+  "status": "generated",
+  "createdAt": "2026-09-17T12:14:46.361Z",
+  "updatedAt": "2026-09-17T14:05:32.171Z"
+}

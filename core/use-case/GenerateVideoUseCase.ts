@@ -4,6 +4,7 @@ export interface GenerateVideoInput {
   videoId: string;
   compositionId: string;
   outputPath: string;
+  inputProps?: Record<string, unknown>;
 }
 
 export interface GenerateVideoService {

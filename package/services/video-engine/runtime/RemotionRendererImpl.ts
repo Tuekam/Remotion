@@ -11,14 +11,19 @@ export class RemotionRendererImpl implements VideoRenderer {
     const composition = await selectComposition({
       serveUrl: bundle.serveUrl,
       id: input.compositionId,
+      inputProps: input.inputProps,
     });
 
-    await renderMedia({
+    const renderOptions: Parameters<typeof renderMedia>[0] = {
       serveUrl: bundle.serveUrl,
       composition,
       codec: "h264",
       outputLocation: input.outputPath,
       overwrite: true,
-    });
+    };
+    if (input.inputProps) {
+      Object.assign(renderOptions, { inputProps: input.inputProps });
+    }
+    await renderMedia(renderOptions);
   }
 }

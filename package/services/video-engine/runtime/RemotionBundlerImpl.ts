@@ -9,6 +9,7 @@ export class RemotionBundlerImpl implements VideoBundler {
   public async bundle(input: VideoBundleInput): Promise<VideoBundle> {
     const serveUrl = await bundle({
       entryPoint: input.entryPoint,
+      publicDir: input.publicDir,
       onProgress: () => undefined,
     });
 
