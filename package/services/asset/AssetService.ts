@@ -1,4 +1,4 @@
-import { copyFile, mkdir, stat } from "node:fs/promises";
+import { copyFile, mkdir, stat, writeFile } from "node:fs/promises";
 import { basename } from "node:path";
 import { randomUUID } from "node:crypto";
 import type { Asset } from "../../../core/models/Asset.js";
@@ -17,8 +17,49 @@ export class AssetService {
     key: AssetKey | null,
     manifest: AssetManifest,
   ): Promise<{ asset: Asset; manifest: AssetManifest }> {
+    return this.registerFile(
+      videoId,
+      type,
+      name,
+      key,
+      manifest,
+      async (targetPath) => copyFile(sourcePath, targetPath),
+    );
+  }
+
+  public async registerContent(
+    videoId: string,
+    contentBase64: string,
+    type: Asset["type"],
+    name: string,
+    key: AssetKey | null,
+    manifest: AssetManifest,
+  ): Promise<{ asset: Asset; manifest: AssetManifest }> {
+    const content = decodeBase64(contentBase64);
+    return this.registerFile(
+      videoId,
+      type,
+      name,
+      key,
+      manifest,
+      async (targetPath) => writeFile(targetPath, content),
+    );
+  }
+
+  private async registerFile(
+    videoId: string,
+    type: Asset["type"],
+    name: string,
+    key: AssetKey | null,
+    manifest: AssetManifest,
+    writeAsset: (targetPath: string) => Promise<void>,
+  ): Promise<{ asset: Asset; manifest: AssetManifest }> {
     const fileName = basename(name);
-    if (fileName.length === 0 || fileName !== name) {
+    if (
+      fileName.length === 0 ||
+      fileName !== name ||
+      !/\.[A-Za-z0-9]+$/.test(fileName)
+    ) {
       throw new Error("Asset name must be a file name");
     }
 
@@ -30,7 +71,7 @@ export class AssetService {
     await mkdir(this.workspaceManager.resolvePath(videoId, "assets"), {
       recursive: true,
     });
-    await copyFile(sourcePath, targetPath);
+    await writeAsset(targetPath);
     const metadata = await stat(targetPath);
     const now = new Date();
     const asset: Asset = {
@@ -57,4 +98,12 @@ export class AssetService {
       },
     };
   }
+}
+
+function decodeBase64(contentBase64: string): Buffer {
+  const value = contentBase64.replace(/^data:[^;]+;base64,/, "");
+  if (value.length === 0 || !/^[A-Za-z0-9+/]*={0,2}$/.test(value)) {
+    throw new Error("Asset content must be valid Base64");
+  }
+  return Buffer.from(value, "base64");
 }

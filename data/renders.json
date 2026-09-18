@@ -448,5 +448,32 @@
     "startedAt": "2026-09-17T14:37:57.881Z",
     "completedAt": "2026-09-17T14:41:03.942Z",
     "error": null
+  },
+  {
+    "id": "4f079d07-90a6-4676-b263-1481d47baa1e",
+    "videoId": "olosto-service-presentation",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-18T09:43:49.692Z",
+    "completedAt": "2026-09-18T09:43:49.944Z",
+    "error": "ENOENT: no such file or directory, open 'C:\\Users\\PROMOPlus\\Documents\\video-saas\\package\\services\\video-engine\\workspace\\olosto-service-presentation\\composition\\MainVideo.tsx'"
+  },
+  {
+    "id": "fdc72fa4-6149-4f92-ba8d-d5b3487d2d8e",
+    "videoId": "olosto-service-presentation",
+    "status": "completed",
+    "outputPath": "C:\\Users\\PROMOPlus\\Documents\\video-saas\\output\\video01.mp4",
+    "startedAt": "2026-09-18T09:44:32.423Z",
+    "completedAt": "2026-09-18T09:50:13.862Z",
+    "error": null
+  },
+  {
+    "id": "467d2ebb-8c7a-4e46-9b02-f322922979da",
+    "videoId": "olosto-service-presentation",
+    "status": "failed",
+    "outputPath": null,
+    "startedAt": "2026-09-18T09:47:35.222Z",
+    "completedAt": "2026-09-18T09:52:19.646Z",
+    "error": "waiting for the page to render the React component at frame 432 failed: timeout 33000ms exceeded"
   }
 ]

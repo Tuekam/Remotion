@@ -75,6 +75,29 @@ Les assets `required` bloquent la validation s'ils manquent. Les assets
   exactement au fichier présent dans le workspace, extension comprise.
 - Pour les fichiers audio, utiliser le chemin réellement enregistré dans le
   workspace et le conserver identique dans `staticFile(...)`.
+- Si le fichier utilisateur provient d'un environnement différent du serveur
+  MCP, utiliser `register_asset` avec `contentBase64` plutôt que de transmettre
+  un chemin `/mnt/data/...` inaccessible au processus MCP.
+- Le champ `name` doit contenir le nom complet avec son extension réelle.
+- Ne jamais convertir `/mnt/data/...` en `C:\mnt\data\...` : ce chemin reste
+  inaccessible au serveur MCP Windows. Si le contenu Base64 n'est pas
+  disponible, demander à l'utilisateur un chemin Windows accessible au serveur.
+
+## Polices personnalisées
+
+Les polices partagées du moteur sont disponibles dans
+`package/services/video-engine/fonts/` et sont copiées automatiquement dans le
+staging Remotion sous `public/fonts/`.
+
+Polices installées :
+
+- `fonts/Nunito/Nunito-Regular.ttf`
+- `fonts/Nunito/Nunito-Bold.ttf`
+- `fonts/Nunito/Nunito-Italic.ttf`
+- `fonts/Luckybones/Luckybones-Bold.otf`
+
+Dans une composition, charger ces fichiers avec leurs extensions exactes via
+`staticFile(...)` et `@font-face`. Ne jamais omettre l'extension.
 
 Le plan doit rester une description de production lisible, jamais du code.
 

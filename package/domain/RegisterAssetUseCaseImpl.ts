@@ -17,14 +17,23 @@ export class RegisterAssetUseCaseImpl implements RegisterAssetUseCase {
     if (!manifest) {
       throw new Error(`Asset manifest not found: ${input.videoId}`);
     }
-    const result = await this.assetService.register(
-      input.videoId,
-      input.sourcePath,
-      input.type,
-      input.name,
-      input.key ?? null,
-      manifest,
-    );
+    const result = input.contentBase64
+      ? await this.assetService.registerContent(
+          input.videoId,
+          input.contentBase64,
+          input.type,
+          input.name,
+          input.key ?? null,
+          manifest,
+        )
+      : await this.assetService.register(
+          input.videoId,
+          input.sourcePath ?? "",
+          input.type,
+          input.name,
+          input.key ?? null,
+          manifest,
+        );
     await this.assetManifestRepository.update(result.manifest);
     return result.asset;
   }

@@ -520,6 +520,7 @@ Le rendu final reste dans `output/<nom-deterministe>.mp4`.
 [x] Mesurer la durée MP3 quand ElevenLabs ne fournit pas de durée
 [x] Réparer les anciennes voix via `get_voice_over`
 [x] Ajouter le fallback Speech-to-Text horodaté
+[x] Installer Nunito et Luckybones pour Remotion
 ```
 
 La première tâche de développement est de définir et revoir les contrats V3
@@ -570,3 +571,11 @@ Le fallback de synchronisation suit désormais cet ordre :
 1. alignement fourni par `with-timestamps` ;
 2. mots horodatés de `POST /v1/speech-to-text` sur le MP3 généré ;
 3. durée MP3 locale seule, sans calage détaillé.
+
+### Polices personnalisées
+
+Nunito et Luckybones sont installées dans
+`package/services/video-engine/fonts/`, avec leurs fichiers de licence. Le
+moteur les copie automatiquement dans `public/fonts/` pour chaque bundling
+Remotion. Les compositions doivent conserver les extensions exactes dans
+leurs déclarations `@font-face` et leurs appels `staticFile(...)`.

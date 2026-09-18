@@ -1,0 +1,610 @@
+{
+  "id": "29003167-3794-4d73-bbe9-42637dc3e7fb",
+  "videoId": "olosto-service-presentation",
+  "provider": "elevenlabs",
+  "model": "eleven_multilingual_v2",
+  "voiceId": "pNInz6obpgDQGcFmaJgB",
+  "language": "fr",
+  "script": "Vous avez trouvé le produit qu’il vous faut sur un site européen ? Depuis le Cameroun, l’achat peut vite devenir plus compliqué. Avec OLOSTO, vous choisissez simplement votre produit sur votre site européen préféré. OLOSTO facilite votre achat, puis votre commande est acheminée jusqu’au Cameroun. Du panier à l’acheminement, OLOSTO simplifie vos achats internationaux. Achetez en Europe. Nous nous occupons du reste. Vos achats européens, plus simples, avec OLOSTO. Confiez vos achats à OLOSTO.",
+  "audioPath": "audio/voice-over.mp3",
+  "durationMs": 31817,
+  "alignment": null,
+  "segments": [
+    {
+      "id": "olosto-service-presentation-word-1",
+      "text": "Vous",
+      "startMs": 100,
+      "endMs": 200,
+      "durationMs": 100,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-2",
+      "text": "avez",
+      "startMs": 260,
+      "endMs": 400,
+      "durationMs": 140,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-3",
+      "text": "trouvé",
+      "startMs": 440,
+      "endMs": 660,
+      "durationMs": 220,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-4",
+      "text": "le",
+      "startMs": 700,
+      "endMs": 800,
+      "durationMs": 100,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-5",
+      "text": "produit",
+      "startMs": 820,
+      "endMs": 1140,
+      "durationMs": 320,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-6",
+      "text": "qu'il",
+      "startMs": 1180,
+      "endMs": 1320,
+      "durationMs": 140,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-7",
+      "text": "vous",
+      "startMs": 1360,
+      "endMs": 1500,
+      "durationMs": 140,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-8",
+      "text": "faut",
+      "startMs": 1580,
+      "endMs": 1720,
+      "durationMs": 140,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-9",
+      "text": "sur",
+      "startMs": 1800,
+      "endMs": 1900,
+      "durationMs": 100,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-10",
+      "text": "un",
+      "startMs": 1940,
+      "endMs": 2040,
+      "durationMs": 100,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-11",
+      "text": "site",
+      "startMs": 2100,
+      "endMs": 2320,
+      "durationMs": 220,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-12",
+      "text": "européen",
+      "startMs": 2380,
+      "endMs": 2900,
+      "durationMs": 520,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-13",
+      "text": "?",
+      "startMs": 2920,
+      "endMs": 2920,
+      "durationMs": 0,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-14",
+      "text": "Depuis",
+      "startMs": 3720,
+      "endMs": 4000,
+      "durationMs": 280,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-15",
+      "text": "le",
+      "startMs": 4059,
+      "endMs": 4160,
+      "durationMs": 101,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-16",
+      "text": "Cameroun,",
+      "startMs": 4200,
+      "endMs": 4660,
+      "durationMs": 460,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-17",
+      "text": "l'achat",
+      "startMs": 5160,
+      "endMs": 5460,
+      "durationMs": 300,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-18",
+      "text": "peut",
+      "startMs": 5500,
+      "endMs": 5620,
+      "durationMs": 120,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-19",
+      "text": "vite",
+      "startMs": 5680,
+      "endMs": 5840,
+      "durationMs": 160,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-20",
+      "text": "devenir",
+      "startMs": 5880,
+      "endMs": 6220,
+      "durationMs": 340,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-21",
+      "text": "plus",
+      "startMs": 6320,
+      "endMs": 6440,
+      "durationMs": 120,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-22",
+      "text": "compliqué.",
+      "startMs": 6480,
+      "endMs": 6980,
+      "durationMs": 500,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-23",
+      "text": "Avec",
+      "startMs": 7620,
+      "endMs": 7820,
+      "durationMs": 200,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-24",
+      "text": "Holosto,",
+      "startMs": 7920,
+      "endMs": 8400,
+      "durationMs": 480,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-25",
+      "text": "vous",
+      "startMs": 8840,
+      "endMs": 8940,
+      "durationMs": 100,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-26",
+      "text": "choisissez",
+      "startMs": 8980,
+      "endMs": 9440,
+      "durationMs": 460,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-27",
+      "text": "simplement",
+      "startMs": 9500,
+      "endMs": 9960,
+      "durationMs": 460,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-28",
+      "text": "votre",
+      "startMs": 10000,
+      "endMs": 10260,
+      "durationMs": 260,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-29",
+      "text": "produit",
+      "startMs": 10300,
+      "endMs": 10620,
+      "durationMs": 320,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-30",
+      "text": "sur",
+      "startMs": 10680,
+      "endMs": 10820,
+      "durationMs": 140,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-31",
+      "text": "votre",
+      "startMs": 10860,
+      "endMs": 11140,
+      "durationMs": 280,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-32",
+      "text": "site",
+      "startMs": 11200,
+      "endMs": 11460,
+      "durationMs": 260,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-33",
+      "text": "européen",
+      "startMs": 11520,
+      "endMs": 11940,
+      "durationMs": 420,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-34",
+      "text": "préféré.",
+      "startMs": 11980,
+      "endMs": 12520,
+      "durationMs": 540,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-35",
+      "text": "Holosto",
+      "startMs": 13080,
+      "endMs": 13520,
+      "durationMs": 440,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-36",
+      "text": "facilite",
+      "startMs": 13580,
+      "endMs": 14100,
+      "durationMs": 520,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-37",
+      "text": "votre",
+      "startMs": 14140,
+      "endMs": 14360,
+      "durationMs": 220,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-38",
+      "text": "achat,",
+      "startMs": 14420,
+      "endMs": 14720,
+      "durationMs": 300,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-39",
+      "text": "puis",
+      "startMs": 15200,
+      "endMs": 15380,
+      "durationMs": 180,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-40",
+      "text": "votre",
+      "startMs": 15420,
+      "endMs": 15700,
+      "durationMs": 280,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-41",
+      "text": "commande",
+      "startMs": 15760,
+      "endMs": 16059,
+      "durationMs": 299,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-42",
+      "text": "est",
+      "startMs": 16100,
+      "endMs": 16219,
+      "durationMs": 119,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-43",
+      "text": "acheminée",
+      "startMs": 16300,
+      "endMs": 16760,
+      "durationMs": 460,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-44",
+      "text": "jusqu'au",
+      "startMs": 16820,
+      "endMs": 17160,
+      "durationMs": 340,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-45",
+      "text": "Cameroun.",
+      "startMs": 17220,
+      "endMs": 17820,
+      "durationMs": 600,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-46",
+      "text": "Du",
+      "startMs": 18320,
+      "endMs": 18420,
+      "durationMs": 100,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-47",
+      "text": "panier",
+      "startMs": 18480,
+      "endMs": 18760,
+      "durationMs": 280,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-48",
+      "text": "à",
+      "startMs": 18820,
+      "endMs": 18860,
+      "durationMs": 40,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-49",
+      "text": "l'acheminement,",
+      "startMs": 18900,
+      "endMs": 19520,
+      "durationMs": 620,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-50",
+      "text": "Holosto",
+      "startMs": 19760,
+      "endMs": 20380,
+      "durationMs": 620,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-51",
+      "text": "simplifie",
+      "startMs": 20440,
+      "endMs": 20960,
+      "durationMs": 520,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-52",
+      "text": "vos",
+      "startMs": 21000,
+      "endMs": 21160,
+      "durationMs": 160,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-53",
+      "text": "achats",
+      "startMs": 21240,
+      "endMs": 21480,
+      "durationMs": 240,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-54",
+      "text": "internationaux.",
+      "startMs": 21560,
+      "endMs": 22340,
+      "durationMs": 780,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-55",
+      "text": "Achetez",
+      "startMs": 22620,
+      "endMs": 22920,
+      "durationMs": 300,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-56",
+      "text": "en",
+      "startMs": 22980,
+      "endMs": 23060,
+      "durationMs": 80,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-57",
+      "text": "Europe.",
+      "startMs": 23120,
+      "endMs": 23540,
+      "durationMs": 420,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-58",
+      "text": "Nous",
+      "startMs": 23960,
+      "endMs": 24040,
+      "durationMs": 80,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-59",
+      "text": "nous",
+      "startMs": 24080,
+      "endMs": 24220,
+      "durationMs": 140,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-60",
+      "text": "occupons",
+      "startMs": 24280,
+      "endMs": 24640,
+      "durationMs": 360,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-61",
+      "text": "du",
+      "startMs": 24680,
+      "endMs": 24780,
+      "durationMs": 100,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-62",
+      "text": "reste.",
+      "startMs": 24820,
+      "endMs": 25220,
+      "durationMs": 400,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-63",
+      "text": "Vos",
+      "startMs": 25660,
+      "endMs": 25800,
+      "durationMs": 140,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-64",
+      "text": "achats",
+      "startMs": 25880,
+      "endMs": 26120,
+      "durationMs": 240,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-65",
+      "text": "européens",
+      "startMs": 26160,
+      "endMs": 26880,
+      "durationMs": 720,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-66",
+      "text": "plus",
+      "startMs": 26940,
+      "endMs": 27080,
+      "durationMs": 140,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-67",
+      "text": "simples",
+      "startMs": 27160,
+      "endMs": 27580,
+      "durationMs": 420,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-68",
+      "text": "avec",
+      "startMs": 28080,
+      "endMs": 28360,
+      "durationMs": 280,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-69",
+      "text": "Holosto.",
+      "startMs": 28400,
+      "endMs": 29020,
+      "durationMs": 620,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-70",
+      "text": "Confiez",
+      "startMs": 29500,
+      "endMs": 29960,
+      "durationMs": 460,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-71",
+      "text": "vos",
+      "startMs": 30000,
+      "endMs": 30140,
+      "durationMs": 140,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-72",
+      "text": "achats",
+      "startMs": 30220,
+      "endMs": 30660,
+      "durationMs": 440,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-73",
+      "text": "à",
+      "startMs": 30740,
+      "endMs": 30900,
+      "durationMs": 160,
+      "sceneId": null
+    },
+    {
+      "id": "olosto-service-presentation-word-74",
+      "text": "Holosto.",
+      "startMs": 30940,
+      "endMs": 31500,
+      "durationMs": 560,
+      "sceneId": null
+    }
+  ],
+  "generationFingerprint": "bd4786a0debbeb7efee993b6b3311d362099390dd5053f2830f9c46e1c7d680d",
+  "status": "generated",
+  "createdAt": "2026-09-18T09:42:12.609Z",
+  "updatedAt": "2026-09-18T09:42:12.609Z"
+}

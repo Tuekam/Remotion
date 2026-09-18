@@ -9,6 +9,14 @@ import type { VideoEngine } from "./contracts/VideoEngine.js";
 import type { VideoRenderer } from "./contracts/VideoRenderer.js";
 import type { WorkspaceManager } from "./contracts/WorkspaceManager.js";
 
+const sharedFontsPath = join(
+  process.cwd(),
+  "package",
+  "services",
+  "video-engine",
+  "fonts",
+);
+
 export class VideoEngineImpl implements VideoEngine {
   public constructor(
     private readonly workspaceManager: WorkspaceManager,
@@ -98,6 +106,10 @@ export class VideoEngineImpl implements VideoEngine {
     await copyDirectoryIfPresent(
       join(workspacePath, "audio"),
       join(publicDir, "audio"),
+    );
+    await copyDirectoryIfPresent(
+      sharedFontsPath,
+      join(publicDir, "fonts"),
     );
   }
 }
