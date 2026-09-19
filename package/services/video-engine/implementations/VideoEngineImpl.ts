@@ -8,8 +8,8 @@ import type {
   VideoBundler,
   VideoEngine,
   VideoRenderer,
-  WorkspaceManager,
 } from "../contracts/index.js";
+import type { WorkspaceManager } from "../../../../core/service/WorkspaceManager.js";
 
 const sharedFontsPath = join(
   process.cwd(),
@@ -19,28 +19,21 @@ const sharedFontsPath = join(
   "fonts",
 );
 
+/** Orchestre les opérations du composant VideoEngineImpl dans le flux applicatif. */
 export class VideoEngineImpl implements VideoEngine {
+/** Initialise l’instance avec les dépendances injectées nécessaires à son rôle. */
   public constructor(
     private readonly workspaceManager: WorkspaceManager,
     private readonly videoBundler: VideoBundler,
     private readonly videoRenderer: VideoRenderer,
   ) {}
 
-  /** Returns the isolated workspace used by a video project. */
+  /** Retourne l'espace de travail isole utilise par un projet video. */
   public getWorkspace(videoId: string): Promise<VideoWorkspace> {
     return this.workspaceManager.get(videoId);
   }
 
-  public async execute(videoId: string): Promise<void> {
-    const bundle = await this.bundleWorkspace(videoId);
-    try {
-      return;
-    } finally {
-      await bundle.cleanup();
-    }
-  }
-
-  /** Bundles and renders one composition while keeping its staging directory isolated. */
+  /** Regroupe et rend une composition en conservant un repertoire de staging isole. */
   public async render(input: RenderVideoInput): Promise<Render> {
     const renderId = randomUUID();
     const startedAt = new Date();
@@ -118,10 +111,12 @@ export class VideoEngineImpl implements VideoEngine {
   }
 }
 
+/** Extrait un message exploitable depuis une erreur inconnue pour les diagnostics de rendu. */
 function toErrorMessage(error: unknown): string {
   return error instanceof Error ? error.message : String(error);
 }
 
+/** Copie un répertoire vers le staging lorsqu’il existe, sans échouer pour une source absente. */
 async function copyDirectoryIfPresent(
   sourcePath: string,
   targetPath: string,
@@ -137,6 +132,7 @@ async function copyDirectoryIfPresent(
   await cp(sourcePath, targetPath, { recursive: true, force: true });
 }
 
+/** Identifie une erreur système signalant qu’un fichier ou répertoire n’existe pas. */
 function isFileNotFoundError(error: unknown): error is NodeJS.ErrnoException {
   return (
     error instanceof Error &&

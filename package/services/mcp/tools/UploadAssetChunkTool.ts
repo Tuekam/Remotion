@@ -27,13 +27,16 @@ interface UploadState {
   chunks: Map<number, string>;
 }
 
+/** Orchestre les opérations du composant UploadAssetChunkTool dans le flux applicatif. */
 export class UploadAssetChunkTool {
   private readonly uploads = new Map<string, UploadState>();
 
+/** Initialise l’instance avec les dépendances injectées nécessaires à son rôle. */
   public constructor(
     private readonly registerAssetUseCase: RegisterAssetUseCase,
   ) {}
 
+/** Enregistre les outils du composant auprès du serveur MCP fourni. */
   public register(server: McpServer): void {
     server.registerTool(
       "upload_asset_chunk",

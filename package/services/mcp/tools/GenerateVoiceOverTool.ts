@@ -2,11 +2,14 @@ import { z } from "zod";
 import type { McpServer } from "@modelcontextprotocol/server";
 import type { GenerateVoiceOverUseCase } from "../../../../core/use-case/GenerateVoiceOverUseCase.js";
 
+/** Orchestre les opérations du composant GenerateVoiceOverTool dans le flux applicatif. */
 export class GenerateVoiceOverTool {
+/** Initialise l’instance avec les dépendances injectées nécessaires à son rôle. */
   public constructor(
     private readonly generateVoiceOverUseCase: GenerateVoiceOverUseCase,
   ) {}
 
+/** Enregistre les outils du composant auprès du serveur MCP fourni. */
   public register(server: McpServer): void {
     server.registerTool(
       "generate_voice_over",

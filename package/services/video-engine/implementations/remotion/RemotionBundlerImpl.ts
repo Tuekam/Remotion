@@ -5,8 +5,9 @@ import type {
   VideoBundler,
 } from "../../contracts/VideoBundler.js";
 
+/** Orchestre les opérations du composant RemotionBundlerImpl dans le flux applicatif. */
 export class RemotionBundlerImpl implements VideoBundler {
-  /** Creates an isolated Remotion bundle from the prepared public directory. */
+  /** Cree un bundle Remotion isole a partir du repertoire public prepare. */
   public async bundle(input: VideoBundleInput): Promise<VideoBundle> {
     const serveUrl = await bundle({
       entryPoint: input.entryPoint,

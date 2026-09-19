@@ -1,5 +1,6 @@
 import type { VoiceOverAlignment } from "../../../../core/models/VoiceOver.js";
 
+/** Contrat des données ElevenLabsSynthesisRequest utilisé dans le domaine vidéo. */
 export interface ElevenLabsSynthesisRequest {
   voiceId: string;
   text: string;
@@ -15,22 +16,26 @@ export interface ElevenLabsSynthesisRequest {
   };
 }
 
+/** Contrat des données ElevenLabsSynthesisResult utilisé dans le domaine vidéo. */
 export interface ElevenLabsSynthesisResult {
   audio: Buffer;
   durationMs: number | null;
   alignment: VoiceOverAlignment | null;
 }
 
+/** Contrat des données ElevenLabsTranscriptionWord utilisé dans le domaine vidéo. */
 export interface ElevenLabsTranscriptionWord {
   text: string;
   startMs: number;
   endMs: number;
 }
 
+/** Contrat des données ElevenLabsTranscriptionResult utilisé dans le domaine vidéo. */
 export interface ElevenLabsTranscriptionResult {
   words: ElevenLabsTranscriptionWord[];
 }
 
+/** Contrat des données ElevenLabsClient utilisé dans le domaine vidéo. */
 export interface ElevenLabsClient {
   synthesize(
     request: ElevenLabsSynthesisRequest,

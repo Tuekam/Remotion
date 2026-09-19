@@ -41,9 +41,7 @@ Demande naturelle
     ↓
 Brief et validation V2
     ↓
-VideoPlan
-    ↓
-Script global
+Prompt agent et script global
     ↓
 ElevenLabs TTS avec timestamps
     ↓
@@ -247,7 +245,6 @@ Elle positionne la voix et la musique sur le même axe temporel et est comparée
 
 ```text
 ProductionPlan
-├── videoPlan
 ├── voicePlan
 ├── musicPlan
 ├── audioTimeline
@@ -491,6 +488,28 @@ Le rendu final reste dans `output/<nom-deterministe>.mp4`.
 
 ## 16. État actuel
 
+Le catalogue imposé des types vidéo a été supprimé. Le brief ne contient plus
+de champs métier prédéfinis : l'agent transmet un prompt libre décrivant la
+production attendue. La validation et la planification travaillent directement
+à partir de ce prompt et des assets, sans taxonomie serveur ni confirmation de
+type. Les outils MCP `list_video_types` et `get_video_requirements` ne sont
+plus exposés.
+
+Le nettoyage a également supprimé l'ancien flux CRUD `Video`, qui doublonnait
+le flux actuel basé sur `VideoBrief`, `AssetManifest`, `ProductionPlan` et
+`Render`. Les repositories, Use Cases et le stockage local
+associés à ce flux ont été retirés du composition root et du projet.
+
+Les artefacts générés (`*.js.map`, `*.d.ts.map`, `*.tsbuildinfo` et les
+fichiers Remotion temporaires) ne sont plus conservés dans le code source et
+sont ignorés par `.gitignore`.
+
+Les commentaires du code applicatif sont en français et doivent expliquer le
+rôle concret de chaque interface, classe, méthode ou fonction utilitaire :
+transformation réalisée, place dans le flux, données manipulées et invariants
+importants. Les commentaires génériques qui répètent uniquement le nom de la
+fonction sont interdits.
+
 ```text
 [x] Objectif V3 défini
 [x] ElevenLabs choisi
@@ -689,9 +708,9 @@ dépendance cyclique ou mélange deux responsabilités.
 Règle de placement confirmée : `core/` ne possède pas de dossier générique
 `contracts/`. Les contrats d'interface sont placés dans `core/repository/`,
 `core/use-case/` ou dans le dossier `contracts/` de leur couche technique.
-Les contrats audio sont dans `package/services/audio/contracts/`, ceux du
-moteur dans `package/services/video-engine/contracts/`, et le contrat partagé
-du workspace dans `package/services/contracts/`.
+Les contrats métier sont dans `core/`. Les contrats techniques conservés sont
+limités aux intégrations externes et au moteur vidéo. `WorkspaceManager` est
+dans `core/service/` car il est partagé par plusieurs couches.
 
 ### 17.4 Phases d'exécution
 
@@ -791,7 +810,7 @@ Le nettoyage sera considéré terminé lorsque :
 [ ] Tools MCP simplifiés
 [x] Fichiers inutiles supprimés
 [x] Documentation des fonctions publiques revue
-[ ] Typecheck et tests validés
+[x] Typecheck et tests validés
 ```
 
 La réorganisation du moteur vidéo est en cours : la séparation
@@ -805,12 +824,11 @@ La première tranche du refactor a été appliquée sans modifier le
 comportement métier :
 
 - les contrats des Use Cases sont dans `core/use-case/` ;
-- les contrats techniques audio sont dans
-  `package/services/audio/contracts/` ;
+- les services audio internes ne possèdent plus de contrats artificiels :
+les Use Cases injectent directement leurs implémentations ;
 - les contrats techniques du moteur vidéo sont dans
   `package/services/video-engine/contracts/` ;
-- le contrat partagé du workspace est dans
-  `package/services/contracts/` ;
+- le contrat partagé du workspace est dans `core/service/` ;
 - `RenderVideoInput` et `VideoWorkspace` sont maintenant des modèles partagés
   dans `core/models/` ;
 - les anciennes interfaces dupliquées dans `package/services/**/contracts/`
@@ -829,3 +847,48 @@ les interfaces techniques qui n'appartiennent pas au domaine partagé ont été
 ramenées dans leur couche, conformément à la règle de séparation validée.
 - le typecheck ne signale plus d'erreur dans les couches refactorisées ; les
   erreurs restantes sont limitées aux compositions de workspace existantes.
+
+### 17.8 Nettoyage et documentation réalisés
+
+- le modèle métier `VideoBrief` a été réduit à un `prompt` libre, les assets
+  associés et les métadonnées de cycle de vie ;
+- la validation ne recherche plus une liste statique de champs métier ;
+- `VideoValidationService` a été supprimé ; la validation minimale du prompt
+  est directement portée par `ValidateVideoProjectUseCaseImpl`, car elle ne
+  justifie plus un service séparé ;
+- le flux de planification vidéo intermédiaire a été supprimé : le prompt de
+  l'agent alimente directement la production ;
+- l'ancien CRUD `Video` et son stockage local ont été supprimés après
+  vérification de l'absence de références actives ;
+- les anciens types vidéo, le catalogue et les Tools MCP de découverte ont été
+  supprimés ;
+- les sourcemaps générées présentes dans les répertoires applicatifs ont été
+  supprimées et ajoutées aux exclusions Git ;
+- les interfaces, implémentations, méthodes publiques et utilitaires du code
+  applicatif ont reçu des commentaires TSDoc en français décrivant leur rôle
+  réel et leur utilisation dans le flux ;
+- le contrat `WorkspaceManager`, partagé par le domaine, les services MCP,
+  l'audio et le moteur vidéo, est maintenant centralisé dans
+  `core/service/WorkspaceManager.ts` ; le dossier technique
+  `package/services/contracts/` ne le contient plus ;
+- les interfaces restantes dans `core/repository/` représentent toutes un
+  accès persistant à un modèle métier (`VideoBrief`, `AssetManifest`,
+  `VoiceOver`, `AudioTimeline` ou `ProductionPlan`) ;
+- l'ancien contrat orphelin `DeleteVideoRepository` a été supprimé après
+  retrait du flux CRUD `Video` ;
+- les implémentations des repositories sont directement placées dans
+  `package/data/` ; seul `package/data/database/` reste dédié au stockage JSON
+  local, sans sous-dossier `package/data/repositories/` intermédiaire ;
+- dans `package/services/mcp/`, seul `Server.ts` reste à la racine ; les
+  services de workspace sont regroupés dans `workspace/` et les services de
+  rendu MCP dans `rendering/` ;
+- les relais `GenerateVideoService`, `VideoEngine.execute()` et les contrats
+  audio utilisés par une seule implémentation ont été supprimés ;
+- le client MCP stdio interne non utilisé a été supprimé ;
+- `pnpm.cmd run typecheck` et `git diff --check` passent après ces changements ;
+- les diagnostics VS Code ne signalent aucune erreur après le nettoyage ;
+- le fichier `AssetService.ts` reste dans
+  `package/services/asset/AssetService.ts` et n'a révélé aucune erreur lors
+  de la vérification globale ;
+- la validation finale du projet a été effectuée le 19 septembre 2026 avec
+  le typecheck TypeScript, les diagnostics VS Code et `git diff --check`.

@@ -1,5 +1,6 @@
 import type { VoiceOver } from "../models/VoiceOver.js";
 
+/** Contrat des données GenerateVoiceOverRequest utilisé dans le domaine vidéo. */
 export interface GenerateVoiceOverRequest {
   videoId: string;
   script: string;
@@ -16,6 +17,7 @@ export interface GenerateVoiceOverRequest {
   };
 }
 
+/** Contrat des données GenerateVoiceOverUseCase utilisé dans le domaine vidéo. */
 export interface GenerateVoiceOverUseCase {
   execute(input: GenerateVoiceOverRequest): Promise<VoiceOver>;
 }

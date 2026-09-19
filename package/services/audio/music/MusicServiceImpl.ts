@@ -1,16 +1,27 @@
 import { randomUUID } from "node:crypto";
 import { access } from "node:fs/promises";
 import type { Music } from "../../../../core/models/Music.js";
-import type {
-  MusicService,
-  PrepareMusicRequest,
-} from "../contracts/MusicService.js";
-import type { WorkspaceManager } from "../../contracts/WorkspaceManager.js";
+import type { WorkspaceManager } from "../../../../core/service/WorkspaceManager.js";
 
-export class MusicServiceImpl implements MusicService {
+export interface PrepareMusicRequest {
+  videoId: string;
+  assetId: string;
+  assetPath: string;
+  durationMs: number;
+  finalDurationMs: number;
+  volume?: number;
+  fadeInMs?: number;
+  fadeOutMs?: number;
+  loop?: boolean;
+  ducking?: Partial<Music["ducking"]>;
+}
+
+/** Orchestre les opérations du composant MusicServiceImpl dans le flux applicatif. */
+export class MusicServiceImpl {
+/** Initialise l’instance avec les dépendances injectées nécessaires à son rôle. */
   public constructor(private readonly workspaceManager: WorkspaceManager) {}
 
-  /** Builds the music track configuration for the requested final duration. */
+  /** Construit la configuration de la piste musicale pour la duree finale demandee. */
   public async prepare(request: PrepareMusicRequest): Promise<Music> {
     validateRequest(request);
     const path = this.workspaceManager.resolvePath(
@@ -49,6 +60,7 @@ export class MusicServiceImpl implements MusicService {
   }
 }
 
+/** Valide les paramètres métier requis avant de lancer le traitement audio demandé. */
 function validateRequest(request: PrepareMusicRequest): void {
   if (request.videoId.trim().length === 0) {
     throw new Error("Video ID must not be empty");
@@ -75,12 +87,14 @@ function validateRequest(request: PrepareMusicRequest): void {
   );
 }
 
+/** Vérifie qu’un volume audio reste dans la plage acceptée par le moteur. */
 function validateVolume(value: number, label: string): void {
   if (!Number.isFinite(value) || value < 0 || value > 1) {
     throw new Error(`${label} must be between 0 and 1`);
   }
 }
 
+/** Vérifie qu’un fichier audio existe avant de l’ajouter à la production. */
 async function assertFileExists(path: string): Promise<void> {
   try {
     await access(path);
@@ -92,6 +106,7 @@ async function assertFileExists(path: string): Promise<void> {
   }
 }
 
+/** Identifie une erreur système signalant qu’un fichier ou répertoire n’existe pas. */
 function isFileNotFoundError(error: unknown): error is NodeJS.ErrnoException {
   return (
     error instanceof Error &&

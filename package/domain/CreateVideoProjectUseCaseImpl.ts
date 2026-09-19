@@ -7,17 +7,20 @@ import type {
   CreateVideoProjectInput,
   CreateVideoProjectUseCase,
 } from "../../core/use-case/CreateVideoProjectUseCase.js";
-import type { WorkspaceManager } from "../services/contracts/WorkspaceManager.js";
+import type { WorkspaceManager } from "../../core/service/WorkspaceManager.js";
 
+/** Orchestre les opérations du composant CreateVideoProjectUseCaseImpl dans le flux applicatif. */
 export class CreateVideoProjectUseCaseImpl
   implements CreateVideoProjectUseCase
 {
+/** Initialise l’instance avec les dépendances injectées nécessaires à son rôle. */
   public constructor(
     private readonly workspaceManager: WorkspaceManager,
     private readonly videoBriefRepository: VideoBriefRepository,
     private readonly assetManifestRepository: AssetManifestRepository,
   ) {}
 
+/** Exécute le cas d’usage avec les données reçues et retourne son résultat. */
   public async execute(input: CreateVideoProjectInput): Promise<VideoBrief> {
     if (input.videoId.trim().length === 0) {
       throw new Error("Video id is required");
@@ -27,38 +30,9 @@ export class CreateVideoProjectUseCaseImpl
     const now = new Date();
     const brief: VideoBrief = {
       id: input.videoId,
-      type: null,
-      objective: null,
-      platform: null,
-      format: null,
-      durationInSeconds: null,
-      language: null,
-      product: null,
-      name: null,
-      description: null,
-      features: [],
-      service: null,
-      company: null,
-      activity: null,
-      valueProposition: null,
-      offer: null,
-      price: null,
-      callToAction: null,
-      targetAudience: null,
-      problem: null,
-      solution: null,
-      howItWorks: null,
-      client: null,
-      experience: null,
-      initialProblem: null,
-      result: null,
-      eventDate: null,
-      locationOrLink: null,
-      benefits: [],
-      brand: null,
+      prompt: null,
       assetIds: [],
       status: "incomplete",
-      typeConfirmed: false,
       createdAt: now,
       updatedAt: now,
     };

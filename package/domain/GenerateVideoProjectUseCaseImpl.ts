@@ -8,15 +8,18 @@ import type {
 import type { GenerateVideoInput } from "../../core/use-case/GenerateVideoUseCase.js";
 import type { GenerateVideoUseCase } from "../../core/use-case/GenerateVideoUseCase.js";
 
+/** Orchestre les opérations du composant GenerateVideoProjectUseCaseImpl dans le flux applicatif. */
 export class GenerateVideoProjectUseCaseImpl
   implements GenerateVideoProjectUseCase
 {
+/** Initialise l’instance avec les dépendances injectées nécessaires à son rôle. */
   public constructor(
     private readonly videoBriefRepository: VideoBriefRepository,
     private readonly productionPlanRepository: ProductionPlanRepository,
     private readonly generateVideoUseCase: GenerateVideoUseCase,
   ) {}
 
+/** Exécute le cas d’usage avec les données reçues et retourne son résultat. */
   public async execute(input: GenerateVideoProjectInput): Promise<Render> {
     const brief = await this.videoBriefRepository.getByVideoId(input.videoId);
     if (!brief) {

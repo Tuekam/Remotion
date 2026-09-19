@@ -22,13 +22,16 @@ interface ElevenLabsAlignment {
   char_durations_ms?: number[];
 }
 
+/** Orchestre les opérations du composant ElevenLabsClientImpl dans le flux applicatif. */
 export class ElevenLabsClientImpl implements ElevenLabsClient {
+/** Initialise l’instance avec les dépendances injectées nécessaires à son rôle. */
   public constructor(
     private readonly elevenLabsApiKey: string | undefined,
     private readonly elevenLabsApiBaseUrl = "https://api.elevenlabs.io",
     private readonly fetcher: typeof fetch = fetch,
   ) {}
 
+/** Réalise l’opération synthesize sur les données reçues et retourne le résultat attendu. */
   public async synthesize(
     request: ElevenLabsSynthesisRequest,
   ): Promise<ElevenLabsSynthesisResult> {
@@ -58,6 +61,7 @@ export class ElevenLabsClientImpl implements ElevenLabsClient {
     throw new Error("ElevenLabs synthesis failed", { cause: lastError });
   }
 
+/** Réalise l’opération transcribe sur les données reçues et retourne le résultat attendu. */
   public async transcribe(
     audio: Buffer,
     languageCode?: string,
@@ -148,6 +152,7 @@ export class ElevenLabsClientImpl implements ElevenLabsClient {
   }
 }
 
+/** Convertit l’alignement ElevenLabs en segments temporels utilisables par la voix off. */
 function mapAlignment(
   alignment: ElevenLabsAlignment | undefined,
 ): VoiceOverAlignment | null {
@@ -171,6 +176,7 @@ function mapAlignment(
   };
 }
 
+/** Retourne la durée couverte par l’alignement en prenant le dernier horodatage disponible. */
 function getAlignmentDuration(
   alignment: VoiceOverAlignment | null,
 ): number | null {

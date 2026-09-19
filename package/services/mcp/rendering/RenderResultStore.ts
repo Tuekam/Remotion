@@ -1,15 +1,18 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
-import type { Render } from "../../../core/models/Render.js";
+import type { Render } from "../../../../core/models/Render.js";
 
 type StoredRender = Omit<Render, "startedAt" | "completedAt"> & {
   startedAt: string | null;
   completedAt: string | null;
 };
 
+/** Orchestre les opérations du composant RenderResultStore dans le flux applicatif. */
 export class RenderResultStore {
+/** Initialise l’instance avec les dépendances injectées nécessaires à son rôle. */
   public constructor(private readonly renderStorePath: string) {}
 
+/** Réalise l’opération save sur les données reçues et retourne le résultat attendu. */
   public async save(render: Render): Promise<void> {
     const renders = await this.readAll();
     const index = renders.findIndex((item) => item.id === render.id);
@@ -21,6 +24,7 @@ export class RenderResultStore {
     await this.writeAll(renders);
   }
 
+/** Récupère la ressource demandée et signale son absence selon le contrat du service. */
   public async get(id: string): Promise<Render | null> {
     const renders = await this.readAll();
     return renders.find((render) => render.id === id) ?? null;
@@ -49,6 +53,7 @@ export class RenderResultStore {
   }
 }
 
+/** Identifie une erreur système signalant qu’un fichier ou répertoire n’existe pas. */
 function isFileNotFoundError(error: unknown): error is NodeJS.ErrnoException {
   return (
     error instanceof Error &&

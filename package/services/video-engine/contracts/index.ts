@@ -5,4 +5,3 @@ export type {
 } from "./VideoBundler.js";
 export type { VideoEngine } from "./VideoEngine.js";
 export type { VideoRenderer } from "./VideoRenderer.js";
-export type { WorkspaceManager } from "../../contracts/WorkspaceManager.js";

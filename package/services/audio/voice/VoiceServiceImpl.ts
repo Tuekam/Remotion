@@ -6,23 +6,22 @@ import type {
   ElevenLabsClient,
   ElevenLabsSynthesisRequest,
 } from "../contracts/ElevenLabsClient.js";
-import type {
-  GenerateVoiceOverRequest,
-  VoiceService,
-} from "../contracts/VoiceService.js";
-import type { WorkspaceManager } from "../../contracts/WorkspaceManager.js";
+import type { GenerateVoiceOverRequest } from "../../../../core/use-case/GenerateVoiceOverUseCase.js";
+import type { WorkspaceManager } from "../../../../core/service/WorkspaceManager.js";
 
 const VOICE_AUDIO_PATH = "audio/voice-over.mp3";
 const VOICE_METADATA_PATH = "audio/voice-over.json";
 
-export class VoiceServiceImpl implements VoiceService {
+/** Orchestre les opérations du composant VoiceServiceImpl dans le flux applicatif. */
+export class VoiceServiceImpl {
+/** Initialise l’instance avec les dépendances injectées nécessaires à son rôle. */
   public constructor(
     private readonly elevenLabsClient: ElevenLabsClient,
     private readonly voiceOverRepository: VoiceOverRepository,
     private readonly workspaceManager: WorkspaceManager,
   ) {}
 
-  /** Reuses or generates one validated voice-over for the video's global script. */
+  /** Reutilise ou genere une voix off validee pour le script global de la video. */
   public async generate(request: GenerateVoiceOverRequest): Promise<VoiceOver> {
     validateRequest(request);
 
@@ -119,6 +118,7 @@ export class VoiceServiceImpl implements VoiceService {
   }
 }
 
+/** Valide les paramètres métier requis avant de lancer le traitement audio demandé. */
 function validateRequest(request: GenerateVoiceOverRequest): void {
   if (request.videoId.trim().length === 0) {
     throw new Error("Video ID must not be empty");
@@ -134,6 +134,7 @@ function validateRequest(request: GenerateVoiceOverRequest): void {
   }
 }
 
+/** Construit une empreinte stable d’une demande de voix pour permettre la réutilisation du résultat. */
 function createFingerprint(request: GenerateVoiceOverRequest): string {
   return createHash("sha256")
     .update(
@@ -149,6 +150,7 @@ function createFingerprint(request: GenerateVoiceOverRequest): string {
     .digest("hex");
 }
 
+/** Teste l’existence d’un fichier sans propager l’erreur standard de fichier absent. */
 async function fileExists(path: string): Promise<boolean> {
   try {
     await access(path);
@@ -161,6 +163,7 @@ async function fileExists(path: string): Promise<boolean> {
   }
 }
 
+/** Identifie une erreur système signalant qu’un fichier ou répertoire n’existe pas. */
 function isFileNotFoundError(error: unknown): error is NodeJS.ErrnoException {
   return (
     error instanceof Error &&

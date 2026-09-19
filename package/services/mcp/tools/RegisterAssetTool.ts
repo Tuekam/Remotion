@@ -18,11 +18,14 @@ const assetKeys = [
   "program",
 ] as const;
 
+/** Orchestre les opérations du composant RegisterAssetTool dans le flux applicatif. */
 export class RegisterAssetTool {
+/** Initialise l’instance avec les dépendances injectées nécessaires à son rôle. */
   public constructor(
     private readonly registerAssetUseCase: RegisterAssetUseCase,
   ) {}
 
+/** Enregistre les outils du composant auprès du serveur MCP fourni. */
   public register(server: McpServer): void {
     server.registerTool(
       "register_asset",

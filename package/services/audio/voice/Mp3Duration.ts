@@ -1,4 +1,4 @@
-/** Measures an MP3 duration from MPEG audio frames without external binaries. */
+/** Calcule la durée d’un MP3 en millisecondes en parcourant ses trames MPEG. */
 export function measureMp3DurationMs(audio: Buffer): number | null {
   let offset = 0;
   if (audio.length >= 10 && audio.toString("ascii", 0, 3) === "ID3") {
@@ -27,6 +27,7 @@ interface Mp3Frame {
   sampleRate: number;
 }
 
+/** Lit les en-têtes d’une trame MP3 à un offset donné et retourne ses paramètres de décodage. */
 function readMp3Frame(audio: Buffer, offset: number): Mp3Frame | null {
   const header = audio.readUInt32BE(offset);
   if (((header & 0xffe00000) >>> 0) !== 0xffe00000) {
@@ -81,6 +82,7 @@ function readMp3Frame(audio: Buffer, offset: number): Mp3Frame | null {
   return { frameLength, samplesPerFrame, sampleRate };
 }
 
+/** Décode un entier sync-safe utilisé par les métadonnées ID3 du fichier MP3. */
 function syncSafeInteger(audio: Buffer, offset: number): number {
   return (
     ((audio[offset] ?? 0) & 0x7f) * 0x200000 +

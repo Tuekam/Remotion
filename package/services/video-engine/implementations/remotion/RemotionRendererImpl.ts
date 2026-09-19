@@ -3,8 +3,9 @@ import type { RenderVideoInput } from "../../../../../core/models/RenderVideoInp
 import type { VideoBundle } from "../../contracts/VideoBundler.js";
 import type { VideoRenderer } from "../../contracts/VideoRenderer.js";
 
+/** Orchestre les opérations du composant RemotionRendererImpl dans le flux applicatif. */
 export class RemotionRendererImpl implements VideoRenderer {
-  /** Selects the requested composition and renders it to the caller's output path. */
+  /** Selectionne la composition demandee et la rend vers le chemin de sortie fourni. */
   public async render(
     input: RenderVideoInput,
     bundle: VideoBundle,

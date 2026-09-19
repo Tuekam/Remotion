@@ -1,5 +1,4 @@
 import type { AudioTimeline } from "./AudioTimeline.js";
-import type { VideoPlan } from "./VideoPlan.js";
 
 export type ProductionPlanStatus =
   | "audio-pending"
@@ -9,10 +8,10 @@ export type ProductionPlanStatus =
   | "verification-failed"
   | "completed";
 
+/** Contrat des données ProductionPlan utilisé dans le domaine vidéo. */
 export interface ProductionPlan {
   id: string;
   videoId: string;
-  videoPlan: VideoPlan;
   voicePlan: string;
   musicPlan: string;
   audioTimeline: AudioTimeline;

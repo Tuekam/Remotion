@@ -6,6 +6,7 @@ export type VoiceOverStatus =
   | "validated"
   | "invalid";
 
+/** Contrat des données VoiceSegment utilisé dans le domaine vidéo. */
 export interface VoiceSegment {
   id: string;
   text: string;
@@ -15,17 +16,20 @@ export interface VoiceSegment {
   sceneId: string | null;
 }
 
+/** Contrat des données VoiceAlignmentCharacter utilisé dans le domaine vidéo. */
 export interface VoiceAlignmentCharacter {
   character: string;
   startMs: number;
   durationMs: number;
 }
 
+/** Contrat des données VoiceOverAlignment utilisé dans le domaine vidéo. */
 export interface VoiceOverAlignment {
   characters: VoiceAlignmentCharacter[];
   source: "provider" | "estimated";
 }
 
+/** Contrat des données VoiceOver utilisé dans le domaine vidéo. */
 export interface VoiceOver {
   id: string;
   videoId: string;

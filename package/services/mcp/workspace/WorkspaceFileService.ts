@@ -7,12 +7,15 @@ import {
   writeFile,
 } from "node:fs/promises";
 import { dirname } from "node:path";
-import type { WorkspaceManager } from "../contracts/WorkspaceManager.js";
-import type { WorkspaceEntry } from "./contracts/WorkspaceServices.js";
+import type { WorkspaceManager } from "../../../../core/service/WorkspaceManager.js";
+import type { WorkspaceEntry } from "../contracts/WorkspaceServices.js";
 
+/** Orchestre les opérations du composant WorkspaceFileService dans le flux applicatif. */
 export class WorkspaceFileService {
+/** Initialise l’instance avec les dépendances injectées nécessaires à son rôle. */
   public constructor(private readonly workspaceManager: WorkspaceManager) {}
 
+/** Réalise l’opération inspectDirectory sur les données reçues et retourne le résultat attendu. */
   public async inspectDirectory(
     videoId: string,
     relativePath = "",
@@ -25,6 +28,7 @@ export class WorkspaceFileService {
     }));
   }
 
+  /** Lit un tableau JSON depuis le chemin fourni; crée le fichier et son dossier avec un tableau vide s’ils manquent. */
   public read(videoId: string, relativePath: string): Promise<string> {
     return readFile(
       this.workspaceManager.resolvePath(videoId, relativePath),
@@ -32,6 +36,7 @@ export class WorkspaceFileService {
     );
   }
 
+  /** Sérialise un tableau de modèles persistés en JSON et l’écrit dans le fichier cible. */
   public async write(
     videoId: string,
     relativePath: string,
@@ -42,6 +47,7 @@ export class WorkspaceFileService {
     await writeFile(filePath, content, "utf8");
   }
 
+/** Met à jour la ressource métier existante à partir des données reçues. */
   public async update(
     videoId: string,
     relativePath: string,
@@ -55,6 +61,7 @@ export class WorkspaceFileService {
     await writeFile(filePath, content, "utf8");
   }
 
+/** Crée et persiste la ressource métier correspondant aux données reçues. */
   public async createDirectory(
     videoId: string,
     relativePath: string,
@@ -64,6 +71,7 @@ export class WorkspaceFileService {
     });
   }
 
+/** Supprime la ressource ciblée après validation de son identifiant. */
   public async delete(
     videoId: string,
     relativePath: string,
@@ -76,6 +84,7 @@ export class WorkspaceFileService {
     await rm(targetPath, { recursive: true, force: false });
   }
 
+/** Réalise l’opération inspectAsset sur les données reçues et retourne le résultat attendu. */
   public inspectAsset(videoId: string, relativePath: string) {
     return stat(this.workspaceManager.resolvePath(videoId, relativePath));
   }

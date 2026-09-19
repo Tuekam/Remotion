@@ -1,16 +1,19 @@
 import { z } from "zod";
 import type { McpServer } from "@modelcontextprotocol/server";
 import type { GenerateVideoProjectUseCase } from "../../../../core/use-case/GenerateVideoProjectUseCase.js";
-import { RenderResultStore } from "../RenderResultStore.js";
-import { RenderOutputPathResolver } from "../RenderOutputPathResolver.js";
+import { RenderResultStore } from "../rendering/RenderResultStore.js";
+import { RenderOutputPathResolver } from "../rendering/RenderOutputPathResolver.js";
 
+/** Orchestre les opérations du composant GenerateVideoProjectTool dans le flux applicatif. */
 export class GenerateVideoProjectTool {
+/** Initialise l’instance avec les dépendances injectées nécessaires à son rôle. */
   public constructor(
     private readonly generateVideoProjectUseCase: GenerateVideoProjectUseCase,
     private readonly renderResultStore: RenderResultStore,
     private readonly renderOutputPathResolver: RenderOutputPathResolver,
   ) {}
 
+/** Enregistre les outils du composant auprès du serveur MCP fourni. */
   public register(server: McpServer): void {
     server.registerTool(
       "generate_video_project",

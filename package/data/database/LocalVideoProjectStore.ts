@@ -4,7 +4,6 @@ import type { AssetManifest } from "../../../core/models/AssetManifest.js";
 import type { AudioTimeline } from "../../../core/models/AudioTimeline.js";
 import type { ProductionPlan } from "../../../core/models/ProductionPlan.js";
 import type { VideoBrief } from "../../../core/models/VideoBrief.js";
-import type { VideoPlan } from "../../../core/models/VideoPlan.js";
 import type { VoiceOver } from "../../../core/models/VoiceOver.js";
 
 type StoredVideoBrief = Omit<VideoBrief, "createdAt" | "updatedAt"> & {
@@ -22,11 +21,6 @@ type StoredAssetManifest = Omit<AssetManifest, "updatedAt" | "assets"> & {
   >;
 };
 
-type StoredVideoPlan = Omit<VideoPlan, "createdAt" | "updatedAt"> & {
-  createdAt: string;
-  updatedAt: string;
-};
-
 type StoredVoiceOver = Omit<VoiceOver, "createdAt" | "updatedAt"> & {
   createdAt: string;
   updatedAt: string;
@@ -42,16 +36,18 @@ type StoredProductionPlan = Omit<ProductionPlan, "createdAt" | "updatedAt"> & {
   updatedAt: string;
 };
 
+/** Orchestre les opérations du composant LocalVideoProjectStore dans le flux applicatif. */
 export class LocalVideoProjectStore {
+/** Initialise l’instance avec les dépendances injectées nécessaires à son rôle. */
   public constructor(
     private readonly briefStorePath: string,
     private readonly manifestStorePath: string,
-    private readonly planStorePath: string,
     private readonly voiceOverStorePath: string,
     private readonly audioTimelineStorePath: string,
     private readonly productionPlanStorePath: string,
   ) {}
 
+  /** Persiste un nouveau VideoBrief dans le fichier JSON dédié; refuse les doublons et retourne le brief fourni. */
   public async createBrief(brief: VideoBrief): Promise<VideoBrief> {
     const briefs = await this.read<StoredVideoBrief>(this.briefStorePath);
     if (briefs.some((item) => item.id === brief.id)) {
@@ -61,12 +57,14 @@ export class LocalVideoProjectStore {
     return brief;
   }
 
+  /** Charge le VideoBrief associé à un identifiant vidéo et restaure ses dates; retourne null si absent. */
   public async getBrief(videoId: string): Promise<VideoBrief | null> {
     const briefs = await this.read<StoredVideoBrief>(this.briefStorePath);
     const brief = briefs.find((item) => item.id === videoId);
     return brief ? hydrateBrief(brief) : null;
   }
 
+  /** Remplace le VideoBrief existant dans le stockage JSON après vérification de son existence. */
   public async updateBrief(brief: VideoBrief): Promise<VideoBrief> {
     const briefs = await this.read<StoredVideoBrief>(this.briefStorePath);
     const index = briefs.findIndex((item) => item.id === brief.id);
@@ -78,6 +76,7 @@ export class LocalVideoProjectStore {
     return brief;
   }
 
+  /** Persiste le manifeste d’assets d’une vidéo et interdit plusieurs manifestes pour le même videoId. */
   public async createManifest(manifest: AssetManifest): Promise<AssetManifest> {
     const manifests = await this.read<StoredAssetManifest>(this.manifestStorePath);
     if (manifests.some((item) => item.videoId === manifest.videoId)) {
@@ -90,12 +89,14 @@ export class LocalVideoProjectStore {
     return manifest;
   }
 
+  /** Charge le manifeste d’assets d’une vidéo et reconstruit les dates de chaque asset. */
   public async getManifest(videoId: string): Promise<AssetManifest | null> {
     const manifests = await this.read<StoredAssetManifest>(this.manifestStorePath);
     const manifest = manifests.find((item) => item.videoId === videoId);
     return manifest ? hydrateManifest(manifest) : null;
   }
 
+  /** Met à jour le manifeste d’assets existant en le sérialisant dans le fichier JSON. */
   public async updateManifest(
     manifest: AssetManifest,
   ): Promise<AssetManifest> {
@@ -111,32 +112,7 @@ export class LocalVideoProjectStore {
     return manifest;
   }
 
-  public async createPlan(plan: VideoPlan): Promise<VideoPlan> {
-    const plans = await this.read<StoredVideoPlan>(this.planStorePath);
-    if (plans.some((item) => item.videoId === plan.videoId)) {
-      throw new Error(`Video plan already exists: ${plan.videoId}`);
-    }
-    await this.write(this.planStorePath, [...plans, serializePlan(plan)]);
-    return plan;
-  }
-
-  public async getPlan(videoId: string): Promise<VideoPlan | null> {
-    const plans = await this.read<StoredVideoPlan>(this.planStorePath);
-    const plan = plans.find((item) => item.videoId === videoId);
-    return plan ? hydratePlan(plan) : null;
-  }
-
-  public async updatePlan(plan: VideoPlan): Promise<VideoPlan> {
-    const plans = await this.read<StoredVideoPlan>(this.planStorePath);
-    const index = plans.findIndex((item) => item.videoId === plan.videoId);
-    if (index === -1) {
-      throw new Error(`Video plan not found: ${plan.videoId}`);
-    }
-    plans[index] = serializePlan(plan);
-    await this.write(this.planStorePath, plans);
-    return plan;
-  }
-
+  /** Persiste la voix off d’une vidéo et garantit son unicité par videoId. */
   public async createVoiceOver(voiceOver: VoiceOver): Promise<VoiceOver> {
     const voiceOvers = await this.read<StoredVoiceOver>(this.voiceOverStorePath);
     if (voiceOvers.some((item) => item.videoId === voiceOver.videoId)) {
@@ -149,12 +125,14 @@ export class LocalVideoProjectStore {
     return voiceOver;
   }
 
+  /** Charge la voix off associée à une vidéo et restaure ses dates de création et de mise à jour. */
   public async getVoiceOver(videoId: string): Promise<VoiceOver | null> {
     const voiceOvers = await this.read<StoredVoiceOver>(this.voiceOverStorePath);
     const voiceOver = voiceOvers.find((item) => item.videoId === videoId);
     return voiceOver ? hydrateVoiceOver(voiceOver) : null;
   }
 
+  /** Met à jour la voix off persistée d’une vidéo après vérification de son existence. */
   public async updateVoiceOver(voiceOver: VoiceOver): Promise<VoiceOver> {
     const voiceOvers = await this.read<StoredVoiceOver>(this.voiceOverStorePath);
     const index = voiceOvers.findIndex(
@@ -168,6 +146,7 @@ export class LocalVideoProjectStore {
     return voiceOver;
   }
 
+  /** Persiste la timeline audio d’une vidéo et refuse les doublons de videoId. */
   public async createAudioTimeline(
     timeline: AudioTimeline,
   ): Promise<AudioTimeline> {
@@ -184,6 +163,7 @@ export class LocalVideoProjectStore {
     return timeline;
   }
 
+  /** Charge la timeline audio d’une vidéo en reconvertissant les dates JSON en objets Date. */
   public async getAudioTimeline(videoId: string): Promise<AudioTimeline | null> {
     const timelines = await this.read<StoredAudioTimeline>(
       this.audioTimelineStorePath,
@@ -192,6 +172,7 @@ export class LocalVideoProjectStore {
     return timeline ? hydrateAudioTimeline(timeline) : null;
   }
 
+  /** Remplace la timeline audio existante dans le fichier JSON de la vidéo. */
   public async updateAudioTimeline(
     timeline: AudioTimeline,
   ): Promise<AudioTimeline> {
@@ -209,6 +190,7 @@ export class LocalVideoProjectStore {
     return timeline;
   }
 
+  /** Persiste le plan de production audio d’une vidéo et en garantit l’unicité. */
   public async createProductionPlan(
     plan: ProductionPlan,
   ): Promise<ProductionPlan> {
@@ -225,6 +207,7 @@ export class LocalVideoProjectStore {
     return plan;
   }
 
+  /** Charge le plan de production d’une vidéo et restaure ses dates persistées. */
   public async getProductionPlan(
     videoId: string,
   ): Promise<ProductionPlan | null> {
@@ -235,6 +218,7 @@ export class LocalVideoProjectStore {
     return plan ? hydrateProductionPlan(plan) : null;
   }
 
+  /** Met à jour le plan de production existant dans le stockage JSON. */
   public async updateProductionPlan(
     plan: ProductionPlan,
   ): Promise<ProductionPlan> {
@@ -269,6 +253,7 @@ export class LocalVideoProjectStore {
   }
 }
 
+/** Convertit les données JSON persistées en VideoBrief en restaurant les instances Date. */
 function hydrateBrief(brief: StoredVideoBrief): VideoBrief {
   return {
     ...brief,
@@ -277,6 +262,7 @@ function hydrateBrief(brief: StoredVideoBrief): VideoBrief {
   };
 }
 
+/** Convertit un VideoBrief métier en représentation JSON avec des dates ISO. */
 function serializeBrief(brief: VideoBrief): StoredVideoBrief {
   return {
     ...brief,
@@ -285,6 +271,7 @@ function serializeBrief(brief: VideoBrief): StoredVideoBrief {
   };
 }
 
+/** Reconstruit un AssetManifest métier et les dates de chaque asset à partir du JSON. */
 function hydrateManifest(manifest: StoredAssetManifest): AssetManifest {
   return {
     ...manifest,
@@ -297,6 +284,7 @@ function hydrateManifest(manifest: StoredAssetManifest): AssetManifest {
   };
 }
 
+/** Prépare un AssetManifest pour la persistance en convertissant toutes les dates en chaînes ISO. */
 function serializeManifest(manifest: AssetManifest): StoredAssetManifest {
   return {
     ...manifest,
@@ -309,22 +297,7 @@ function serializeManifest(manifest: AssetManifest): StoredAssetManifest {
   };
 }
 
-function hydratePlan(plan: StoredVideoPlan): VideoPlan {
-  return {
-    ...plan,
-    createdAt: new Date(plan.createdAt),
-    updatedAt: new Date(plan.updatedAt),
-  };
-}
-
-function serializePlan(plan: VideoPlan): StoredVideoPlan {
-  return {
-    ...plan,
-    createdAt: plan.createdAt.toISOString(),
-    updatedAt: plan.updatedAt.toISOString(),
-  };
-}
-
+/** Reconstruit une VoiceOver métier depuis le JSON et restaure ses dates. */
 function hydrateVoiceOver(voiceOver: StoredVoiceOver): VoiceOver {
   return {
     ...voiceOver,
@@ -333,6 +306,7 @@ function hydrateVoiceOver(voiceOver: StoredVoiceOver): VoiceOver {
   };
 }
 
+/** Prépare une VoiceOver pour la persistance en convertissant ses dates en ISO. */
 function serializeVoiceOver(voiceOver: VoiceOver): StoredVoiceOver {
   return {
     ...voiceOver,
@@ -341,6 +315,7 @@ function serializeVoiceOver(voiceOver: VoiceOver): StoredVoiceOver {
   };
 }
 
+/** Reconstruit une AudioTimeline métier depuis le JSON et restaure ses dates. */
 function hydrateAudioTimeline(timeline: StoredAudioTimeline): AudioTimeline {
   return {
     ...timeline,
@@ -354,6 +329,7 @@ function hydrateAudioTimeline(timeline: StoredAudioTimeline): AudioTimeline {
   };
 }
 
+/** Prépare une AudioTimeline pour la persistance en convertissant ses dates en ISO. */
 function serializeAudioTimeline(
   timeline: AudioTimeline,
 ): StoredAudioTimeline {
@@ -369,6 +345,7 @@ function serializeAudioTimeline(
   };
 }
 
+/** Reconstruit un ProductionPlan métier depuis le JSON et restaure ses dates. */
 function hydrateProductionPlan(plan: StoredProductionPlan): ProductionPlan {
   return {
     ...plan,
@@ -382,6 +359,7 @@ function hydrateProductionPlan(plan: StoredProductionPlan): ProductionPlan {
   };
 }
 
+/** Prépare un ProductionPlan pour la persistance en convertissant ses dates en ISO. */
 function serializeProductionPlan(
   plan: ProductionPlan,
 ): StoredProductionPlan {
@@ -397,6 +375,7 @@ function serializeProductionPlan(
   };
 }
 
+/** Identifie une erreur système signalant qu’un fichier ou répertoire n’existe pas. */
 function isFileNotFoundError(error: unknown): error is NodeJS.ErrnoException {
   return (
     error instanceof Error &&

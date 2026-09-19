@@ -1,22 +1,19 @@
 import { randomUUID } from "node:crypto";
 import type { ProductionPlan } from "../../../../core/models/ProductionPlan.js";
 import type { ProductionPlanRepository } from "../../../../core/repository/ProductionPlanRepository.js";
-import type {
-  AudioTimelineService,
-  CreateAudioTimelineRequest,
-} from "../contracts/AudioTimelineService.js";
-import type {
-  CreateProductionPlanRequest,
-  ProductionPlanService,
-} from "../contracts/ProductionPlanService.js";
+import { AudioTimelineServiceImpl } from "../timeline/AudioTimelineServiceImpl.js";
+import type { CreateAudioTimelineRequest } from "../timeline/AudioTimelineServiceImpl.js";
+import type { CreateProductionPlanRequest } from "../../../../core/use-case/CreateProductionPlanUseCase.js";
 
-export class ProductionPlanServiceImpl implements ProductionPlanService {
+/** Orchestre les opérations du composant ProductionPlanServiceImpl dans le flux applicatif. */
+export class ProductionPlanServiceImpl {
+/** Initialise l’instance avec les dépendances injectées nécessaires à son rôle. */
   public constructor(
     private readonly productionPlanRepository: ProductionPlanRepository,
-    private readonly audioTimelineService: AudioTimelineService,
+    private readonly audioTimelineService: AudioTimelineServiceImpl,
   ) {}
 
-  /** Persists a production plan built from the validated video and audio inputs. */
+  /** Persiste un plan de production construit a partir des entrees video et audio validees. */
   public async create(
     request: CreateProductionPlanRequest,
   ): Promise<ProductionPlan> {
@@ -40,7 +37,6 @@ export class ProductionPlanServiceImpl implements ProductionPlanService {
     const plan: ProductionPlan = {
       id: existing?.id ?? randomUUID(),
       videoId: request.videoId,
-      videoPlan: request.videoPlan,
       voicePlan: buildVoicePlan(request.voiceOver),
       musicPlan: buildMusicPlan(request.musicTracks ?? []),
       audioTimeline: timeline,
@@ -56,12 +52,10 @@ export class ProductionPlanServiceImpl implements ProductionPlanService {
   }
 }
 
+/** Valide les paramètres métier requis avant de lancer le traitement audio demandé. */
 function validateRequest(request: CreateProductionPlanRequest): void {
   if (request.videoId.trim().length === 0) {
     throw new Error("Video ID must not be empty");
-  }
-  if (request.videoPlan.videoId !== request.videoId) {
-    throw new Error("Video plan must belong to the current video");
   }
   if (request.voiceOver.videoId !== request.videoId) {
     throw new Error("Voice-over must belong to the current video");
@@ -73,12 +67,14 @@ function validateRequest(request: CreateProductionPlanRequest): void {
   }
 }
 
+/** Construit la description de la piste voix à partir des segments de la voix off validée. */
 function buildVoicePlan(voiceOver: CreateProductionPlanRequest["voiceOver"]): string {
   return `Narration ${voiceOver.language}, voix ${voiceOver.voiceId}, durée réelle ${
     voiceOver.durationMs ?? 0
   } ms.`;
 }
 
+/** Construit la description de la piste musicale et de son ducking pour le plan audio. */
 function buildMusicPlan(
   musicTracks: CreateProductionPlanRequest["musicTracks"],
 ): string {

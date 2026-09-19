@@ -1,3 +1,4 @@
+/** Contrat des données MusicDucking utilisé dans le domaine vidéo. */
 export interface MusicDucking {
   enabled: boolean;
   volumeDuringVoice: number;
@@ -5,6 +6,7 @@ export interface MusicDucking {
   releaseMs: number;
 }
 
+/** Contrat des données Music utilisé dans le domaine vidéo. */
 export interface Music {
   id: string;
   videoId: string;

@@ -1,13 +1,25 @@
 import { randomUUID } from "node:crypto";
 import type { AudioTimeline } from "../../../../core/models/AudioTimeline.js";
-import type {
-  AudioTimelineResult,
-  AudioTimelineService,
-  CreateAudioTimelineRequest,
-} from "../contracts/AudioTimelineService.js";
+import type { Music } from "../../../../core/models/Music.js";
+import type { VoiceOver } from "../../../../core/models/VoiceOver.js";
 
-export class AudioTimelineServiceImpl implements AudioTimelineService {
-  /** Aligns voice and music tracks on the shared frame timeline. */
+export interface CreateAudioTimelineRequest {
+  videoId: string;
+  voiceOver: VoiceOver;
+  musicTracks?: Music[];
+  fps: number;
+  durationTargetMs?: number;
+}
+
+export interface AudioTimelineResult {
+  timeline: AudioTimeline;
+  voiceDurationInFrames: number;
+  finalDurationInFrames: number;
+}
+
+/** Orchestre les opérations du composant AudioTimelineServiceImpl dans le flux applicatif. */
+export class AudioTimelineServiceImpl {
+  /** Aligne les pistes voix et musique sur la timeline commune en images. */
   public create(request: CreateAudioTimelineRequest): AudioTimelineResult {
     validateRequest(request);
 
@@ -53,6 +65,7 @@ export class AudioTimelineServiceImpl implements AudioTimelineService {
   }
 }
 
+/** Convertit une durée en secondes en nombre entier d’images selon le FPS fourni. */
 export function secondsToFrames(seconds: number, fps: number): number {
   if (!Number.isFinite(seconds) || seconds < 0) {
     throw new Error("Seconds must be a non-negative finite number");
@@ -63,6 +76,7 @@ export function secondsToFrames(seconds: number, fps: number): number {
   return Math.round(seconds * fps);
 }
 
+/** Valide les paramètres métier requis avant de lancer le traitement audio demandé. */
 function validateRequest(request: CreateAudioTimelineRequest): void {
   if (request.videoId.trim().length === 0) {
     throw new Error("Video ID must not be empty");

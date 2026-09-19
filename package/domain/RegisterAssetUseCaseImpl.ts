@@ -6,12 +6,15 @@ import type {
 } from "../../core/use-case/RegisterAssetUseCase.js";
 import { AssetService } from "../services/asset/AssetService.js";
 
+/** Orchestre les opérations du composant RegisterAssetUseCaseImpl dans le flux applicatif. */
 export class RegisterAssetUseCaseImpl implements RegisterAssetUseCase {
+/** Initialise l’instance avec les dépendances injectées nécessaires à son rôle. */
   public constructor(
     private readonly assetService: AssetService,
     private readonly assetManifestRepository: AssetManifestRepository,
   ) {}
 
+/** Exécute le cas d’usage avec les données reçues et retourne son résultat. */
   public async execute(input: RegisterAssetInput): Promise<Asset> {
     const manifest = await this.assetManifestRepository.getByVideoId(input.videoId);
     if (!manifest) {

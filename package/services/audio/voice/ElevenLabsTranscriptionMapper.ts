@@ -11,7 +11,7 @@ interface ElevenLabsTranscriptionResponse {
   }>;
 }
 
-/** Keeps only valid word timestamps returned by the Speech-to-Text provider. */
+/** Transforme la réponse Speech-to-Text en mots horodatés utilisables pour synchroniser la voix. */
 export function mapTranscriptionResponse(
   payload: ElevenLabsTranscriptionResponse,
 ): ElevenLabsTranscriptionResult {

@@ -1,5 +1,6 @@
 export type RenderStatus = "pending" | "rendering" | "completed" | "failed";
 
+/** Contrat des données Render utilisé dans le domaine vidéo. */
 export interface Render {
   id: string;
   videoId: string;

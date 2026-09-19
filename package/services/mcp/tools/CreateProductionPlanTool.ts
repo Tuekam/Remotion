@@ -2,11 +2,14 @@ import { z } from "zod";
 import type { McpServer } from "@modelcontextprotocol/server";
 import type { CreateProductionPlanUseCase } from "../../../../core/use-case/CreateProductionPlanUseCase.js";
 
+/** Orchestre les opérations du composant CreateProductionPlanTool dans le flux applicatif. */
 export class CreateProductionPlanTool {
+/** Initialise l’instance avec les dépendances injectées nécessaires à son rôle. */
   public constructor(
     private readonly createProductionPlanUseCase: CreateProductionPlanUseCase,
   ) {}
 
+/** Enregistre les outils du composant auprès du serveur MCP fourni. */
   public register(server: McpServer): void {
     server.registerTool(
       "create_production_plan",
@@ -14,7 +17,6 @@ export class CreateProductionPlanTool {
         description: "Create the audiovisual production plan from video and audio data.",
         inputSchema: z.object({
           videoId: z.string().min(1),
-          videoPlan: z.any(),
           voiceOver: z.any(),
           musicTracks: z.array(z.any()).optional(),
           fps: z.number().positive(),
@@ -24,7 +26,6 @@ export class CreateProductionPlanTool {
       async (input) => {
         const request = {
           videoId: input.videoId,
-          videoPlan: input.videoPlan,
           voiceOver: input.voiceOver,
           fps: input.fps,
         };
