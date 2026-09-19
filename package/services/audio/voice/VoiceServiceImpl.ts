@@ -68,11 +68,16 @@ export class VoiceServiceImpl implements VoiceService {
 
     const now = new Date();
     let segments: VoiceOver["segments"] = [];
-    if (!result.alignment && result.durationMs && this.elevenLabsClient.transcribe) {
+    if (!result.alignment) {
       const transcription = await this.elevenLabsClient.transcribe(
         result.audio,
         request.language,
       );
+      if (transcription.words.length === 0) {
+        throw new Error(
+          "Speech-to-text returned no valid timestamped words for the voice-over",
+        );
+      }
       segments = transcription.words.map((word, index) => ({
         id: `${existing?.id ?? request.videoId}-word-${index + 1}`,
         text: word.text,

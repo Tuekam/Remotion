@@ -150,9 +150,9 @@ Timings disponibles
     → synchronisation précise
 
 Timings indisponibles
-    → durée totale mesurée
-    → segments estimés à partir du script
-    → validation moins précise
+    → transcription Speech-to-Text ElevenLabs
+    → mots horodatés convertis en segments
+    → blocage si aucun mot horodaté valide n'est fourni
 ```
 
 L'architecture ne doit pas devenir inutilisable si l'alignement manque.
@@ -571,7 +571,19 @@ Le fallback de synchronisation suit désormais cet ordre :
 
 1. alignement fourni par `with-timestamps` ;
 2. mots horodatés de `POST /v1/speech-to-text` sur le MP3 généré ;
-3. durée MP3 locale seule, sans calage détaillé.
+3. blocage si aucun alignement TTS ni mot horodaté STT valide n'est
+   disponible.
+
+La durée MP3 locale reste une métadonnée de contrôle et permet de connaître
+la durée totale, mais elle ne suffit pas à construire une timeline de scènes.
+Le système ne fabrique plus un segment global à partir du script lorsque les
+timestamps sont absents. `VoiceService` exige le fallback Speech-to-Text dans
+ce cas, et `AudioTimelineService` refuse toute timeline qui ne contient pas
+de segments horodatés.
+
+Le code audio fera l'objet d'un découpage dédié lors de la prochaine tranche :
+client ElevenLabs (HTTP), mesure MP3, conversion STT et orchestration voix
+seront séparés afin que chaque fichier conserve une responsabilité unique.
 
 ### Polices personnalisées
 

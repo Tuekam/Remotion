@@ -35,7 +35,7 @@ export interface ElevenLabsClient {
   synthesize(
     request: ElevenLabsSynthesisRequest,
   ): Promise<ElevenLabsSynthesisResult>;
-  transcribe?(
+  transcribe(
     audio: Buffer,
     languageCode?: string,
   ): Promise<ElevenLabsTranscriptionResult>;

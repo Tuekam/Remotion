@@ -1,6 +1,5 @@
 import { randomUUID } from "node:crypto";
 import type { AudioTimeline } from "../../../../core/models/AudioTimeline.js";
-import type { VoiceSegment } from "../../../../core/models/VoiceOver.js";
 import type {
   AudioTimelineResult,
   AudioTimelineService,
@@ -25,9 +24,12 @@ export class AudioTimelineServiceImpl implements AudioTimelineService {
         .map((track) => track.endMs ?? 0)
         .filter((endMs) => endMs > 0),
     );
-    const voiceSegments = request.voiceOver.segments.length
-      ? request.voiceOver.segments
-      : createFallbackSegment(request.voiceOver);
+    if (request.voiceOver.segments.length === 0) {
+      throw new Error(
+        "Timestamped voice segments are required to create an audio timeline",
+      );
+    }
+    const voiceSegments = request.voiceOver.segments;
     const now = new Date();
     const timeline: AudioTimeline = {
       id: randomUUID(),
@@ -59,20 +61,6 @@ export function secondsToFrames(seconds: number, fps: number): number {
     throw new Error("FPS must be greater than zero");
   }
   return Math.round(seconds * fps);
-}
-
-function createFallbackSegment(voiceOver: CreateAudioTimelineRequest["voiceOver"]): VoiceSegment[] {
-  const durationMs = voiceOver.durationMs ?? 0;
-  return [
-    {
-      id: `${voiceOver.id}-segment-1`,
-      text: voiceOver.script,
-      startMs: 0,
-      endMs: durationMs,
-      durationMs,
-      sceneId: null,
-    },
-  ];
 }
 
 function validateRequest(request: CreateAudioTimelineRequest): void {
