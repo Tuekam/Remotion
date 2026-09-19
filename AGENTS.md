@@ -82,6 +82,22 @@ Les assets `required` bloquent la validation s'ils manquent. Les assets
 - Ne jamais convertir `/mnt/data/...` en `C:\mnt\data\...` : ce chemin reste
   inaccessible au serveur MCP Windows. Si le contenu Base64 n'est pas
   disponible, demander à l'utilisateur un chemin Windows accessible au serveur.
+- Pour un fichier fourni par l'utilisateur lorsque `contentBase64` n'est pas
+  disponible dans la session MCP, utiliser le dossier Windows partagé :
+  `C:\Users\PROMOPlus\Documents\video-saas\incoming\`.
+- Copier d'abord le fichier dans `incoming\`, puis utiliser son chemin Windows
+  complet dans `register_asset`.
+- Les fichiers du dossier `incoming\` doivent conserver leur nom et leur
+  extension réelle, par exemple `logo.jpeg` ou `background.mp3`.
+- Après l'import, vérifier la présence exacte du fichier dans
+  `workspace/<videoId>/assets/` avant toute référence dans la composition.
+- Si une URL HTTP/HTTPS publique est disponible, utiliser `sourceUrl` dans
+  `register_asset`. Le serveur télécharge directement le fichier et le copie
+  dans le workspace.
+- Fournir obligatoirement `name` avec l'extension réelle, même si le serveur
+  peut la déduire depuis l'URL.
+- Ne pas utiliser une URL locale, `/mnt/data/...` ou `C:\mnt\data\...` comme
+  `sourceUrl` : le serveur doit pouvoir atteindre l'URL depuis Windows.
 
 ## Polices personnalisées
 

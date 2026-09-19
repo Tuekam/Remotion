@@ -2131,5 +2131,1875 @@
     "status": "generated",
     "createdAt": "2026-09-18T09:42:12.609Z",
     "updatedAt": "2026-09-18T09:42:12.609Z"
+  },
+  {
+    "id": "35cc3f67-67a3-455e-ab93-d65ae8770a56",
+    "videoId": "olosto-premium-ad-01",
+    "provider": "elevenlabs",
+    "model": "eleven_multilingual_v2",
+    "voiceId": "pNInz6obpgDQGcFmaJgB",
+    "language": "fr",
+    "script": "Vous avez trouvé le produit qu’il vous faut sur un site européen ? Depuis le Cameroun, l’achat peut vite devenir plus compliqué. Avec OLOSTO, vous choisissez simplement votre produit sur votre site européen préféré. OLOSTO facilite votre achat, puis votre commande est acheminée jusqu’au Cameroun. Du panier à l’acheminement, OLOSTO simplifie vos achats internationaux. Achetez en Europe. Nous nous occupons du reste. Vos achats européens, plus simples, avec OLOSTO. Confiez vos achats à OLOSTO.",
+    "audioPath": "audio/voice-over.mp3",
+    "durationMs": 30563,
+    "alignment": null,
+    "segments": [
+      {
+        "id": "olosto-premium-ad-01-word-1",
+        "text": "Vous",
+        "startMs": 80,
+        "endMs": 200,
+        "durationMs": 120,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-2",
+        "text": "avez",
+        "startMs": 260,
+        "endMs": 420,
+        "durationMs": 160,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-3",
+        "text": "trouvé",
+        "startMs": 460,
+        "endMs": 700,
+        "durationMs": 240,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-4",
+        "text": "le",
+        "startMs": 760,
+        "endMs": 840,
+        "durationMs": 80,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-5",
+        "text": "produit",
+        "startMs": 860,
+        "endMs": 1160,
+        "durationMs": 300,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-6",
+        "text": "qu'il",
+        "startMs": 1200,
+        "endMs": 1340,
+        "durationMs": 140,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-7",
+        "text": "vous",
+        "startMs": 1380,
+        "endMs": 1500,
+        "durationMs": 120,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-8",
+        "text": "faut",
+        "startMs": 1540,
+        "endMs": 1680,
+        "durationMs": 140,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-9",
+        "text": "sur",
+        "startMs": 1720,
+        "endMs": 1840,
+        "durationMs": 120,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-10",
+        "text": "un",
+        "startMs": 1900,
+        "endMs": 1980,
+        "durationMs": 80,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-11",
+        "text": "site",
+        "startMs": 2040,
+        "endMs": 2200,
+        "durationMs": 160,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-12",
+        "text": "européen",
+        "startMs": 2240,
+        "endMs": 2720,
+        "durationMs": 480,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-13",
+        "text": "?",
+        "startMs": 2740,
+        "endMs": 2740,
+        "durationMs": 0,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-14",
+        "text": "Depuis",
+        "startMs": 3360,
+        "endMs": 3600,
+        "durationMs": 240,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-15",
+        "text": "le",
+        "startMs": 3640,
+        "endMs": 3740,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-16",
+        "text": "Cameroun,",
+        "startMs": 3780,
+        "endMs": 4240,
+        "durationMs": 460,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-17",
+        "text": "l'achat",
+        "startMs": 4420,
+        "endMs": 4760,
+        "durationMs": 340,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-18",
+        "text": "peut",
+        "startMs": 4800,
+        "endMs": 4960,
+        "durationMs": 160,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-19",
+        "text": "vite",
+        "startMs": 5020,
+        "endMs": 5240,
+        "durationMs": 220,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-20",
+        "text": "devenir",
+        "startMs": 5300,
+        "endMs": 5640,
+        "durationMs": 340,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-21",
+        "text": "plus",
+        "startMs": 5680,
+        "endMs": 5800,
+        "durationMs": 120,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-22",
+        "text": "compliqué.",
+        "startMs": 5840,
+        "endMs": 6460,
+        "durationMs": 620,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-23",
+        "text": "Avec",
+        "startMs": 6920,
+        "endMs": 7120,
+        "durationMs": 200,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-24",
+        "text": "Olosto,",
+        "startMs": 7180,
+        "endMs": 7680,
+        "durationMs": 500,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-25",
+        "text": "vous",
+        "startMs": 8000,
+        "endMs": 8100,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-26",
+        "text": "choisissez",
+        "startMs": 8140,
+        "endMs": 8640,
+        "durationMs": 500,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-27",
+        "text": "simplement",
+        "startMs": 8700,
+        "endMs": 9180,
+        "durationMs": 480,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-28",
+        "text": "votre",
+        "startMs": 9220,
+        "endMs": 9500,
+        "durationMs": 280,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-29",
+        "text": "produit",
+        "startMs": 9540,
+        "endMs": 9880,
+        "durationMs": 340,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-30",
+        "text": "sur",
+        "startMs": 9940,
+        "endMs": 10060,
+        "durationMs": 120,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-31",
+        "text": "votre",
+        "startMs": 10100,
+        "endMs": 10380,
+        "durationMs": 280,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-32",
+        "text": "site",
+        "startMs": 10440,
+        "endMs": 10600,
+        "durationMs": 160,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-33",
+        "text": "européen",
+        "startMs": 10660,
+        "endMs": 11120,
+        "durationMs": 460,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-34",
+        "text": "préféré.",
+        "startMs": 11160,
+        "endMs": 11760,
+        "durationMs": 600,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-35",
+        "text": "Olosto",
+        "startMs": 12320,
+        "endMs": 12700,
+        "durationMs": 380,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-36",
+        "text": "facilite",
+        "startMs": 12760,
+        "endMs": 13180,
+        "durationMs": 420,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-37",
+        "text": "votre",
+        "startMs": 13220,
+        "endMs": 13400,
+        "durationMs": 180,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-38",
+        "text": "achat,",
+        "startMs": 13460,
+        "endMs": 13740,
+        "durationMs": 280,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-39",
+        "text": "puis",
+        "startMs": 14080,
+        "endMs": 14260,
+        "durationMs": 180,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-40",
+        "text": "votre",
+        "startMs": 14300,
+        "endMs": 14560,
+        "durationMs": 260,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-41",
+        "text": "commande",
+        "startMs": 14600,
+        "endMs": 14920,
+        "durationMs": 320,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-42",
+        "text": "est",
+        "startMs": 14960,
+        "endMs": 15080,
+        "durationMs": 120,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-43",
+        "text": "acheminée",
+        "startMs": 15160,
+        "endMs": 15620,
+        "durationMs": 460,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-44",
+        "text": "jusqu'au",
+        "startMs": 15660,
+        "endMs": 15960,
+        "durationMs": 300,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-45",
+        "text": "Cameroun.",
+        "startMs": 16020,
+        "endMs": 16660,
+        "durationMs": 640,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-46",
+        "text": "Du",
+        "startMs": 17260,
+        "endMs": 17360,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-47",
+        "text": "panier",
+        "startMs": 17420,
+        "endMs": 17760,
+        "durationMs": 340,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-48",
+        "text": "à",
+        "startMs": 17820,
+        "endMs": 17840,
+        "durationMs": 20,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-49",
+        "text": "l'acheminement,",
+        "startMs": 17880,
+        "endMs": 18500,
+        "durationMs": 620,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-50",
+        "text": "Olosto",
+        "startMs": 18980,
+        "endMs": 19460,
+        "durationMs": 480,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-51",
+        "text": "simplifie",
+        "startMs": 19540,
+        "endMs": 20040,
+        "durationMs": 500,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-52",
+        "text": "vos",
+        "startMs": 20100,
+        "endMs": 20240,
+        "durationMs": 140,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-53",
+        "text": "achats",
+        "startMs": 20320,
+        "endMs": 20560,
+        "durationMs": 240,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-54",
+        "text": "internationaux.",
+        "startMs": 20640,
+        "endMs": 21440,
+        "durationMs": 800,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-55",
+        "text": "Achetez",
+        "startMs": 21920,
+        "endMs": 22220,
+        "durationMs": 300,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-56",
+        "text": "en",
+        "startMs": 22260,
+        "endMs": 22360,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-57",
+        "text": "Europe,",
+        "startMs": 22400,
+        "endMs": 22820,
+        "durationMs": 420,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-58",
+        "text": "nous",
+        "startMs": 23300,
+        "endMs": 23380,
+        "durationMs": 80,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-59",
+        "text": "nous",
+        "startMs": 23440,
+        "endMs": 23560,
+        "durationMs": 120,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-60",
+        "text": "occupons",
+        "startMs": 23620,
+        "endMs": 23960,
+        "durationMs": 340,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-61",
+        "text": "du",
+        "startMs": 24000,
+        "endMs": 24080,
+        "durationMs": 80,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-62",
+        "text": "reste.",
+        "startMs": 24140,
+        "endMs": 24540,
+        "durationMs": 400,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-63",
+        "text": "Vos",
+        "startMs": 25060,
+        "endMs": 25220,
+        "durationMs": 160,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-64",
+        "text": "achats",
+        "startMs": 25300,
+        "endMs": 25600,
+        "durationMs": 300,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-65",
+        "text": "européens",
+        "startMs": 25640,
+        "endMs": 26400,
+        "durationMs": 760,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-66",
+        "text": "plus",
+        "startMs": 26460,
+        "endMs": 26600,
+        "durationMs": 140,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-67",
+        "text": "simples",
+        "startMs": 26660,
+        "endMs": 27260,
+        "durationMs": 600,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-68",
+        "text": "avec",
+        "startMs": 27380,
+        "endMs": 27560,
+        "durationMs": 180,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-69",
+        "text": "Olosto.",
+        "startMs": 27620,
+        "endMs": 28140,
+        "durationMs": 520,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-70",
+        "text": "Confiez",
+        "startMs": 28540,
+        "endMs": 28920,
+        "durationMs": 380,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-71",
+        "text": "vos",
+        "startMs": 28960,
+        "endMs": 29100,
+        "durationMs": 140,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-72",
+        "text": "achats",
+        "startMs": 29180,
+        "endMs": 29520,
+        "durationMs": 340,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-73",
+        "text": "à",
+        "startMs": 29600,
+        "endMs": 29660,
+        "durationMs": 60,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-ad-01-word-74",
+        "text": "Olosto",
+        "startMs": 29720,
+        "endMs": 30240,
+        "durationMs": 520,
+        "sceneId": null
+      }
+    ],
+    "generationFingerprint": "99b7db48234d4456006250fd2bf69b6438fc4d07dde281099896bc5826125de1",
+    "status": "generated",
+    "createdAt": "2026-09-18T11:11:55.614Z",
+    "updatedAt": "2026-09-18T11:11:55.614Z"
+  },
+  {
+    "id": "1648d865-efb5-4502-b146-87c7acc9b92e",
+    "videoId": "olosto-premium-cinematic-01",
+    "provider": "elevenlabs",
+    "model": "eleven_multilingual_v2",
+    "voiceId": "pNInz6obpgDQGcFmaJgB",
+    "language": "fr",
+    "script": "Vous avez trouvé le produit qu’il vous faut sur un site européen ? Depuis le Cameroun, l’achat peut vite devenir plus compliqué. Avec OLOSTO, vous choisissez simplement votre produit sur votre site européen préféré. OLOSTO facilite votre achat, puis votre commande est acheminée jusqu’au Cameroun. Du panier à l’acheminement, OLOSTO simplifie vos achats internationaux. Achetez en Europe. Nous nous occupons du reste. Vos achats européens, plus simples, avec OLOSTO. Confiez vos achats à OLOSTO.",
+    "audioPath": "audio/voice-over.mp3",
+    "durationMs": 35683,
+    "alignment": null,
+    "segments": [
+      {
+        "id": "olosto-premium-cinematic-01-word-1",
+        "text": "Vous",
+        "startMs": 100,
+        "endMs": 200,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-2",
+        "text": "avez",
+        "startMs": 240,
+        "endMs": 380,
+        "durationMs": 140,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-3",
+        "text": "trouvé",
+        "startMs": 420,
+        "endMs": 640,
+        "durationMs": 220,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-4",
+        "text": "le",
+        "startMs": 660,
+        "endMs": 760,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-5",
+        "text": "produit",
+        "startMs": 800,
+        "endMs": 1140,
+        "durationMs": 340,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-6",
+        "text": "qu'il",
+        "startMs": 1180,
+        "endMs": 1340,
+        "durationMs": 160,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-7",
+        "text": "vous",
+        "startMs": 1360,
+        "endMs": 1500,
+        "durationMs": 140,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-8",
+        "text": "faut",
+        "startMs": 1560,
+        "endMs": 1700,
+        "durationMs": 140,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-9",
+        "text": "sur",
+        "startMs": 1740,
+        "endMs": 1840,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-10",
+        "text": "un",
+        "startMs": 1880,
+        "endMs": 1980,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-11",
+        "text": "site",
+        "startMs": 2040,
+        "endMs": 2280,
+        "durationMs": 240,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-12",
+        "text": "européen",
+        "startMs": 2340,
+        "endMs": 2800,
+        "durationMs": 460,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-13",
+        "text": "?",
+        "startMs": 2880,
+        "endMs": 2880,
+        "durationMs": 0,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-14",
+        "text": "Depuis",
+        "startMs": 3460,
+        "endMs": 3760,
+        "durationMs": 300,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-15",
+        "text": "le",
+        "startMs": 3800,
+        "endMs": 3900,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-16",
+        "text": "Cameroun,",
+        "startMs": 3960,
+        "endMs": 4400,
+        "durationMs": 440,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-17",
+        "text": "l'achat",
+        "startMs": 4820,
+        "endMs": 5120,
+        "durationMs": 300,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-18",
+        "text": "peut",
+        "startMs": 5180,
+        "endMs": 5300,
+        "durationMs": 120,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-19",
+        "text": "vite",
+        "startMs": 5360,
+        "endMs": 5620,
+        "durationMs": 260,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-20",
+        "text": "devenir",
+        "startMs": 5680,
+        "endMs": 6280,
+        "durationMs": 600,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-21",
+        "text": "plus",
+        "startMs": 6320,
+        "endMs": 6440,
+        "durationMs": 120,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-22",
+        "text": "compliqué.",
+        "startMs": 6500,
+        "endMs": 7100,
+        "durationMs": 600,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-23",
+        "text": "Avec",
+        "startMs": 7520,
+        "endMs": 7780,
+        "durationMs": 260,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-24",
+        "text": "Holosto,",
+        "startMs": 7820,
+        "endMs": 8400,
+        "durationMs": 580,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-25",
+        "text": "vous",
+        "startMs": 8840,
+        "endMs": 8940,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-26",
+        "text": "choisissez",
+        "startMs": 8980,
+        "endMs": 9520,
+        "durationMs": 540,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-27",
+        "text": "simplement",
+        "startMs": 9600,
+        "endMs": 10120,
+        "durationMs": 520,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-28",
+        "text": "votre",
+        "startMs": 10160,
+        "endMs": 10440,
+        "durationMs": 280,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-29",
+        "text": "produit",
+        "startMs": 10480,
+        "endMs": 11140,
+        "durationMs": 660,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-30",
+        "text": "sur",
+        "startMs": 11220,
+        "endMs": 11360,
+        "durationMs": 140,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-31",
+        "text": "votre",
+        "startMs": 11400,
+        "endMs": 11700,
+        "durationMs": 300,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-32",
+        "text": "site",
+        "startMs": 11760,
+        "endMs": 12060,
+        "durationMs": 300,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-33",
+        "text": "européen",
+        "startMs": 12140,
+        "endMs": 12660,
+        "durationMs": 520,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-34",
+        "text": "préféré.",
+        "startMs": 12700,
+        "endMs": 13320,
+        "durationMs": 620,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-35",
+        "text": "Holosto",
+        "startMs": 13840,
+        "endMs": 14520,
+        "durationMs": 680,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-36",
+        "text": "facilite",
+        "startMs": 14600,
+        "endMs": 15080,
+        "durationMs": 480,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-37",
+        "text": "votre",
+        "startMs": 15140,
+        "endMs": 15320,
+        "durationMs": 180,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-38",
+        "text": "achat,",
+        "startMs": 15400,
+        "endMs": 15700,
+        "durationMs": 300,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-39",
+        "text": "puis",
+        "startMs": 16239,
+        "endMs": 16620,
+        "durationMs": 381,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-40",
+        "text": "votre",
+        "startMs": 16680,
+        "endMs": 16940,
+        "durationMs": 260,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-41",
+        "text": "commande",
+        "startMs": 17000,
+        "endMs": 17360,
+        "durationMs": 360,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-42",
+        "text": "est",
+        "startMs": 17420,
+        "endMs": 17520,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-43",
+        "text": "acheminée",
+        "startMs": 17580,
+        "endMs": 18280,
+        "durationMs": 700,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-44",
+        "text": "jusqu'au",
+        "startMs": 18360,
+        "endMs": 18680,
+        "durationMs": 320,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-45",
+        "text": "Cameroun.",
+        "startMs": 18740,
+        "endMs": 19360,
+        "durationMs": 620,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-46",
+        "text": "Du",
+        "startMs": 20140,
+        "endMs": 20260,
+        "durationMs": 120,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-47",
+        "text": "panier",
+        "startMs": 20300,
+        "endMs": 20600,
+        "durationMs": 300,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-48",
+        "text": "à",
+        "startMs": 20660,
+        "endMs": 20700,
+        "durationMs": 40,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-49",
+        "text": "l'acheminement,",
+        "startMs": 20740,
+        "endMs": 21400,
+        "durationMs": 660,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-50",
+        "text": "Holosto",
+        "startMs": 21900,
+        "endMs": 22560,
+        "durationMs": 660,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-51",
+        "text": "simplifie",
+        "startMs": 23040,
+        "endMs": 23520,
+        "durationMs": 480,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-52",
+        "text": "vos",
+        "startMs": 23580,
+        "endMs": 23720,
+        "durationMs": 140,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-53",
+        "text": "achats",
+        "startMs": 23800,
+        "endMs": 24080,
+        "durationMs": 280,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-54",
+        "text": "internationaux.",
+        "startMs": 24160,
+        "endMs": 25020,
+        "durationMs": 860,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-55",
+        "text": "Achetez",
+        "startMs": 25460,
+        "endMs": 25800,
+        "durationMs": 340,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-56",
+        "text": "en",
+        "startMs": 25880,
+        "endMs": 25980,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-57",
+        "text": "Europe.",
+        "startMs": 26040,
+        "endMs": 26560,
+        "durationMs": 520,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-58",
+        "text": "Nous",
+        "startMs": 27100,
+        "endMs": 27200,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-59",
+        "text": "nous",
+        "startMs": 27240,
+        "endMs": 27400,
+        "durationMs": 160,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-60",
+        "text": "occupons",
+        "startMs": 27480,
+        "endMs": 27940,
+        "durationMs": 460,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-61",
+        "text": "du",
+        "startMs": 28000,
+        "endMs": 28100,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-62",
+        "text": "reste.",
+        "startMs": 28140,
+        "endMs": 28580,
+        "durationMs": 440,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-63",
+        "text": "Vos",
+        "startMs": 29120,
+        "endMs": 29300,
+        "durationMs": 180,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-64",
+        "text": "achats",
+        "startMs": 29400,
+        "endMs": 29680,
+        "durationMs": 280,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-65",
+        "text": "européens",
+        "startMs": 29740,
+        "endMs": 30440,
+        "durationMs": 700,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-66",
+        "text": "plus",
+        "startMs": 30480,
+        "endMs": 30660,
+        "durationMs": 180,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-67",
+        "text": "simples",
+        "startMs": 30760,
+        "endMs": 31420,
+        "durationMs": 660,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-68",
+        "text": "avec",
+        "startMs": 31520,
+        "endMs": 31800,
+        "durationMs": 280,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-69",
+        "text": "Holosto.",
+        "startMs": 31840,
+        "endMs": 32460,
+        "durationMs": 620,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-70",
+        "text": "Confiez",
+        "startMs": 33120,
+        "endMs": 33580,
+        "durationMs": 460,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-71",
+        "text": "vos",
+        "startMs": 33620,
+        "endMs": 33780,
+        "durationMs": 160,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-72",
+        "text": "achats",
+        "startMs": 33860,
+        "endMs": 34260,
+        "durationMs": 400,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-73",
+        "text": "à",
+        "startMs": 34380,
+        "endMs": 34560,
+        "durationMs": 180,
+        "sceneId": null
+      },
+      {
+        "id": "olosto-premium-cinematic-01-word-74",
+        "text": "Holosto.",
+        "startMs": 34600,
+        "endMs": 35300,
+        "durationMs": 700,
+        "sceneId": null
+      }
+    ],
+    "generationFingerprint": "99b7db48234d4456006250fd2bf69b6438fc4d07dde281099896bc5826125de1",
+    "status": "generated",
+    "createdAt": "2026-09-18T11:51:58.563Z",
+    "updatedAt": "2026-09-18T11:51:58.563Z"
+  },
+  {
+    "id": "79dfde3e-f2d7-4225-8135-cae16af77730",
+    "videoId": "video01",
+    "provider": "elevenlabs",
+    "model": "eleven_multilingual_v2",
+    "voiceId": "pNInz6obpgDQGcFmaJgB",
+    "language": "fr",
+    "script": "Vous repérez un produit en Europe, vous avez envie de l’acheter… mais une question se pose : comment le recevoir au Cameroun ? Avec OLOSTO, votre achat devient plus simple. Vous nous confiez votre commande, et nous facilitons son acheminement jusqu’au Cameroun. Vous commandez. Nous acheminons. Vous recevez. Une expérience fluide, pensée pour vous permettre d’accéder plus facilement à vos achats européens, sans vous perdre dans les contraintes logistiques. Vos achats européens, en toute simplicité. Confiez vos commandes à OLOSTO.",
+    "audioPath": "audio/voice-over.mp3",
+    "durationMs": 35918,
+    "alignment": null,
+    "segments": [
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-1",
+        "text": "Vous",
+        "startMs": 100,
+        "endMs": 200,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-2",
+        "text": "repérez",
+        "startMs": 240,
+        "endMs": 660,
+        "durationMs": 420,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-3",
+        "text": "un",
+        "startMs": 720,
+        "endMs": 820,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-4",
+        "text": "produit",
+        "startMs": 860,
+        "endMs": 1180,
+        "durationMs": 320,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-5",
+        "text": "en",
+        "startMs": 1220,
+        "endMs": 1320,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-6",
+        "text": "Europe,",
+        "startMs": 1360,
+        "endMs": 1740,
+        "durationMs": 380,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-7",
+        "text": "vous",
+        "startMs": 2060,
+        "endMs": 2180,
+        "durationMs": 120,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-8",
+        "text": "avez",
+        "startMs": 2240,
+        "endMs": 2420,
+        "durationMs": 180,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-9",
+        "text": "envie",
+        "startMs": 2480,
+        "endMs": 2700,
+        "durationMs": 220,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-10",
+        "text": "de",
+        "startMs": 2760,
+        "endMs": 2820,
+        "durationMs": 60,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-11",
+        "text": "l'acheter,",
+        "startMs": 2860,
+        "endMs": 3240,
+        "durationMs": 380,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-12",
+        "text": "mais",
+        "startMs": 3680,
+        "endMs": 3820,
+        "durationMs": 140,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-13",
+        "text": "une",
+        "startMs": 3900,
+        "endMs": 4040,
+        "durationMs": 140,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-14",
+        "text": "question",
+        "startMs": 4080,
+        "endMs": 4480,
+        "durationMs": 400,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-15",
+        "text": "se",
+        "startMs": 4540,
+        "endMs": 4680,
+        "durationMs": 140,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-16",
+        "text": "pose.",
+        "startMs": 4740,
+        "endMs": 5120,
+        "durationMs": 380,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-17",
+        "text": "Comment",
+        "startMs": 5540,
+        "endMs": 5800,
+        "durationMs": 260,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-18",
+        "text": "le",
+        "startMs": 5840,
+        "endMs": 5940,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-19",
+        "text": "recevoir",
+        "startMs": 5980,
+        "endMs": 6640,
+        "durationMs": 660,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-20",
+        "text": "au",
+        "startMs": 6680,
+        "endMs": 6780,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-21",
+        "text": "Cameroun",
+        "startMs": 6840,
+        "endMs": 7360,
+        "durationMs": 520,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-22",
+        "text": "?",
+        "startMs": 8180,
+        "endMs": 8180,
+        "durationMs": 0,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-23",
+        "text": "Avec",
+        "startMs": 8280,
+        "endMs": 8500,
+        "durationMs": 220,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-24",
+        "text": "Holosto,",
+        "startMs": 8520,
+        "endMs": 9080,
+        "durationMs": 560,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-25",
+        "text": "votre",
+        "startMs": 9540,
+        "endMs": 9740,
+        "durationMs": 200,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-26",
+        "text": "achat",
+        "startMs": 9820,
+        "endMs": 10060,
+        "durationMs": 240,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-27",
+        "text": "devient",
+        "startMs": 10100,
+        "endMs": 10420,
+        "durationMs": 320,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-28",
+        "text": "plus",
+        "startMs": 10480,
+        "endMs": 10640,
+        "durationMs": 160,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-29",
+        "text": "simple.",
+        "startMs": 10740,
+        "endMs": 11160,
+        "durationMs": 420,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-30",
+        "text": "Vous",
+        "startMs": 11700,
+        "endMs": 11800,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-31",
+        "text": "nous",
+        "startMs": 11840,
+        "endMs": 11960,
+        "durationMs": 120,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-32",
+        "text": "confiez",
+        "startMs": 12000,
+        "endMs": 12440,
+        "durationMs": 440,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-33",
+        "text": "votre",
+        "startMs": 12500,
+        "endMs": 12780,
+        "durationMs": 280,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-34",
+        "text": "commande",
+        "startMs": 12840,
+        "endMs": 13560,
+        "durationMs": 720,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-35",
+        "text": "et",
+        "startMs": 13640,
+        "endMs": 13700,
+        "durationMs": 60,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-36",
+        "text": "nous",
+        "startMs": 13740,
+        "endMs": 13880,
+        "durationMs": 140,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-37",
+        "text": "facilitons",
+        "startMs": 13940,
+        "endMs": 14560,
+        "durationMs": 620,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-38",
+        "text": "son",
+        "startMs": 14620,
+        "endMs": 14760,
+        "durationMs": 140,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-39",
+        "text": "acheminement",
+        "startMs": 14860,
+        "endMs": 15460,
+        "durationMs": 600,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-40",
+        "text": "jusqu'au",
+        "startMs": 15520,
+        "endMs": 15880,
+        "durationMs": 360,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-41",
+        "text": "Cameroun.",
+        "startMs": 15940,
+        "endMs": 16500,
+        "durationMs": 560,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-42",
+        "text": "Vous",
+        "startMs": 17280,
+        "endMs": 17400,
+        "durationMs": 120,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-43",
+        "text": "commandez,",
+        "startMs": 17460,
+        "endMs": 17960,
+        "durationMs": 500,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-44",
+        "text": "nous",
+        "startMs": 18720,
+        "endMs": 18860,
+        "durationMs": 140,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-45",
+        "text": "acheminons,",
+        "startMs": 18940,
+        "endMs": 19440,
+        "durationMs": 500,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-46",
+        "text": "vous",
+        "startMs": 20260,
+        "endMs": 20340,
+        "durationMs": 80,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-47",
+        "text": "recevez.",
+        "startMs": 20380,
+        "endMs": 21040,
+        "durationMs": 660,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-48",
+        "text": "Une",
+        "startMs": 21720,
+        "endMs": 21800,
+        "durationMs": 80,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-49",
+        "text": "expérience",
+        "startMs": 21860,
+        "endMs": 22500,
+        "durationMs": 640,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-50",
+        "text": "fluide",
+        "startMs": 22560,
+        "endMs": 22980,
+        "durationMs": 420,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-51",
+        "text": "pensée",
+        "startMs": 23600,
+        "endMs": 24160,
+        "durationMs": 560,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-52",
+        "text": "pour",
+        "startMs": 24200,
+        "endMs": 24340,
+        "durationMs": 140,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-53",
+        "text": "vous",
+        "startMs": 24380,
+        "endMs": 24480,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-54",
+        "text": "permettre",
+        "startMs": 24540,
+        "endMs": 25000,
+        "durationMs": 460,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-55",
+        "text": "d'accéder",
+        "startMs": 25040,
+        "endMs": 25580,
+        "durationMs": 540,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-56",
+        "text": "plus",
+        "startMs": 25620,
+        "endMs": 25760,
+        "durationMs": 140,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-57",
+        "text": "facilement",
+        "startMs": 25800,
+        "endMs": 26300,
+        "durationMs": 500,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-58",
+        "text": "à",
+        "startMs": 26360,
+        "endMs": 26400,
+        "durationMs": 40,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-59",
+        "text": "vos",
+        "startMs": 26440,
+        "endMs": 26600,
+        "durationMs": 160,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-60",
+        "text": "achats",
+        "startMs": 26680,
+        "endMs": 26980,
+        "durationMs": 300,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-61",
+        "text": "européens",
+        "startMs": 27040,
+        "endMs": 27720,
+        "durationMs": 680,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-62",
+        "text": "sans",
+        "startMs": 28180,
+        "endMs": 28320,
+        "durationMs": 140,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-63",
+        "text": "vous",
+        "startMs": 28360,
+        "endMs": 28500,
+        "durationMs": 140,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-64",
+        "text": "perdre",
+        "startMs": 28560,
+        "endMs": 28960,
+        "durationMs": 400,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-65",
+        "text": "dans",
+        "startMs": 29000,
+        "endMs": 29100,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-66",
+        "text": "les",
+        "startMs": 29140,
+        "endMs": 29240,
+        "durationMs": 100,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-67",
+        "text": "contraintes",
+        "startMs": 29280,
+        "endMs": 29820,
+        "durationMs": 540,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-68",
+        "text": "logistiques.",
+        "startMs": 29880,
+        "endMs": 30560,
+        "durationMs": 680,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-69",
+        "text": "Vos",
+        "startMs": 31140,
+        "endMs": 31260,
+        "durationMs": 120,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-70",
+        "text": "achats",
+        "startMs": 31340,
+        "endMs": 31600,
+        "durationMs": 260,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-71",
+        "text": "européens",
+        "startMs": 31660,
+        "endMs": 32400,
+        "durationMs": 740,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-72",
+        "text": "en",
+        "startMs": 32479,
+        "endMs": 32580,
+        "durationMs": 101,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-73",
+        "text": "toute",
+        "startMs": 32619,
+        "endMs": 32800,
+        "durationMs": 181,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-74",
+        "text": "simplicité.",
+        "startMs": 32860,
+        "endMs": 33600,
+        "durationMs": 740,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-75",
+        "text": "Confiez",
+        "startMs": 33920,
+        "endMs": 34240,
+        "durationMs": 320,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-76",
+        "text": "vos",
+        "startMs": 34280,
+        "endMs": 34360,
+        "durationMs": 80,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-77",
+        "text": "commandes",
+        "startMs": 34420,
+        "endMs": 34800,
+        "durationMs": 380,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-78",
+        "text": "à",
+        "startMs": 34880,
+        "endMs": 34940,
+        "durationMs": 60,
+        "sceneId": null
+      },
+      {
+        "id": "79dfde3e-f2d7-4225-8135-cae16af77730-word-79",
+        "text": "Holosto.",
+        "startMs": 34980,
+        "endMs": 35620,
+        "durationMs": 640,
+        "sceneId": null
+      }
+    ],
+    "generationFingerprint": "648e23577393bb6b1e86050e3f3aea72197fcbd2bbb797f337d1b6cc5acd3140",
+    "status": "generated",
+    "createdAt": "2026-09-18T13:22:15.596Z",
+    "updatedAt": "2026-09-18T13:22:36.634Z"
   }
 ]

@@ -28,10 +28,11 @@ export class RegisterAssetTool {
       "register_asset",
       {
         description:
-          "Register an asset. Use contentBase64 for files supplied by an external agent; /mnt/data paths are not visible to the Windows MCP process. Use sourcePath only for files already accessible on Windows.",
+          "Register an asset. Use sourceUrl for a public HTTP(S) URL, contentBase64 for files supplied by an external agent, or sourcePath only for files already accessible on Windows. Preserve the complete filename extension.",
         inputSchema: z.object({
           videoId: z.string().min(1),
           sourcePath: z.string().min(1).optional(),
+          sourceUrl: z.string().url().optional(),
           contentBase64: z.string().min(1).optional(),
           name: z.string().min(1),
           type: z.enum(assetTypes),
@@ -39,8 +40,14 @@ export class RegisterAssetTool {
         }),
       },
       async ({ key, ...input }) => {
-        if (!input.sourcePath && !input.contentBase64) {
-          throw new Error("Provide sourcePath or contentBase64");
+        if (
+          [input.sourcePath, input.sourceUrl, input.contentBase64].filter(
+            Boolean,
+          ).length !== 1
+        ) {
+          throw new Error(
+            "Provide exactly one of sourcePath, sourceUrl, or contentBase64",
+          );
         }
         if (
           input.sourcePath &&
@@ -51,22 +58,32 @@ export class RegisterAssetTool {
             "The MCP server cannot access /mnt/data. Send the file bytes with contentBase64 and keep the original extension in name.",
           );
         }
+        const asset = await this.registerAssetUseCase.execute({
+          videoId: input.videoId,
+          name: input.name,
+          type: input.type,
+          ...(input.sourcePath ? { sourcePath: input.sourcePath } : {}),
+          ...(input.sourceUrl ? { sourceUrl: input.sourceUrl } : {}),
+          ...(input.contentBase64
+            ? { contentBase64: input.contentBase64 }
+            : {}),
+          key: key ?? null,
+        });
         return {
         content: [
           {
             type: "text",
-            text: JSON.stringify(
-              await this.registerAssetUseCase.execute({
-                videoId: input.videoId,
-                name: input.name,
-                type: input.type,
-                ...(input.sourcePath ? { sourcePath: input.sourcePath } : {}),
-                ...(input.contentBase64
-                  ? { contentBase64: input.contentBase64 }
-                  : {}),
-                key: key ?? null,
-              }),
-            ),
+            text: JSON.stringify({
+              asset,
+              diagnostics: input.sourceUrl
+                ? {
+                    sourceUrlReceived: input.sourceUrl,
+                    downloadedPath: asset.relativePath,
+                    sizeInBytes: asset.sizeInBytes,
+                    mimeType: asset.mimeType,
+                  }
+                : undefined,
+            }),
           },
         ],
         };

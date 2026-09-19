@@ -7,6 +7,7 @@ export interface RegisterAssetInput {
   key?: AssetKey | null;
   type: AssetType;
   sourcePath?: string;
+  sourceUrl?: string;
   contentBase64?: string;
 }
 

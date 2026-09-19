@@ -521,6 +521,7 @@ Le rendu final reste dans `output/<nom-deterministe>.mp4`.
 [x] Réparer les anciennes voix via `get_voice_over`
 [x] Ajouter le fallback Speech-to-Text horodaté
 [x] Installer Nunito et Luckybones pour Remotion
+[x] Ajouter l'import d'assets par URL HTTP/HTTPS
 ```
 
 La première tâche de développement est de définir et revoir les contrats V3
@@ -579,3 +580,15 @@ Nunito et Luckybones sont installées dans
 moteur les copie automatiquement dans `public/fonts/` pour chaque bundling
 Remotion. Les compositions doivent conserver les extensions exactes dans
 leurs déclarations `@font-face` et leurs appels `staticFile(...)`.
+
+### Import d'assets par URL
+
+`register_asset` accepte désormais trois sources exclusives :
+
+1. `sourcePath` pour un fichier déjà présent sur Windows ;
+2. `contentBase64` pour un fichier transmis par un agent externe ;
+3. `sourceUrl` pour une URL HTTP/HTTPS accessible depuis le serveur.
+
+Le téléchargement est limité à 50 Mo. Le nom fourni doit conserver
+l'extension réelle, puis le fichier est enregistré dans
+`workspace/<videoId>/assets/`.

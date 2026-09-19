@@ -126,9 +126,33 @@
     "summary": "Service Presentation: Faire comprendre la valeur du service.",
     "narrative": "Identifier le besoin du public. Présenter le service et sa valeur. Terminer par un appel à l'action.",
     "callToAction": "Confiez vos achats à OLOSTO.",
-    "visualDirection": "Créer une direction visuelle cohérente à partir du brief.",
+    "visualDirection": "Utiliser les assets fournis dans le workspace du projet.",
     "scenes": [],
-    "createdAt": "2026-09-18T09:03:05.654Z",
-    "updatedAt": "2026-09-18T09:03:05.654Z"
+    "createdAt": "2026-09-18T11:11:28.305Z",
+    "updatedAt": "2026-09-18T11:11:28.305Z"
+  },
+  {
+    "id": "olosto-premium-cinematic-01-plan",
+    "videoId": "olosto-premium-cinematic-01",
+    "videoType": "service-presentation",
+    "summary": "Service Presentation: Faire comprendre la valeur du service.",
+    "narrative": "Identifier le besoin du public. Présenter le service et sa valeur. Terminer par un appel à l'action.",
+    "callToAction": "Confiez vos achats à OLOSTO.",
+    "visualDirection": "Utiliser les assets fournis dans le workspace du projet.",
+    "scenes": [],
+    "createdAt": "2026-09-18T11:50:33.468Z",
+    "updatedAt": "2026-09-18T11:50:33.468Z"
+  },
+  {
+    "id": "video01-plan",
+    "videoId": "video01",
+    "videoType": "service-presentation",
+    "summary": "Service Presentation: Faire comprendre la valeur du service.",
+    "narrative": "Identifier le besoin du public. Présenter le service et sa valeur. Terminer par un appel à l'action.",
+    "callToAction": "Confiez vos commandes à OLOSTO.",
+    "visualDirection": "Utiliser les assets fournis dans le workspace du projet.",
+    "scenes": [],
+    "createdAt": "2026-09-18T13:21:55.875Z",
+    "updatedAt": "2026-09-18T13:21:55.875Z"
   }
 ]

@@ -52,6 +52,7 @@ import { ListVideoTypesTool } from "./package/services/mcp/tools/ListVideoTypesT
 import { GetVideoRequirementsTool } from "./package/services/mcp/tools/GetVideoRequirementsTool.js";
 import { CreateVideoProjectTool } from "./package/services/mcp/tools/CreateVideoProjectTool.js";
 import { RegisterAssetTool } from "./package/services/mcp/tools/RegisterAssetTool.js";
+import { UploadAssetChunkTool } from "./package/services/mcp/tools/UploadAssetChunkTool.js";
 import { UpdateVideoBriefTool } from "./package/services/mcp/tools/UpdateVideoBriefTool.js";
 import { ValidateVideoProjectTool } from "./package/services/mcp/tools/ValidateVideoProjectTool.js";
 import { CreateVideoPlanTool } from "./package/services/mcp/tools/CreateVideoPlanTool.js";
@@ -180,6 +181,7 @@ export const container = createContainer({
   getVideoRequirementsTool: asClass(GetVideoRequirementsTool).singleton(),
   createVideoProjectTool: asClass(CreateVideoProjectTool).singleton(),
   registerAssetTool: asClass(RegisterAssetTool).singleton(),
+  uploadAssetChunkTool: asClass(UploadAssetChunkTool).singleton(),
   updateVideoBriefTool: asClass(UpdateVideoBriefTool).singleton(),
   validateVideoProjectTool: asClass(ValidateVideoProjectTool).singleton(),
   createVideoPlanTool: asClass(CreateVideoPlanTool).singleton(),

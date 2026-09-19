@@ -23,6 +23,7 @@ import { GenerateVideoProjectTool } from "./tools/GenerateVideoProjectTool.js";
 import { GenerateVoiceOverTool } from "./tools/GenerateVoiceOverTool.js";
 import { GetVoiceOverTool } from "./tools/GetVoiceOverTool.js";
 import { CreateProductionPlanTool } from "./tools/CreateProductionPlanTool.js";
+import { UploadAssetChunkTool } from "./tools/UploadAssetChunkTool.js";
 
 interface McpTool {
   register(server: McpServer): void;
@@ -55,6 +56,7 @@ export class McpVideoServer {
     private readonly generateVoiceOverTool: GenerateVoiceOverTool,
     private readonly getVoiceOverTool: GetVoiceOverTool,
     private readonly createProductionPlanTool: CreateProductionPlanTool,
+    private readonly uploadAssetChunkTool: UploadAssetChunkTool,
   ) {
     this.registerTools([
       inspectDirectoryTool,
@@ -80,6 +82,7 @@ export class McpVideoServer {
       generateVoiceOverTool,
       getVoiceOverTool,
       createProductionPlanTool,
+      uploadAssetChunkTool,
     ]);
   }
 

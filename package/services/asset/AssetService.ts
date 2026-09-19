@@ -46,6 +46,44 @@ export class AssetService {
     );
   }
 
+  public async registerUrl(
+    videoId: string,
+    sourceUrl: string,
+    type: Asset["type"],
+    name: string,
+    key: AssetKey | null,
+    manifest: AssetManifest,
+  ): Promise<{ asset: Asset; manifest: AssetManifest }> {
+    const url = new URL(sourceUrl);
+    if (url.protocol !== "https:" && url.protocol !== "http:") {
+      throw new Error("Asset URL must use HTTP or HTTPS");
+    }
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Asset download failed with status ${response.status}`);
+    }
+    const contentLength = Number(response.headers.get("content-length") ?? 0);
+    if (contentLength > 50 * 1024 * 1024) {
+      throw new Error("Asset download exceeds the 50 MB limit");
+    }
+    const content = new Uint8Array(await response.arrayBuffer());
+    if (content.length === 0) {
+      throw new Error("Asset download is empty");
+    }
+    if (content.length > 50 * 1024 * 1024) {
+      throw new Error("Asset download exceeds the 50 MB limit");
+    }
+    return this.registerFile(
+      videoId,
+      type,
+      name,
+      key,
+      manifest,
+      async (targetPath) => writeFile(targetPath, content),
+      response.headers.get("content-type") ?? "application/octet-stream",
+    );
+  }
+
   private async registerFile(
     videoId: string,
     type: Asset["type"],
@@ -53,6 +91,7 @@ export class AssetService {
     key: AssetKey | null,
     manifest: AssetManifest,
     writeAsset: (targetPath: string) => Promise<void>,
+    mimeType = "application/octet-stream",
   ): Promise<{ asset: Asset; manifest: AssetManifest }> {
     const fileName = basename(name);
     if (
@@ -81,7 +120,7 @@ export class AssetService {
       key,
       type,
       relativePath: targetRelativePath,
-      mimeType: "application/octet-stream",
+      mimeType,
       sizeInBytes: metadata.size,
       dimensions: null,
       durationInSeconds: null,
