@@ -592,3 +592,226 @@ leurs déclarations `@font-face` et leurs appels `staticFile(...)`.
 Le téléchargement est limité à 50 Mo. Le nom fourni doit conserver
 l'extension réelle, puis le fichier est enregistré dans
 `workspace/<videoId>/assets/`.
+
+## 17. Plan de nettoyage et de réorganisation du projet
+
+Cette phase est planifiée mais n'est pas encore implémentée. Aucun fichier
+applicatif ne doit être déplacé, supprimé ou réécrit avant validation de ce
+plan.
+
+### 17.1 Objectifs
+
+Le refactor doit rendre le projet :
+
+- plus simple à comprendre et à maintenir ;
+- strict sur les responsabilités uniques ;
+- évolutif pour les nouvelles fonctionnalités audio, vidéo et MCP ;
+- cohérent dans la séparation domaine, contrats, infrastructure et transport ;
+- exempt de fichiers morts, doublons, déclarations générées ou abstractions
+  inutilisées ;
+- homogène dans ses conventions de nommage.
+
+### 17.2 Règles structurelles
+
+Les règles suivantes deviennent obligatoires :
+
+1. Les modèles partagés et les interfaces réellement partagées entre plusieurs
+   couches appartiennent à `core/`.
+2. `core/` ne contient pas de dossier générique `contracts/` : les contrats
+   des repositories restent dans `core/repository/` et les contrats des
+   Use Cases restent dans `core/use-case/`.
+3. Les interfaces propres à une couche sont regroupées dans un seul dossier
+   `contracts/` de cette couche.
+4. Les implémentations sont regroupées dans un dossier distinct
+   `implementations/` ou dans des sous-domaines dédiés ; une interface et son
+   implémentation ne doivent jamais être définies dans le même fichier.
+5. Les dossiers sont nommés en minuscules.
+6. Les fichiers TypeScript et TSX sont nommés en PascalCase.
+7. Chaque fichier et chaque classe ont une responsabilité principale
+   identifiable.
+8. Les Tools MCP restent des adaptateurs minces et ne contiennent pas de
+   logique métier.
+9. Le composition root reste centralisé et ne doit pas devenir un conteneur
+   de logique applicative.
+10. Les workspaces vidéo restent isolés du code source et conservent leurs
+   compositions dans une structure dédiée.
+
+### 17.3 Structure cible indicative
+
+```text
+core/
+├── models/
+├── errors/
+├── repository/
+└── use-case/
+
+package/
+├── application/
+│   └── use-cases/
+├── infrastructure/
+│   ├── persistence/
+│   │   ├── contracts/
+│   │   └── implementations/
+│   ├── providers/
+│   │   ├── contracts/
+│   │   └── implementations/
+│   └── filesystem/
+├── presentation/
+│   └── mcp/
+│       ├── server/
+│       └── tools/
+└── video-engine/
+    ├── contracts/
+    ├── implementations/
+    ├── remotion/
+    ├── workspace/
+    └── shared/
+```
+
+Cette structure est une cible à confirmer après inventaire des imports. Elle
+ne doit pas être appliquée mécaniquement si un déplacement crée une
+dépendance cyclique ou mélange deux responsabilités.
+
+Règle de placement confirmée : `core/` ne possède pas de dossier générique
+`contracts/`. Les contrats d'interface sont placés dans `core/repository/`,
+`core/use-case/` ou dans le dossier `contracts/` de leur couche technique.
+Les contrats audio sont dans `package/services/audio/contracts/`, ceux du
+moteur dans `package/services/video-engine/contracts/`, et le contrat partagé
+du workspace dans `package/services/contracts/`.
+
+### 17.4 Phases d'exécution
+
+#### Phase A — Inventaire et règles de dépendances
+
+1. Recenser les fichiers, imports, exports, interfaces, classes et symboles
+   réellement utilisés.
+2. Identifier les fichiers générés ou obsolètes, notamment les déclarations
+   `.d.ts` présentes dans les sources.
+3. Repérer les responsabilités multiples dans `video-engine`, `audio`, `mcp`,
+   `data` et le composition root.
+4. Cartographier les dépendances entre `core`, application, infrastructure,
+   présentation et moteur vidéo.
+5. Définir les règles d'import autorisées et les dépendances interdites.
+
+#### Phase B — Stabilisation des contrats
+
+1. Déplacer dans `core/` uniquement les interfaces réellement partagées entre
+   plusieurs couches et les modèles communs.
+2. Regrouper les contrats propres à une couche dans un unique dossier
+   `contracts/`.
+3. Renommer les contrats et modèles pour des responsabilités explicites.
+4. Supprimer les interfaces dupliquées, inutilisées ou trop générales.
+5. Ajouter les erreurs métier partagées dans `core/errors/` si nécessaire.
+
+#### Phase C — Réorganisation des implémentations
+
+1. Séparer les implémentations des contrats.
+2. Regrouper les repositories, services, providers, adaptateurs HTTP et
+   accès filesystem par responsabilité.
+3. Découper les fichiers qui orchestrent plusieurs comportements indépendants.
+4. Réorganiser `video-engine` en sous-domaines dédiés : workspace, bundling,
+   rendering, préparation des assets et runtime Remotion.
+5. Réorganiser les services audio par capacité : voix, musique, timeline,
+   production et inspection.
+6. Maintenir une classe par fichier et des noms de fichiers PascalCase
+   alignés sur les symboles exportés.
+
+#### Phase D — Simplification des adaptateurs et du composition root
+
+1. Réduire les Tools MCP à la validation d'entrée, l'appel du Use Case et la
+   sérialisation de la réponse.
+2. Déplacer toute règle métier restante hors des handlers MCP.
+3. Remplacer les enregistrements et imports redondants par une composition
+   root lisible, éventuellement découpée en modules de registration.
+4. Centraliser les constantes de configuration et les chemins.
+5. Supprimer les couches qui ne font que relayer inutilement un appel sans
+   apporter de contrat, validation ou adaptation.
+
+#### Phase E — Nettoyage contrôlé
+
+1. Supprimer uniquement les fichiers prouvés inutilisés après recherche des
+   références et validation de compilation.
+2. Retirer les artefacts générés des répertoires sources et ajuster leur
+   génération si nécessaire.
+3. Nettoyer les duplications, imports inutilisés, noms ambigus et commentaires
+   obsolètes.
+4. Documenter seulement les fonctions non évidentes, en priorité les
+   fonctions publiques d'orchestration et les invariants techniques.
+
+#### Phase F — Migration et validation
+
+1. Migrer les imports par petits lots cohérents.
+2. Exécuter le typecheck après chaque domaine déplacé.
+3. Exécuter les tests unitaires, intégration et parcours MCP concernés.
+4. Vérifier que V1, V2, V3, les imports d'assets, l'audio et Remotion
+   conservent leur comportement.
+5. Vérifier l'absence de dépendances cycliques et de fichiers orphelins.
+6. Redémarrer le serveur MCP et vérifier les schémas exposés après migration.
+7. Mettre à jour cette mémoire avec les déplacements réellement effectués.
+
+### 17.5 Critères d'acceptation
+
+Le nettoyage sera considéré terminé lorsque :
+
+- les modèles et interfaces réellement partagés sont dans `core/`, sans
+  dossier générique `core/contracts/` ;
+- chaque couche possède un emplacement unique pour ses interfaces ;
+- les implémentations sont séparées des interfaces ;
+- les fichiers et dossiers respectent les conventions de nommage ;
+- `video-engine` est organisé par responsabilités ;
+- aucun fichier inutile ou généré n'est conservé sans justification ;
+- les Tools MCP ne portent plus de logique métier ;
+- le typecheck et les tests ciblés passent, hors erreurs préexistantes
+  explicitement recensées ;
+- un parcours complet création → plan → audio → génération → rendu reste
+  fonctionnel.
+
+### 17.6 État
+
+```text
+[ ] Plan validé
+[ ] Inventaire des dépendances réalisé
+[x] Contrats centralisés
+[x] Implémentations séparées
+[ ] Video engine réorganisé
+[ ] Tools MCP simplifiés
+[x] Fichiers inutiles supprimés
+[x] Documentation des fonctions publiques revue
+[ ] Typecheck et tests validés
+```
+
+La réorganisation du moteur vidéo est en cours : la séparation
+`implementations/`, `implementations/remotion/` et
+`implementations/workspace/` est réalisée, mais l'inventaire et le découpage
+complet des responsabilités du moteur restent à terminer.
+
+### 17.7 Première tranche réalisée
+
+La première tranche du refactor a été appliquée sans modifier le
+comportement métier :
+
+- les contrats des Use Cases sont dans `core/use-case/` ;
+- les contrats techniques audio sont dans
+  `package/services/audio/contracts/` ;
+- les contrats techniques du moteur vidéo sont dans
+  `package/services/video-engine/contracts/` ;
+- le contrat partagé du workspace est dans
+  `package/services/contracts/` ;
+- `RenderVideoInput` et `VideoWorkspace` sont maintenant des modèles partagés
+  dans `core/models/` ;
+- les anciennes interfaces dupliquées dans `package/services/**/contracts/`
+  ont été supprimées ou regroupées dans le contrat de leur couche ;
+- les implémentations du moteur vidéo sont maintenant regroupées sous
+  `package/services/video-engine/implementations/`, avec les adaptateurs
+  Remotion dans `remotion/` et la gestion des workspaces dans `workspace/` ;
+- les imports du composition root ont été mis à jour après ces déplacements ;
+- les déclarations `.d.ts` générées présentes dans les sources ont été
+  supprimées ;
+- les fonctions publiques d'orchestration et de sécurité du moteur et des
+  assets ont reçu des commentaires ciblés ;
+
+Une correction architecturale a ensuite supprimé `core/contracts/` :
+les interfaces techniques qui n'appartiennent pas au domaine partagé ont été
+ramenées dans leur couche, conformément à la règle de séparation validée.
+- le typecheck ne signale plus d'erreur dans les couches refactorisées ; les
+  erreurs restantes sont limitées aux compositions de workspace existantes.

@@ -1,13 +1,15 @@
 import { randomUUID } from "node:crypto";
 import { access, cp, mkdir, rm } from "node:fs/promises";
 import { join } from "node:path";
-import type { Render } from "../../../core/models/Render.js";
-import type { RenderVideoInput } from "./models/RenderVideoInput.js";
-import type { VideoWorkspace } from "./models/VideoWorkspace.js";
-import type { VideoBundler } from "./contracts/VideoBundler.js";
-import type { VideoEngine } from "./contracts/VideoEngine.js";
-import type { VideoRenderer } from "./contracts/VideoRenderer.js";
-import type { WorkspaceManager } from "./contracts/WorkspaceManager.js";
+import type { Render } from "../../../../core/models/Render.js";
+import type { RenderVideoInput } from "../../../../core/models/RenderVideoInput.js";
+import type { VideoWorkspace } from "../../../../core/models/VideoWorkspace.js";
+import type {
+  VideoBundler,
+  VideoEngine,
+  VideoRenderer,
+  WorkspaceManager,
+} from "../contracts/index.js";
 
 const sharedFontsPath = join(
   process.cwd(),
@@ -24,6 +26,7 @@ export class VideoEngineImpl implements VideoEngine {
     private readonly videoRenderer: VideoRenderer,
   ) {}
 
+  /** Returns the isolated workspace used by a video project. */
   public getWorkspace(videoId: string): Promise<VideoWorkspace> {
     return this.workspaceManager.get(videoId);
   }
@@ -37,6 +40,7 @@ export class VideoEngineImpl implements VideoEngine {
     }
   }
 
+  /** Bundles and renders one composition while keeping its staging directory isolated. */
   public async render(input: RenderVideoInput): Promise<Render> {
     const renderId = randomUUID();
     const startedAt = new Date();

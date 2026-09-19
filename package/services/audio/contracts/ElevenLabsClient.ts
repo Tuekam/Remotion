@@ -1,4 +1,4 @@
-import type { VoiceOverAlignment } from "../../../../../core/models/VoiceOver.js";
+import type { VoiceOverAlignment } from "../../../../core/models/VoiceOver.js";
 
 export interface ElevenLabsSynthesisRequest {
   voiceId: string;

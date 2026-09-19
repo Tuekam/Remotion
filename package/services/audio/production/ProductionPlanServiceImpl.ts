@@ -4,11 +4,11 @@ import type { ProductionPlanRepository } from "../../../../core/repository/Produ
 import type {
   AudioTimelineService,
   CreateAudioTimelineRequest,
-} from "../timeline/contracts/AudioTimelineService.js";
+} from "../contracts/AudioTimelineService.js";
 import type {
   CreateProductionPlanRequest,
   ProductionPlanService,
-} from "./contracts/ProductionPlanService.js";
+} from "../contracts/ProductionPlanService.js";
 
 export class ProductionPlanServiceImpl implements ProductionPlanService {
   public constructor(
@@ -16,6 +16,7 @@ export class ProductionPlanServiceImpl implements ProductionPlanService {
     private readonly audioTimelineService: AudioTimelineService,
   ) {}
 
+  /** Persists a production plan built from the validated video and audio inputs. */
   public async create(
     request: CreateProductionPlanRequest,
   ): Promise<ProductionPlan> {

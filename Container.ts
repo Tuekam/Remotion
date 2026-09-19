@@ -68,11 +68,11 @@ import { CreateProductionPlanTool } from "./package/services/mcp/tools/CreatePro
 import { RenderResultStore } from "./package/services/mcp/RenderResultStore.js";
 import { RenderOutputPathResolver } from "./package/services/mcp/RenderOutputPathResolver.js";
 import { WorkspaceExecutionService } from "./package/services/mcp/WorkspaceExecutionService.js";
-import { VideoEngineImpl } from "./package/services/video-engine/VideoEngineImpl.js";
-import { GenerateVideoServiceImpl } from "./package/services/video-engine/GenerateVideoServiceImpl.js";
-import { RemotionBundlerImpl } from "./package/services/video-engine/runtime/RemotionBundlerImpl.js";
-import { RemotionRendererImpl } from "./package/services/video-engine/runtime/RemotionRendererImpl.js";
-import { WorkspaceManagerImpl } from "./package/services/video-engine/workspace/WorkspaceManagerImpl.js";
+import { VideoEngineImpl } from "./package/services/video-engine/implementations/VideoEngineImpl.js";
+import { GenerateVideoServiceImpl } from "./package/services/video-engine/implementations/GenerateVideoServiceImpl.js";
+import { RemotionBundlerImpl } from "./package/services/video-engine/implementations/remotion/RemotionBundlerImpl.js";
+import { RemotionRendererImpl } from "./package/services/video-engine/implementations/remotion/RemotionRendererImpl.js";
+import { WorkspaceManagerImpl } from "./package/services/video-engine/implementations/workspace/WorkspaceManagerImpl.js";
 import { AssetService } from "./package/services/asset/AssetService.js";
 import { VideoPlanningService } from "./package/services/video-planning/VideoPlanningService.js";
 import { VideoTypeCatalog } from "./package/services/video-type/VideoTypeCatalog.js";

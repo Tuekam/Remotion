@@ -7,12 +7,8 @@ import {
   writeFile,
 } from "node:fs/promises";
 import { dirname } from "node:path";
-import type { WorkspaceManager } from "../video-engine/contracts/WorkspaceManager.js";
-
-export interface WorkspaceEntry {
-  name: string;
-  type: "file" | "directory";
-}
+import type { WorkspaceManager } from "../contracts/WorkspaceManager.js";
+import type { WorkspaceEntry } from "./contracts/WorkspaceServices.js";
 
 export class WorkspaceFileService {
   public constructor(private readonly workspaceManager: WorkspaceManager) {}

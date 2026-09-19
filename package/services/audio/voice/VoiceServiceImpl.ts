@@ -5,12 +5,12 @@ import type { VoiceOverRepository } from "../../../../core/repository/VoiceOverR
 import type {
   ElevenLabsClient,
   ElevenLabsSynthesisRequest,
-} from "./contracts/ElevenLabsClient.js";
+} from "../contracts/ElevenLabsClient.js";
 import type {
   GenerateVoiceOverRequest,
   VoiceService,
-} from "./contracts/VoiceService.js";
-import type { WorkspaceManager } from "../../video-engine/contracts/WorkspaceManager.js";
+} from "../contracts/VoiceService.js";
+import type { WorkspaceManager } from "../../contracts/WorkspaceManager.js";
 
 const VOICE_AUDIO_PATH = "audio/voice-over.mp3";
 const VOICE_METADATA_PATH = "audio/voice-over.json";
@@ -22,6 +22,7 @@ export class VoiceServiceImpl implements VoiceService {
     private readonly workspaceManager: WorkspaceManager,
   ) {}
 
+  /** Reuses or generates one validated voice-over for the video's global script. */
   public async generate(request: GenerateVoiceOverRequest): Promise<VoiceOver> {
     validateRequest(request);
 

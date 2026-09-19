@@ -1,7 +1,7 @@
 import { access, mkdir } from "node:fs/promises";
 import { isAbsolute, join, relative, resolve, sep } from "node:path";
-import type { VideoWorkspace } from "../models/VideoWorkspace.js";
-import type { WorkspaceManager } from "../contracts/WorkspaceManager.js";
+import type { VideoWorkspace } from "../../../../../core/models/VideoWorkspace.js";
+import type { WorkspaceManager } from "../../../contracts/WorkspaceManager.js";
 
 export class WorkspaceManagerImpl implements WorkspaceManager {
   private readonly rootPath: string;
@@ -10,18 +10,21 @@ export class WorkspaceManagerImpl implements WorkspaceManager {
     this.rootPath = resolve(workspaceRoot);
   }
 
+  /** Creates the isolated directory used by one video project. */
   public async create(videoId: string): Promise<VideoWorkspace> {
     const workspacePath = this.resolveVideoPath(videoId);
     await mkdir(workspacePath, { recursive: true });
     return { videoId, path: workspacePath };
   }
 
+  /** Resolves an existing video workspace and fails when it is missing. */
   public async get(videoId: string): Promise<VideoWorkspace> {
     const workspacePath = this.resolveVideoPath(videoId);
     await access(workspacePath);
     return { videoId, path: workspacePath };
   }
 
+  /** Resolves a path while preventing access outside the video's workspace. */
   public resolvePath(videoId: string, requestedPath = ""): string {
     const workspacePath = this.resolveVideoPath(videoId);
     const targetPath = resolve(workspacePath, requestedPath);

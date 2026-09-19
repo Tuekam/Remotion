@@ -1,4 +1,4 @@
-import type { Music } from "../../../../../core/models/Music.js";
+import type { Music } from "../../../../core/models/Music.js";
 
 export interface PrepareMusicRequest {
   videoId: string;

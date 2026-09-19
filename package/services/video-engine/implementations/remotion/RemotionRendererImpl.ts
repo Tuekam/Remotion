@@ -1,9 +1,10 @@
 import { renderMedia, selectComposition } from "@remotion/renderer";
-import type { RenderVideoInput } from "../models/RenderVideoInput.js";
-import type { VideoBundle } from "../contracts/VideoBundler.js";
-import type { VideoRenderer } from "../contracts/VideoRenderer.js";
+import type { RenderVideoInput } from "../../../../../core/models/RenderVideoInput.js";
+import type { VideoBundle } from "../../contracts/VideoBundler.js";
+import type { VideoRenderer } from "../../contracts/VideoRenderer.js";
 
 export class RemotionRendererImpl implements VideoRenderer {
+  /** Selects the requested composition and renders it to the caller's output path. */
   public async render(
     input: RenderVideoInput,
     bundle: VideoBundle,

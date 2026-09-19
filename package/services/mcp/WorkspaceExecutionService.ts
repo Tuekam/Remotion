@@ -1,6 +1,7 @@
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
-import type { WorkspaceManager } from "../video-engine/contracts/WorkspaceManager.js";
+import type { WorkspaceManager } from "../contracts/WorkspaceManager.js";
+import type { ExecutionResult } from "./contracts/WorkspaceServices.js";
 
 const execFileAsync = promisify(execFile);
 const ALLOWED_COMMANDS = new Set(["pnpm"]);
@@ -8,11 +9,6 @@ const ALLOWED_PNPM_ARGUMENTS = new Set(["--version", "-v"]);
 const ALLOWED_EXECUTABLES = new Set(["tsc", "tsx", "remotion"]);
 const MAX_ARGUMENT_LENGTH = 256;
 const UNSAFE_ARGUMENT_PATTERN = /[;&|<>`$(){}\r\n]/;
-
-export interface ExecutionResult {
-  stdout: string;
-  stderr: string;
-}
 
 export class WorkspaceExecutionService {
   public constructor(private readonly workspaceManager: WorkspaceManager) {}

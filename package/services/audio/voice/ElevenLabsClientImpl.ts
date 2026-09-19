@@ -3,7 +3,7 @@ import type {
   ElevenLabsSynthesisRequest,
   ElevenLabsSynthesisResult,
   ElevenLabsTranscriptionResult,
-} from "./contracts/ElevenLabsClient.js";
+} from "../contracts/ElevenLabsClient.js";
 import type { VoiceOverAlignment } from "../../../../core/models/VoiceOver.js";
 
 const MAX_TTS_ATTEMPTS = 3;

@@ -7,7 +7,7 @@ import type {
   CreateVideoProjectInput,
   CreateVideoProjectUseCase,
 } from "../../core/use-case/CreateVideoProjectUseCase.js";
-import type { WorkspaceManager } from "../services/video-engine/contracts/WorkspaceManager.js";
+import type { WorkspaceManager } from "../services/contracts/WorkspaceManager.js";
 
 export class CreateVideoProjectUseCaseImpl
   implements CreateVideoProjectUseCase

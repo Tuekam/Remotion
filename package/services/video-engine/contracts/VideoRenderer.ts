@@ -1,4 +1,4 @@
-import type { RenderVideoInput } from "../models/RenderVideoInput.js";
+import type { RenderVideoInput } from "../../../../core/models/RenderVideoInput.js";
 import type { VideoBundle } from "./VideoBundler.js";
 
 export interface VideoRenderer {

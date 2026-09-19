@@ -1,12 +1,16 @@
 import { randomUUID } from "node:crypto";
 import { access } from "node:fs/promises";
 import type { Music } from "../../../../core/models/Music.js";
-import type { MusicService, PrepareMusicRequest } from "./contracts/MusicService.js";
-import type { WorkspaceManager } from "../../video-engine/contracts/WorkspaceManager.js";
+import type {
+  MusicService,
+  PrepareMusicRequest,
+} from "../contracts/MusicService.js";
+import type { WorkspaceManager } from "../../contracts/WorkspaceManager.js";
 
 export class MusicServiceImpl implements MusicService {
   public constructor(private readonly workspaceManager: WorkspaceManager) {}
 
+  /** Builds the music track configuration for the requested final duration. */
   public async prepare(request: PrepareMusicRequest): Promise<Music> {
     validateRequest(request);
     const path = this.workspaceManager.resolvePath(

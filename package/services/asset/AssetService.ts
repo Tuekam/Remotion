@@ -4,11 +4,12 @@ import { randomUUID } from "node:crypto";
 import type { Asset } from "../../../core/models/Asset.js";
 import type { AssetManifest } from "../../../core/models/AssetManifest.js";
 import type { AssetKey } from "../../../core/models/VideoType.js";
-import type { WorkspaceManager } from "../video-engine/contracts/WorkspaceManager.js";
+import type { WorkspaceManager } from "../contracts/WorkspaceManager.js";
 
 export class AssetService {
   public constructor(private readonly workspaceManager: WorkspaceManager) {}
 
+  /** Copies a server-accessible file into the current video's isolated workspace. */
   public async register(
     videoId: string,
     sourcePath: string,
@@ -27,6 +28,7 @@ export class AssetService {
     );
   }
 
+  /** Decodes Base64 content and stores it with the exact provided filename. */
   public async registerContent(
     videoId: string,
     contentBase64: string,
@@ -46,6 +48,7 @@ export class AssetService {
     );
   }
 
+  /** Downloads a bounded HTTP(S) asset and stores the response metadata. */
   public async registerUrl(
     videoId: string,
     sourceUrl: string,

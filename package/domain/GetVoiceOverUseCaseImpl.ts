@@ -3,7 +3,7 @@ import type { VoiceOverRepository } from "../../core/repository/VoiceOverReposit
 import type { VoiceOver } from "../../core/models/VoiceOver.js";
 import type { GetVoiceOverUseCase } from "../../core/use-case/GetVoiceOverUseCase.js";
 import { measureMp3DurationMs } from "../services/audio/voice/ElevenLabsClientImpl.js";
-import type { WorkspaceManager } from "../services/video-engine/contracts/WorkspaceManager.js";
+import type { WorkspaceManager } from "../services/contracts/WorkspaceManager.js";
 
 export class GetVoiceOverUseCaseImpl implements GetVoiceOverUseCase {
   public constructor(

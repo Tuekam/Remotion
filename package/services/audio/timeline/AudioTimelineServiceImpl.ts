@@ -5,9 +5,10 @@ import type {
   AudioTimelineResult,
   AudioTimelineService,
   CreateAudioTimelineRequest,
-} from "./contracts/AudioTimelineService.js";
+} from "../contracts/AudioTimelineService.js";
 
 export class AudioTimelineServiceImpl implements AudioTimelineService {
+  /** Aligns voice and music tracks on the shared frame timeline. */
   public create(request: CreateAudioTimelineRequest): AudioTimelineResult {
     validateRequest(request);
 

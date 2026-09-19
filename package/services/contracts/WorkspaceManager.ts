@@ -1,4 +1,4 @@
-import type { VideoWorkspace } from "../models/VideoWorkspace.js";
+import type { VideoWorkspace } from "../../../core/models/VideoWorkspace.js";
 
 export interface WorkspaceManager {
   create(videoId: string): Promise<VideoWorkspace>;

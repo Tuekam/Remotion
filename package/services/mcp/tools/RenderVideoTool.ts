@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { McpServer } from "@modelcontextprotocol/server";
-import type { RenderVideoInput } from "../../video-engine/models/RenderVideoInput.js";
+import type { RenderVideoInput } from "../../../../core/models/RenderVideoInput.js";
 import type { VideoEngine } from "../../video-engine/contracts/VideoEngine.js";
 import { RenderResultStore } from "../RenderResultStore.js";
 import { RenderOutputPathResolver } from "../RenderOutputPathResolver.js";

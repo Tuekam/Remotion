@@ -24,10 +24,7 @@ import { GenerateVoiceOverTool } from "./tools/GenerateVoiceOverTool.js";
 import { GetVoiceOverTool } from "./tools/GetVoiceOverTool.js";
 import { CreateProductionPlanTool } from "./tools/CreateProductionPlanTool.js";
 import { UploadAssetChunkTool } from "./tools/UploadAssetChunkTool.js";
-
-interface McpTool {
-  register(server: McpServer): void;
-}
+import type { McpTool } from "./contracts/McpTool.js";
 
 export class McpVideoServer {
   public constructor(
