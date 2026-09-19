@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import type { VoiceOverRepository } from "../../core/repository/VoiceOverRepository.js";
 import type { VoiceOver } from "../../core/models/VoiceOver.js";
 import type { GetVoiceOverUseCase } from "../../core/use-case/GetVoiceOverUseCase.js";
-import { measureMp3DurationMs } from "../services/audio/voice/ElevenLabsClientImpl.js";
+import { measureMp3DurationMs } from "../services/audio/voice/Mp3Duration.js";
 import type { WorkspaceManager } from "../services/contracts/WorkspaceManager.js";
 
 export class GetVoiceOverUseCaseImpl implements GetVoiceOverUseCase {

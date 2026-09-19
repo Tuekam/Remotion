@@ -581,9 +581,11 @@ timestamps sont absents. `VoiceService` exige le fallback Speech-to-Text dans
 ce cas, et `AudioTimelineService` refuse toute timeline qui ne contient pas
 de segments horodatés.
 
-Le code audio fera l'objet d'un découpage dédié lors de la prochaine tranche :
-client ElevenLabs (HTTP), mesure MP3, conversion STT et orchestration voix
-seront séparés afin que chaque fichier conserve une responsabilité unique.
+Le code audio a été découpé par responsabilité : `ElevenLabsClientImpl`
+gère les appels HTTP et les tentatives TTS, `Mp3Duration` mesure les trames
+MP3, et `ElevenLabsTranscriptionMapper` valide et convertit la réponse STT.
+`VoiceServiceImpl` conserve uniquement l'orchestration, le cache et la
+persistance de la voix.
 
 ### Polices personnalisées
 
