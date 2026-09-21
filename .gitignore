@@ -16,3 +16,5 @@ incoming/*
 
 package/services/video-engine/workspace/**/audio/*
 package/services/video-engine/workspace/**/assets/*
+
+peaks/*
