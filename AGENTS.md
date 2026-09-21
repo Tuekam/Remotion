@@ -11,13 +11,14 @@ codex.cmd --approve-for-me -C "C:\Users\PROMOPlus\Documents\video-saas"
 `--approve-for-me` est requis pour les Tools MCP qui créent, modifient,
 rendent ou suppriment des fichiers. Ne pas ajouter `--sandbox`.
 
+
 ## Périmètre
 
 - Travailler uniquement sur la demande explicite de l'utilisateur.
 - Pour une vidéo, utiliser uniquement le serveur MCP `video-saas`.
 - Conserver tous les fichiers générés dans le workspace du `videoId` demandé.
 - Écrire la vidéo finale dans le dossier racine `output/`.
-- Utiliser un chemin comme `output/video01.mp4`, jamais le dossier `output/`
+- Utiliser un chemin comme par exemple `output/video01.mp4`, jamais le dossier `output/`
   d'un workspace.
 - Ce fichier est l'unique instruction de projet à lire pour une demande vidéo.
 - Ne pas lire `PROJECT.md`, `PROJECT2.md`, `README.md`, l'historique Git ou
@@ -31,39 +32,20 @@ La V2 qualifie la demande avant la production. Ne pas commencer par écrire du
 code Remotion ni appeler `render_video`.
 
 1. Comprendre la demande en langage naturel.
-2. Identifier le type, l'objectif, la plateforme, le format et la durée.
+2. Identifier l'objectif, la plateforme, le format et la durée si ces éléments
+   sont nécessaires à la production.
 3. Demander uniquement les informations obligatoires manquantes.
-4. Faire confirmer le type lorsqu'il a été déduit.
-5. Créer le projet avec `create_video_project`.
-6. Enregistrer le brief avec `update_video_brief`.
-7. Enregistrer les assets utilisateur avec `register_asset`.
-8. Valider avec `validate_video_project`.
-9. Si une information obligatoire manque, attendre au lieu de générer.
-10. Présenter le plan en langage naturel avec `create_video_plan` et
-    `get_video_plan`.
-11. Demander l'approbation du plan si nécessaire.
-12. Confirmer avec `confirm_video_project`.
-13. Appeler `generate_video_project` uniquement après confirmation.
+4. Créer le projet avec `create_video_project`.
+5. Enregistrer le brief libre avec `update_video_brief`.
+6. Enregistrer les assets utilisateur avec `register_asset` si nécessaire.
+7. Valider avec `validate_video_project`.
+8. Si une information obligatoire manque, attendre au lieu de générer.
+9. Confirmer avec `confirm_video_project`.
+10. Appeler `generate_video_project` uniquement après confirmation.
 
-Tools de découverte :
-
-- `list_video_types`
-- `get_video_requirements`
-
-Types initiaux :
-
-- `product-presentation`
-- `product-promotion`
-- `product-demonstration`
-- `service-presentation`
-- `problem-solution`
-- `company-presentation`
-- `testimonial`
-- `event-promotion`
-
-Les assets `required` bloquent la validation s'ils manquent. Les assets
-`recommended` sont facultatifs. Chaque asset doit rester associé à son
-`videoId`.
+Le prompt du brief est la source principale de l'intention créative. Il ne
+faut pas imposer de type vidéo, de formulaire métier statique ou de plan vidéo
+intermédiaire. Chaque asset reste associé à son `videoId`.
 
 ## Règles obligatoires pour les assets
 
@@ -188,13 +170,14 @@ de la voix off doit être basée sur des données vérifiées, jamais estimée.
 Pour une nouvelle vidéo, utiliser si nécessaire :
 
 ```text
-list_video_types / get_video_requirements
 create_video_project
 update_video_brief
 register_asset
 validate_video_project
-create_video_plan / get_video_plan
 confirm_video_project
+generate_voice_over
+get_voice_over
+create_production_plan
 generate_video_project
 ```
 

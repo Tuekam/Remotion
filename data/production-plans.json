@@ -1312,5 +1312,1323 @@
     "status": "ready-for-render",
     "createdAt": "2026-09-18T13:23:20.209Z",
     "updatedAt": "2026-09-18T13:23:20.209Z"
+  },
+  {
+    "id": "409591ca-333a-4c28-b0af-a7f4db1c310a",
+    "videoId": "video07",
+    "voicePlan": "Narration fr, voix pNInz6obpgDQGcFmaJgB, durée réelle 34978 ms.",
+    "musicPlan": "Aucune musique locale sélectionnée.",
+    "audioTimeline": {
+      "id": "063a5980-355c-445a-b6c1-d033ca6f14df",
+      "videoId": "video07",
+      "durationMs": 34978,
+      "voiceOver": {
+        "id": "df938b4e-9925-490e-ae57-159c9b211abb",
+        "videoId": "video07",
+        "provider": "elevenlabs",
+        "model": "eleven_multilingual_v2",
+        "voiceId": "pNInz6obpgDQGcFmaJgB",
+        "language": "fr",
+        "script": "Vous repérez un produit en Europe, vous avez envie de l’acheter… mais une question se pose : comment le recevoir au Cameroun ? Avec OLOSTO, votre achat devient plus simple. Vous nous confiez votre commande, et nous facilitons son acheminement jusqu’au Cameroun. Vous commandez. Nous acheminons. Vous recevez. Une expérience fluide, pensée pour vous permettre d’accéder plus facilement à vos achats européens, sans vous perdre dans les contraintes logistiques. Vos achats européens, en toute simplicité. Confiez vos commandes à OLOSTO.",
+        "audioPath": "audio/voice-over.mp3",
+        "durationMs": 34978,
+        "alignment": null,
+        "segments": [
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-1",
+            "text": "Vous",
+            "startMs": 100,
+            "endMs": 220,
+            "durationMs": 120,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-2",
+            "text": "repérez",
+            "startMs": 260,
+            "endMs": 660,
+            "durationMs": 400,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-3",
+            "text": "un",
+            "startMs": 720,
+            "endMs": 820,
+            "durationMs": 100,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-4",
+            "text": "produit",
+            "startMs": 840,
+            "endMs": 1200,
+            "durationMs": 360,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-5",
+            "text": "en",
+            "startMs": 1260,
+            "endMs": 1360,
+            "durationMs": 100,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-6",
+            "text": "Europe,",
+            "startMs": 1420,
+            "endMs": 1780,
+            "durationMs": 360,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-7",
+            "text": "vous",
+            "startMs": 1840,
+            "endMs": 1960,
+            "durationMs": 120,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-8",
+            "text": "avez",
+            "startMs": 2040,
+            "endMs": 2220,
+            "durationMs": 180,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-9",
+            "text": "envie",
+            "startMs": 2280,
+            "endMs": 2480,
+            "durationMs": 200,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-10",
+            "text": "de",
+            "startMs": 2540,
+            "endMs": 2600,
+            "durationMs": 60,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-11",
+            "text": "l'acheter.",
+            "startMs": 2660,
+            "endMs": 3200,
+            "durationMs": 540,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-12",
+            "text": "Mais",
+            "startMs": 3760,
+            "endMs": 3940,
+            "durationMs": 180,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-13",
+            "text": "une",
+            "startMs": 4000,
+            "endMs": 4100,
+            "durationMs": 100,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-14",
+            "text": "question",
+            "startMs": 4160,
+            "endMs": 4480,
+            "durationMs": 320,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-15",
+            "text": "se",
+            "startMs": 4540,
+            "endMs": 4660,
+            "durationMs": 120,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-16",
+            "text": "pose",
+            "startMs": 4720,
+            "endMs": 5020,
+            "durationMs": 300,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-17",
+            "text": ":",
+            "startMs": 5400,
+            "endMs": 5400,
+            "durationMs": 0,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-18",
+            "text": "comment",
+            "startMs": 5460,
+            "endMs": 5720,
+            "durationMs": 260,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-19",
+            "text": "le",
+            "startMs": 5780,
+            "endMs": 5840,
+            "durationMs": 60,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-20",
+            "text": "recevoir",
+            "startMs": 5900,
+            "endMs": 6360,
+            "durationMs": 460,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-21",
+            "text": "au",
+            "startMs": 6380,
+            "endMs": 6460,
+            "durationMs": 80,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-22",
+            "text": "Cameroun",
+            "startMs": 6520,
+            "endMs": 7020,
+            "durationMs": 500,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-23",
+            "text": "?",
+            "startMs": 7620,
+            "endMs": 7620,
+            "durationMs": 0,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-24",
+            "text": "Avec",
+            "startMs": 7720,
+            "endMs": 7980,
+            "durationMs": 260,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-25",
+            "text": "Holosto,",
+            "startMs": 8020,
+            "endMs": 8600,
+            "durationMs": 580,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-26",
+            "text": "votre",
+            "startMs": 8920,
+            "endMs": 9120,
+            "durationMs": 200,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-27",
+            "text": "achat",
+            "startMs": 9180,
+            "endMs": 9440,
+            "durationMs": 260,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-28",
+            "text": "devient",
+            "startMs": 9500,
+            "endMs": 9880,
+            "durationMs": 380,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-29",
+            "text": "plus",
+            "startMs": 9920,
+            "endMs": 10100,
+            "durationMs": 180,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-30",
+            "text": "simple.",
+            "startMs": 10180,
+            "endMs": 10580,
+            "durationMs": 400,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-31",
+            "text": "Vous",
+            "startMs": 11320,
+            "endMs": 11400,
+            "durationMs": 80,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-32",
+            "text": "nous",
+            "startMs": 11440,
+            "endMs": 11520,
+            "durationMs": 80,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-33",
+            "text": "confiez",
+            "startMs": 11580,
+            "endMs": 11980,
+            "durationMs": 400,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-34",
+            "text": "votre",
+            "startMs": 12020,
+            "endMs": 12260,
+            "durationMs": 240,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-35",
+            "text": "commande",
+            "startMs": 12320,
+            "endMs": 12800,
+            "durationMs": 480,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-36",
+            "text": "et",
+            "startMs": 13200,
+            "endMs": 13260,
+            "durationMs": 60,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-37",
+            "text": "nous",
+            "startMs": 13300,
+            "endMs": 13420,
+            "durationMs": 120,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-38",
+            "text": "facilitons",
+            "startMs": 13480,
+            "endMs": 14120,
+            "durationMs": 640,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-39",
+            "text": "son",
+            "startMs": 14180,
+            "endMs": 14320,
+            "durationMs": 140,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-40",
+            "text": "acheminement",
+            "startMs": 14400,
+            "endMs": 15000,
+            "durationMs": 600,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-41",
+            "text": "jusqu'au",
+            "startMs": 15060,
+            "endMs": 15400,
+            "durationMs": 340,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-42",
+            "text": "Cameroun.",
+            "startMs": 15440,
+            "endMs": 16040,
+            "durationMs": 600,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-43",
+            "text": "Vous",
+            "startMs": 16660,
+            "endMs": 16780,
+            "durationMs": 120,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-44",
+            "text": "commandez,",
+            "startMs": 16820,
+            "endMs": 17320,
+            "durationMs": 500,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-45",
+            "text": "nous",
+            "startMs": 17900,
+            "endMs": 18080,
+            "durationMs": 180,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-46",
+            "text": "acheminons,",
+            "startMs": 18160,
+            "endMs": 18720,
+            "durationMs": 560,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-47",
+            "text": "vous",
+            "startMs": 19340,
+            "endMs": 19440,
+            "durationMs": 100,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-48",
+            "text": "recevez.",
+            "startMs": 19480,
+            "endMs": 20040,
+            "durationMs": 560,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-49",
+            "text": "Une",
+            "startMs": 20660,
+            "endMs": 20740,
+            "durationMs": 80,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-50",
+            "text": "expérience",
+            "startMs": 20800,
+            "endMs": 21380,
+            "durationMs": 580,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-51",
+            "text": "fluide",
+            "startMs": 21440,
+            "endMs": 21900,
+            "durationMs": 460,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-52",
+            "text": "pensée",
+            "startMs": 22300,
+            "endMs": 22740,
+            "durationMs": 440,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-53",
+            "text": "pour",
+            "startMs": 22800,
+            "endMs": 22920,
+            "durationMs": 120,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-54",
+            "text": "vous",
+            "startMs": 22940,
+            "endMs": 23060,
+            "durationMs": 120,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-55",
+            "text": "permettre",
+            "startMs": 23120,
+            "endMs": 23620,
+            "durationMs": 500,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-56",
+            "text": "d'accéder",
+            "startMs": 23660,
+            "endMs": 24200,
+            "durationMs": 540,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-57",
+            "text": "plus",
+            "startMs": 24240,
+            "endMs": 24360,
+            "durationMs": 120,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-58",
+            "text": "facilement",
+            "startMs": 24420,
+            "endMs": 25000,
+            "durationMs": 580,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-59",
+            "text": "à",
+            "startMs": 25080,
+            "endMs": 25120,
+            "durationMs": 40,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-60",
+            "text": "vos",
+            "startMs": 25160,
+            "endMs": 25300,
+            "durationMs": 140,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-61",
+            "text": "achats",
+            "startMs": 25380,
+            "endMs": 25680,
+            "durationMs": 300,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-62",
+            "text": "européens",
+            "startMs": 25740,
+            "endMs": 26580,
+            "durationMs": 840,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-63",
+            "text": "sans",
+            "startMs": 26660,
+            "endMs": 26800,
+            "durationMs": 140,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-64",
+            "text": "vous",
+            "startMs": 26860,
+            "endMs": 27020,
+            "durationMs": 160,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-65",
+            "text": "perdre",
+            "startMs": 27060,
+            "endMs": 27440,
+            "durationMs": 380,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-66",
+            "text": "dans",
+            "startMs": 27480,
+            "endMs": 27580,
+            "durationMs": 100,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-67",
+            "text": "les",
+            "startMs": 27620,
+            "endMs": 27740,
+            "durationMs": 120,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-68",
+            "text": "contraintes",
+            "startMs": 27780,
+            "endMs": 28240,
+            "durationMs": 460,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-69",
+            "text": "logistiques.",
+            "startMs": 28300,
+            "endMs": 29040,
+            "durationMs": 740,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-70",
+            "text": "Vos",
+            "startMs": 29720,
+            "endMs": 29880,
+            "durationMs": 160,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-71",
+            "text": "achats",
+            "startMs": 29960,
+            "endMs": 30280,
+            "durationMs": 320,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-72",
+            "text": "européens",
+            "startMs": 30360,
+            "endMs": 31300,
+            "durationMs": 940,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-73",
+            "text": "en",
+            "startMs": 31380,
+            "endMs": 31480,
+            "durationMs": 100,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-74",
+            "text": "toute",
+            "startMs": 31520,
+            "endMs": 31660,
+            "durationMs": 140,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-75",
+            "text": "simplicité.",
+            "startMs": 31720,
+            "endMs": 32380,
+            "durationMs": 660,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-76",
+            "text": "Confiez",
+            "startMs": 33140,
+            "endMs": 33460,
+            "durationMs": 320,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-77",
+            "text": "vos",
+            "startMs": 33500,
+            "endMs": 33620,
+            "durationMs": 120,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-78",
+            "text": "commandes",
+            "startMs": 33660,
+            "endMs": 34000,
+            "durationMs": 340,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-79",
+            "text": "à",
+            "startMs": 34060,
+            "endMs": 34120,
+            "durationMs": 60,
+            "sceneId": null
+          },
+          {
+            "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-80",
+            "text": "Holosto.",
+            "startMs": 34140,
+            "endMs": 34660,
+            "durationMs": 520,
+            "sceneId": null
+          }
+        ],
+        "generationFingerprint": "648e23577393bb6b1e86050e3f3aea72197fcbd2bbb797f337d1b6cc5acd3140",
+        "status": "generated",
+        "createdAt": "2026-09-19T11:14:52.018Z",
+        "updatedAt": "2026-09-19T11:26:26.167Z"
+      },
+      "voiceSegments": [
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-1",
+          "text": "Vous",
+          "startMs": 100,
+          "endMs": 220,
+          "durationMs": 120,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-2",
+          "text": "repérez",
+          "startMs": 260,
+          "endMs": 660,
+          "durationMs": 400,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-3",
+          "text": "un",
+          "startMs": 720,
+          "endMs": 820,
+          "durationMs": 100,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-4",
+          "text": "produit",
+          "startMs": 840,
+          "endMs": 1200,
+          "durationMs": 360,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-5",
+          "text": "en",
+          "startMs": 1260,
+          "endMs": 1360,
+          "durationMs": 100,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-6",
+          "text": "Europe,",
+          "startMs": 1420,
+          "endMs": 1780,
+          "durationMs": 360,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-7",
+          "text": "vous",
+          "startMs": 1840,
+          "endMs": 1960,
+          "durationMs": 120,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-8",
+          "text": "avez",
+          "startMs": 2040,
+          "endMs": 2220,
+          "durationMs": 180,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-9",
+          "text": "envie",
+          "startMs": 2280,
+          "endMs": 2480,
+          "durationMs": 200,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-10",
+          "text": "de",
+          "startMs": 2540,
+          "endMs": 2600,
+          "durationMs": 60,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-11",
+          "text": "l'acheter.",
+          "startMs": 2660,
+          "endMs": 3200,
+          "durationMs": 540,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-12",
+          "text": "Mais",
+          "startMs": 3760,
+          "endMs": 3940,
+          "durationMs": 180,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-13",
+          "text": "une",
+          "startMs": 4000,
+          "endMs": 4100,
+          "durationMs": 100,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-14",
+          "text": "question",
+          "startMs": 4160,
+          "endMs": 4480,
+          "durationMs": 320,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-15",
+          "text": "se",
+          "startMs": 4540,
+          "endMs": 4660,
+          "durationMs": 120,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-16",
+          "text": "pose",
+          "startMs": 4720,
+          "endMs": 5020,
+          "durationMs": 300,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-17",
+          "text": ":",
+          "startMs": 5400,
+          "endMs": 5400,
+          "durationMs": 0,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-18",
+          "text": "comment",
+          "startMs": 5460,
+          "endMs": 5720,
+          "durationMs": 260,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-19",
+          "text": "le",
+          "startMs": 5780,
+          "endMs": 5840,
+          "durationMs": 60,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-20",
+          "text": "recevoir",
+          "startMs": 5900,
+          "endMs": 6360,
+          "durationMs": 460,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-21",
+          "text": "au",
+          "startMs": 6380,
+          "endMs": 6460,
+          "durationMs": 80,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-22",
+          "text": "Cameroun",
+          "startMs": 6520,
+          "endMs": 7020,
+          "durationMs": 500,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-23",
+          "text": "?",
+          "startMs": 7620,
+          "endMs": 7620,
+          "durationMs": 0,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-24",
+          "text": "Avec",
+          "startMs": 7720,
+          "endMs": 7980,
+          "durationMs": 260,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-25",
+          "text": "Holosto,",
+          "startMs": 8020,
+          "endMs": 8600,
+          "durationMs": 580,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-26",
+          "text": "votre",
+          "startMs": 8920,
+          "endMs": 9120,
+          "durationMs": 200,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-27",
+          "text": "achat",
+          "startMs": 9180,
+          "endMs": 9440,
+          "durationMs": 260,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-28",
+          "text": "devient",
+          "startMs": 9500,
+          "endMs": 9880,
+          "durationMs": 380,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-29",
+          "text": "plus",
+          "startMs": 9920,
+          "endMs": 10100,
+          "durationMs": 180,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-30",
+          "text": "simple.",
+          "startMs": 10180,
+          "endMs": 10580,
+          "durationMs": 400,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-31",
+          "text": "Vous",
+          "startMs": 11320,
+          "endMs": 11400,
+          "durationMs": 80,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-32",
+          "text": "nous",
+          "startMs": 11440,
+          "endMs": 11520,
+          "durationMs": 80,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-33",
+          "text": "confiez",
+          "startMs": 11580,
+          "endMs": 11980,
+          "durationMs": 400,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-34",
+          "text": "votre",
+          "startMs": 12020,
+          "endMs": 12260,
+          "durationMs": 240,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-35",
+          "text": "commande",
+          "startMs": 12320,
+          "endMs": 12800,
+          "durationMs": 480,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-36",
+          "text": "et",
+          "startMs": 13200,
+          "endMs": 13260,
+          "durationMs": 60,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-37",
+          "text": "nous",
+          "startMs": 13300,
+          "endMs": 13420,
+          "durationMs": 120,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-38",
+          "text": "facilitons",
+          "startMs": 13480,
+          "endMs": 14120,
+          "durationMs": 640,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-39",
+          "text": "son",
+          "startMs": 14180,
+          "endMs": 14320,
+          "durationMs": 140,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-40",
+          "text": "acheminement",
+          "startMs": 14400,
+          "endMs": 15000,
+          "durationMs": 600,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-41",
+          "text": "jusqu'au",
+          "startMs": 15060,
+          "endMs": 15400,
+          "durationMs": 340,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-42",
+          "text": "Cameroun.",
+          "startMs": 15440,
+          "endMs": 16040,
+          "durationMs": 600,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-43",
+          "text": "Vous",
+          "startMs": 16660,
+          "endMs": 16780,
+          "durationMs": 120,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-44",
+          "text": "commandez,",
+          "startMs": 16820,
+          "endMs": 17320,
+          "durationMs": 500,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-45",
+          "text": "nous",
+          "startMs": 17900,
+          "endMs": 18080,
+          "durationMs": 180,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-46",
+          "text": "acheminons,",
+          "startMs": 18160,
+          "endMs": 18720,
+          "durationMs": 560,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-47",
+          "text": "vous",
+          "startMs": 19340,
+          "endMs": 19440,
+          "durationMs": 100,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-48",
+          "text": "recevez.",
+          "startMs": 19480,
+          "endMs": 20040,
+          "durationMs": 560,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-49",
+          "text": "Une",
+          "startMs": 20660,
+          "endMs": 20740,
+          "durationMs": 80,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-50",
+          "text": "expérience",
+          "startMs": 20800,
+          "endMs": 21380,
+          "durationMs": 580,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-51",
+          "text": "fluide",
+          "startMs": 21440,
+          "endMs": 21900,
+          "durationMs": 460,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-52",
+          "text": "pensée",
+          "startMs": 22300,
+          "endMs": 22740,
+          "durationMs": 440,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-53",
+          "text": "pour",
+          "startMs": 22800,
+          "endMs": 22920,
+          "durationMs": 120,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-54",
+          "text": "vous",
+          "startMs": 22940,
+          "endMs": 23060,
+          "durationMs": 120,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-55",
+          "text": "permettre",
+          "startMs": 23120,
+          "endMs": 23620,
+          "durationMs": 500,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-56",
+          "text": "d'accéder",
+          "startMs": 23660,
+          "endMs": 24200,
+          "durationMs": 540,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-57",
+          "text": "plus",
+          "startMs": 24240,
+          "endMs": 24360,
+          "durationMs": 120,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-58",
+          "text": "facilement",
+          "startMs": 24420,
+          "endMs": 25000,
+          "durationMs": 580,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-59",
+          "text": "à",
+          "startMs": 25080,
+          "endMs": 25120,
+          "durationMs": 40,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-60",
+          "text": "vos",
+          "startMs": 25160,
+          "endMs": 25300,
+          "durationMs": 140,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-61",
+          "text": "achats",
+          "startMs": 25380,
+          "endMs": 25680,
+          "durationMs": 300,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-62",
+          "text": "européens",
+          "startMs": 25740,
+          "endMs": 26580,
+          "durationMs": 840,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-63",
+          "text": "sans",
+          "startMs": 26660,
+          "endMs": 26800,
+          "durationMs": 140,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-64",
+          "text": "vous",
+          "startMs": 26860,
+          "endMs": 27020,
+          "durationMs": 160,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-65",
+          "text": "perdre",
+          "startMs": 27060,
+          "endMs": 27440,
+          "durationMs": 380,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-66",
+          "text": "dans",
+          "startMs": 27480,
+          "endMs": 27580,
+          "durationMs": 100,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-67",
+          "text": "les",
+          "startMs": 27620,
+          "endMs": 27740,
+          "durationMs": 120,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-68",
+          "text": "contraintes",
+          "startMs": 27780,
+          "endMs": 28240,
+          "durationMs": 460,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-69",
+          "text": "logistiques.",
+          "startMs": 28300,
+          "endMs": 29040,
+          "durationMs": 740,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-70",
+          "text": "Vos",
+          "startMs": 29720,
+          "endMs": 29880,
+          "durationMs": 160,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-71",
+          "text": "achats",
+          "startMs": 29960,
+          "endMs": 30280,
+          "durationMs": 320,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-72",
+          "text": "européens",
+          "startMs": 30360,
+          "endMs": 31300,
+          "durationMs": 940,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-73",
+          "text": "en",
+          "startMs": 31380,
+          "endMs": 31480,
+          "durationMs": 100,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-74",
+          "text": "toute",
+          "startMs": 31520,
+          "endMs": 31660,
+          "durationMs": 140,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-75",
+          "text": "simplicité.",
+          "startMs": 31720,
+          "endMs": 32380,
+          "durationMs": 660,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-76",
+          "text": "Confiez",
+          "startMs": 33140,
+          "endMs": 33460,
+          "durationMs": 320,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-77",
+          "text": "vos",
+          "startMs": 33500,
+          "endMs": 33620,
+          "durationMs": 120,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-78",
+          "text": "commandes",
+          "startMs": 33660,
+          "endMs": 34000,
+          "durationMs": 340,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-79",
+          "text": "à",
+          "startMs": 34060,
+          "endMs": 34120,
+          "durationMs": 60,
+          "sceneId": null
+        },
+        {
+          "id": "df938b4e-9925-490e-ae57-159c9b211abb-word-80",
+          "text": "Holosto.",
+          "startMs": 34140,
+          "endMs": 34660,
+          "durationMs": 520,
+          "sceneId": null
+        }
+      ],
+      "musicTracks": [],
+      "createdAt": "2026-09-19T11:27:19.702Z",
+      "updatedAt": "2026-09-19T11:27:19.702Z"
+    },
+    "finalDurationMs": 34978,
+    "status": "ready-for-render",
+    "createdAt": "2026-09-19T11:27:19.703Z",
+    "updatedAt": "2026-09-19T11:27:19.703Z"
   }
 ]

@@ -813,8 +813,124 @@
         "durationInSeconds": null,
         "createdAt": "2026-09-18T16:21:27.627Z",
         "updatedAt": "2026-09-18T16:21:27.627Z"
+      },
+      {
+        "id": "bf8c7e21-3957-4cf7-b80a-89647d79db25",
+        "videoId": "video01",
+        "name": "background.mp3",
+        "key": null,
+        "type": "audio",
+        "relativePath": "assets/background.mp3",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 2039221,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-20T10:27:35.328Z",
+        "updatedAt": "2026-09-20T10:27:35.328Z"
+      },
+      {
+        "id": "5224c19f-4b06-4aa2-9707-592b2b16ac67",
+        "videoId": "video01",
+        "name": "logo.jpeg",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/logo.jpeg",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-20T10:27:46.333Z",
+        "updatedAt": "2026-09-20T10:27:46.333Z"
       }
     ],
-    "updatedAt": "2026-09-18T16:21:27.627Z"
+    "updatedAt": "2026-09-20T10:27:46.333Z"
+  },
+  {
+    "videoId": "video07",
+    "assets": [
+      {
+        "id": "ecb49b68-0fc6-4b2d-8c26-a31774384be7",
+        "videoId": "video07",
+        "name": "logo.jpeg",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/logo.jpeg",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-19T10:49:08.406Z",
+        "updatedAt": "2026-09-19T10:49:08.406Z"
+      },
+      {
+        "id": "e1b2d51c-345e-4606-b072-05a3521ea49c",
+        "videoId": "video07",
+        "name": "background.mp3",
+        "key": null,
+        "type": "audio",
+        "relativePath": "assets/background.mp3",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 2039221,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-19T10:49:11.927Z",
+        "updatedAt": "2026-09-19T10:49:11.927Z"
+      }
+    ],
+    "updatedAt": "2026-09-19T10:49:11.927Z"
+  },
+  {
+    "videoId": "video02",
+    "assets": [
+      {
+        "id": "ddf09543-8045-4075-8bcb-1c381c584ecb",
+        "videoId": "video02",
+        "name": "background.mp3",
+        "key": null,
+        "type": "audio",
+        "relativePath": "assets/background.mp3",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 2039221,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-20T10:29:09.541Z",
+        "updatedAt": "2026-09-20T10:29:09.541Z"
+      },
+      {
+        "id": "23f93896-8925-45c7-a6bc-e6cc97af18bc",
+        "videoId": "video02",
+        "name": "logo.jpeg",
+        "key": "logo",
+        "type": "image",
+        "relativePath": "assets/logo.jpeg",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 28237,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-20T10:29:11.573Z",
+        "updatedAt": "2026-09-20T10:29:11.573Z"
+      }
+    ],
+    "updatedAt": "2026-09-20T10:29:11.573Z"
+  },
+  {
+    "videoId": "video04",
+    "assets": [
+      {
+        "id": "70cc1bac-0346-43e3-9aee-b175b73065bf",
+        "videoId": "video04",
+        "name": "background.mp3",
+        "key": null,
+        "type": "audio",
+        "relativePath": "assets/background.mp3",
+        "mimeType": "application/octet-stream",
+        "sizeInBytes": 2039221,
+        "dimensions": null,
+        "durationInSeconds": null,
+        "createdAt": "2026-09-21T07:49:21.007Z",
+        "updatedAt": "2026-09-21T07:49:21.007Z"
+      }
+    ],
+    "updatedAt": "2026-09-21T07:49:21.007Z"
   }
 ]
